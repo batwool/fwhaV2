@@ -114,11 +114,11 @@ const HeaterMaintenance = () => {
           <div className="max-w-5xl">
             <div className="inline-block bg-white px-4 py-2 mb-4">
               <h1 className="text-base font-semibold text-[#003049]">
-                Heater Repair For Fort Worth Homes
+                Heater Maintenance For Fort Worth Homes
               </h1>
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Heater Repair Experts Serving Fort Worth, TX
+              Heater Maintenance Experts Serving Fort Worth, TX
             </h2>
 
             {/* STACKED FEATURE SVG ITEMS */}
