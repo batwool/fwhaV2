@@ -1,0 +1,91 @@
+import React from 'react';
+import fwhahero from '/src/assets/fwhahero.mp4';
+
+const Hero = () => {
+  return (
+    <section className="relative min-h-screen flex items-center">
+      {/* Video + Overlay */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <video
+          className="w-full h-full object-cover object-center"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src={fwhahero} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <div
+          className="absolute inset-0 backdrop-blur-sm"
+          style={{ backgroundColor: 'rgba(0,48,73,0.5)' }}
+        ></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white z-10">
+        <div className="flex flex-col justify-center min-h-screen">
+          <div className="flex justify-start gap-4 mb-6">
+            <img
+              src="https://brodypennell.com/wp-content/uploads/2022/08/Reviews.svg"
+              alt="Reviews"
+              className="h-20"
+            />
+            <img
+              src="https://brodypennell.com/wp-content/uploads/2022/08/Reviews-1.svg"
+              alt="Reviews"
+              className="h-20"
+            />
+            <img
+              src="https://brodypennell.com/wp-content/uploads/2022/08/Reviews-2.svg"
+              alt="Reviews"
+              className="h-20"
+            />
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-4">
+            Celebrating 15 Years of Excellence
+          </h1>
+
+          <p className="text-2xl md:text-4xl font-semibold mb-8">
+            Proudly Serving Fort Worth Since 2013
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-start mb-16">
+            <a
+              href="#contact"
+              className="bg-[#780000] text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-[#650000] transition-colors"
+            >
+              Request Service
+            </a>
+            <a
+              href="tel:8178000340"
+              className="bg-white text-[#780000] px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-200 transition-colors"
+            >
+              Call (817) 800-0340
+            </a>
+          </div>
+
+          {/* Stats: hidden on small screens */}
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-left">
+              <div className="text-4xl font-bold mb-2">A+</div>
+              <p className="text-gray-200">Rated by BBB</p>
+            </div>
+            <div className="text-left">
+              <div className="text-4xl font-bold mb-2">25+</div>
+              <p className="text-gray-200">Areas Serviced</p>
+            </div>
+            <div className="text-left">
+              <div className="text-4xl font-bold mb-2">30</div>
+              <p className="text-gray-200">Years of Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
