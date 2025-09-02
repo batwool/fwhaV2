@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 // Service Pages
 import ACRepair from './pages/ACRepair';
 import ACReplacement from './pages/ACReplacement';
+import ACInstallation from './pages/ACInstallation';
 import ACMaintenance from './pages/ACMaintenance';
 
 import HeaterRepair from './pages/HeaterRepair';
@@ -50,8 +51,9 @@ function App() {
 
         {/* AC Services */}
         <Route path="/ac-repair" element={<ACRepair />} />
-        <Route path="/ac-replacement" element={<ACReplacement />} />
+        <Route path="/ac-installation" element={<ACInstallation />} />
         <Route path="/ac-maintenance" element={<ACMaintenance />} />
+        <Route path="/ac-replacement" element={<ACReplacement />} />
 
         {/* Heating Services */}
         <Route path="/heater-repair" element={<HeaterRepair />} />
