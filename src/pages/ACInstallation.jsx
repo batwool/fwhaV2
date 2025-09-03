@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import cityscape from "../assets/cityscapes.png";
+import acInstallation from "../assets/acinstallation.jpg"; // ✅ import image
+
 
 const ACInstallation = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -107,7 +109,7 @@ const ACInstallation = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-6"
           style={{
-            backgroundImage: `url('src/assets/ac-installation.jpg')`,
+            backgroundImage: `url(${acInstallation})`,
           }}
         />
         <div className="absolute inset-0 bg-[#001f33] opacity-70" />

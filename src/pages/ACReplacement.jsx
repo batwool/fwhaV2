@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import cityscape from "../assets/cityscapes.png";
+import acReplacement from "../assets/acreplacement.jpg"; // ✅ import image
+
 
 const ACReplacement = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -106,8 +108,8 @@ const ACReplacement = () => {
       <section className="relative bg-gradient-to-r from-[#003049] to-[#00283e] text-white">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-6"
-          style={{
-            backgroundImage: `url('src/assets/acreplacement.jpg')`,
+           style={{
+            backgroundImage: `url(${acReplacement})`,
           }}
         />
         <div className="absolute inset-0 bg-[#001f33] opacity-70" />

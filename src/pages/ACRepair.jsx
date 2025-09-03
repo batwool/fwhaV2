@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cityscape from "../assets/cityscapes.png";
+import checkingAC from '../assets/checkingac.jpg';
 
 const ACRepair = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -120,7 +121,7 @@ const ACRepair = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-6"
           style={{
-            backgroundImage: `url('src/assets/checkingac.jpg')`,
+        backgroundImage: `url(${checkingAC})`,
           }}
         />
         <div className="absolute inset-0 bg-[#001f33] opacity-70" />
