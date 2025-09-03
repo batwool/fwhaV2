@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// ✅ Import images
+import hvacImage from '../assets/hvac2.jpg';
+import heatingImage from '../assets/heating.jpg';
+
 const Services = () => {
   const acServices = [
     { title: 'AC Repair', icon: '', path: '/ac-repair' },
@@ -61,7 +65,7 @@ const Services = () => {
               className="relative w-full max-w-[calc(100%-1rem)] group rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:brightness-90"
             >
               <img
-                src="src/assets/hvac2.jpg"
+                src={hvacImage}
                 alt="Air Conditioning"
                 className="w-full h-96 object-cover"
               />
@@ -97,7 +101,7 @@ const Services = () => {
               className="relative w-full max-w-[calc(100%-1rem)] group rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:brightness-90"
             >
               <img
-                src="src/assets/heating.jpg"
+                src={heatingImage}
                 alt="Heating"
                 className="w-full h-96 object-cover"
               />
@@ -135,12 +139,12 @@ const Services = () => {
           >
             Call (817) 800-0340
           </a>
-          <Link
-            to="/request-service"
+          <button
+            onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
             className="inline-block px-12 py-6 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#003049] transition-colors duration-200 text-xl"
           >
             Request Service
-          </Link>
+          </button>
         </div>
       </div>
     </section>

@@ -107,7 +107,7 @@ const ACInstallation = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-6"
           style={{
-            backgroundImage: `url('src/assets/acinstallation.jpg')`,
+            backgroundImage: `url('src/assets/ac-installation.jpg')`,
           }}
         />
         <div className="absolute inset-0 bg-[#001f33] opacity-70" />
@@ -119,7 +119,7 @@ const ACInstallation = () => {
               </h1>
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Professional AC Installation Services in Fort Worth
+              Professional Installation Services in Fort Worth
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
               For professional AC installation services in Fort Worth, TX, call North Texas's most trusted HVAC company: Fort Worth Heat and Air.

@@ -1,4 +1,5 @@
 import React from 'react';
+import mikePhoto from '../assets/mikephoto1.jpeg'; // ✅ Import the image
 
 const ACInstallSection = () => {
   return (
@@ -8,7 +9,7 @@ const ACInstallSection = () => {
           {/* Image */}
           <div className="order-2 lg:order-1">
             <img
-              src="src/assets/mikephoto1.jpeg"
+              src={mikePhoto}
               alt="Air Conditioning Installation"
               className="w-full rounded-lg shadow-lg"
             />
@@ -19,7 +20,7 @@ const ACInstallSection = () => {
             <h2 className="text-4xl font-bold text-[#003049] mb-6">
               Fixing Air Conditioners & Heaters in Fort Worth for 15 Years
             </h2>
-             <div className="w-24 h-1 mt-2" style={{ backgroundColor: '#780000' }} ></div>
+            <div className="w-24 h-1 mt-2" style={{ backgroundColor: '#780000' }}></div>
 
             <p className="text-gray-700">
               Looking for <span className="text-[#780000]">air conditioner installation</span> or <span className="text-[#780000]">heating system repair</span> in <span className="text-[#780000]">Fort Worth, TX</span>? You’re in the right place. <span className="text-[#780000]">Fort Worth Heat & Air</span>, a trusted local business, provides full-service <span className="text-[#780000]">HVAC solutions</span> for the <span className="text-[#780000]">DFW area</span>. Our licensed technicians assess your needs and recommend <span className="text-[#780000]">AC and furnace services</span> tailored to your comfort and budget. We specialize in <span className="text-[#780000]">AC repair, HVAC maintenance, duct cleaning, indoor air quality solutions,</span> and <span className="text-[#780000]">smart thermostat installation</span>.

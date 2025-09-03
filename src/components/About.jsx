@@ -1,5 +1,10 @@
 import React from 'react';
 
+// ✅ Import images
+import groupPhoto from '../assets/groupphoto1.jpeg';
+import ginoPhoto from '../assets/ginophoto.jpeg';
+import canonPhoto from '../assets/canonphoto3.jpeg';
+
 const About = () => {
   return (
     <section id="about" className="py-20 bg-white">
@@ -9,19 +14,19 @@ const About = () => {
           {/* Images */}
           <div className="lg:-ml-14 max-w-[116%]">
             <img
-              src="src/assets/groupphoto1.jpeg"
-              alt="Brody Pennell Service"
+              src={groupPhoto}
+              alt="Fort Worth Heat & Air Team"
               className="w-full rounded-lg shadow-lg"
             />
             <div className="grid grid-cols-2 gap-4 mt-4">
               <img
-                src="src/assets/ginophoto.jpeg"
-                alt="Service"
+                src={ginoPhoto}
+                alt="Technician Gino"
                 className="w-full rounded-lg shadow-md"
               />
               <img
-                src="src/assets/canonphoto3.jpeg"
-                alt="Service"
+                src={canonPhoto}
+                alt="Technician at work"
                 className="w-full rounded-lg shadow-md"
               />
             </div>

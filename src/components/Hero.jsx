@@ -53,19 +53,23 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-start mb-16">
-            <a
-              href="#contact"
-              className="bg-[#780000] text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-[#650000] transition-colors"
-            >
-              Request Service
-            </a>
-            <a
-              href="tel:8178000340"
-              className="bg-white text-[#780000] px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-200 transition-colors"
-            >
-              Call (817) 800-0340
-            </a>
-          </div>
+  {/* Request Service button triggers HCP modal */}
+  <button
+    onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+    className="bg-[#780000] text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-[#650000] transition-colors"
+  >
+    Request Service
+  </button>
+
+  {/* Call button */}
+  <a
+    href="tel:8178000340"
+    className="bg-white text-[#780000] px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-200 transition-colors"
+  >
+    Call (817) 800-0340
+  </a>
+</div>
+
 
           {/* Stats: hidden on small screens */}
           <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -178,9 +178,14 @@ const ACRepair = () => {
             </div>
             
             <div className="mt-10">
-              <button className="bg-[#780000] hover:bg-[#5a0000] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+              <button
+                type="button"
+                 onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+                className="bg-[#780000] hover:bg-[#5a0000] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105"
+                >
                 Schedule Repair Now
               </button>
+
             </div>
           </div>
         </div>
@@ -210,9 +215,14 @@ const ACRepair = () => {
                 <div className="p-8 bg-gradient-to-r from-[#003049] to-[#00283e] text-white rounded-xl shadow-xl">
                   <h3 className="text-2xl font-bold mb-4">Schedule Your AC Repair Today!</h3>
                   <p className="mb-6">Need help now? Book a visit or call <span className="font-semibold">(817) 800-0340</span>. We service all major brands.</p>
-                  <button className="bg-white text-[#003049] font-semibold py-3 px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors">
-                    Book Repair Service
-                  </button>
+                  <button
+  type="button"
+  onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+  className="bg-white text-[#003049] font-semibold py-3 px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors"
+>
+  Book Repair Service
+</button>
+
                 </div>
                 <div className="h-2 w-full bg-[#780000] rounded-full mt-8"></div>
               </div>
@@ -511,9 +521,14 @@ const ACRepair = () => {
             Don’t wait for a heatwave to discover your system needs help. Book a repair now and breathe easy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#003049] font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-105">
-              Schedule Repair Online
-            </button>
+            <button
+  type="button"
+  onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+  className="bg-white text-[#003049] font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-105"
+>
+  Schedule Repair Online
+</button>
+
             <a href="tel:8178000340" className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-white hover:text-[#003049] transition-colors transform hover:scale-105">
               Or Call: (817) 800-0340
             </a>
@@ -574,12 +589,27 @@ const ACRepair = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              Book Online Now
-            </button>
+            <button
+  type="button"
+  onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+  className="bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center"
+>
+  <svg
+    className="w-5 h-5 mr-2"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+    />
+  </svg>
+  Book Online Now
+</button>
+
             <a href="tel:8178000340" className="bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

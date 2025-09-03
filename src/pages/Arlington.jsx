@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import hvacImg from "../assets/hvac2.jpg";
 import { Link } from "react-router-dom";
 
 const Arlington = () => {

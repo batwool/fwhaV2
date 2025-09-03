@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from "/src/assets/logo5.png";
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,17 +33,20 @@ const Header = () => {
       ],
     },
     {
-      label: "About Us",
+      label: "Commercial",
       links: [
-        { name: "Our Story", href: "/our-story" },
-        { name: "Team", href: "/team" },
+        { name: "AC Services", href: "/commercial-ac-services" },
+        { name: "Heater Services", href: "/commercial-ac-services" },
+        { name: "Preventative Maintenance", href: "/commercial-maintenance" },
+        { name: "Indoor Air Quality", href: "/commercial-iaq" },
       ],
     },
     {
       label: "Resources",
       links: [
         { name: "Blog", href: "/blog" },
-        { name: "FAQs", href: "/faqs" },
+        { name: "Specials", href: "/specials" },
+        { name: "Certifications", href: "/certifications" },
       ],
     },
   ];
@@ -66,11 +71,11 @@ const Header = () => {
       {/* Logo: hard left */}
       <Link to="/" className="absolute inset-y-0 left-0 flex items-center pl-4">
         <img
-          src="src/assets/logo5.png"
-          alt="Fort Worth Heat & Air"
-          className="h-16 md:h-20 w-auto object-contain transform -translate-y-0.5"
-          style={{ maxWidth: '220px' }}
-        />
+  src={logo}
+  alt="Fort Worth Heat & Air"
+  className="h-16 md:h-20 w-auto object-contain transform -translate-y-0.5"
+  style={{ maxWidth: "220px" }}
+/>
       </Link>
 
       {/* Main content area with more flexible layout */}
@@ -123,9 +128,12 @@ const Header = () => {
           >
             (817) 800-0340
           </a>
-          <button className="bg-[#780000] text-white px-5 py-3 rounded-md hover:bg-[#8B0000] transition-colors text-lg whitespace-nowrap mr-4">
-            Request Service
-          </button>
+          <button onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+          className="bg-[#780000] text-white px-5 py-3 rounded-md hover:bg-[#8B0000] transition-colors text-lg whitespace-nowrap mr-4"
+          >
+  Request Service
+</button>
+
         </div>
 
         {/* Mobile Hamburger - positioned absolutely on the right */}
