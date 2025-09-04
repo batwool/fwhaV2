@@ -1,6 +1,5 @@
 import React from 'react';
 import fwhahero from '/src/assets/fwhahero.mp4';
-import fwhaposter from '/src/assets/fwhaposter.webp'; // 👈 poster image you generated
 import fbreview from '../assets/fbreview.png';
 import googlereview from '../assets/GoogleReview.png';
 import yelpreview from '../assets/yelpreview.png';
@@ -16,7 +15,7 @@ const Hero = () => {
           loop
           muted
           playsInline
-          poster={fwhaposter} // 👈 loads instantly as LCP
+          poster="/fwhaposter.webp" // 👈 loads instantly as LCP
         >
           <source src={fwhahero} type="video/mp4" />
           Your browser does not support the video tag.
