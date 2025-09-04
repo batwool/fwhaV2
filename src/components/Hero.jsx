@@ -1,5 +1,5 @@
 import React from 'react';
-import fwhahero from '/src/assets/fwhahero.mp4';
+import fwhahero from '/src/assets/shorterfwha.mp4';
 import fbreview from '../assets/fbreview.png';
 import googlereview from '../assets/GoogleReview.png';
 import yelpreview from '../assets/yelpreview.png';
@@ -15,6 +15,7 @@ const Hero = () => {
           loop
           muted
           playsInline
+          preload="none"
           poster="/fwhaposter.webp" // 👈 loads instantly as LCP
         >
           <source src={fwhahero} type="video/mp4" />

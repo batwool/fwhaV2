@@ -35,8 +35,10 @@ import SansomPark from './pages/SansomPark';
 import Watauga from './pages/Watauga';
 import WestworthVillage from './pages/WestworthVillage';
 import Bedford from './pages/Bedford';
+import Burleson from './pages/Burleson';
 
 import './index.css';
+
 
 
 
@@ -92,6 +94,7 @@ function App() {
         <Route path="/watauga" element={<Watauga />} />
         <Route path="/westworth-village" element={<WestworthVillage />} />
         <Route path="/bedford" element={<Bedford />} />
+        <Route path="/burleson" element={<Burleson />} />
       </Routes>
       <Footer />
     </div>
