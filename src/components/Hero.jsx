@@ -1,5 +1,9 @@
 import React from 'react';
 import fwhahero from '/src/assets/fwhahero.mp4';
+import fbreview from '../assets/fbreview.png';
+import googlereview from '../assets/GoogleReview.png';
+import yelpreview from '../assets/yelpreview.png';
+
 
 const Hero = () => {
   return (
@@ -24,35 +28,37 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white z-10">
-        <div className="flex flex-col justify-center min-h-screen">
-          <div className="flex justify-start gap-4 mb-6">
-            <img
-              src="https://brodypennell.com/wp-content/uploads/2022/08/Reviews.svg"
-              alt="Reviews"
-              className="h-20"
-            />
-            <img
-              src="https://brodypennell.com/wp-content/uploads/2022/08/Reviews-1.svg"
-              alt="Reviews"
-              className="h-20"
-            />
-            <img
-              src="https://brodypennell.com/wp-content/uploads/2022/08/Reviews-2.svg"
-              alt="Reviews"
-              className="h-20"
-            />
-          </div>
+<div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white z-10">
+  <div className="flex flex-col justify-center min-h-screen">
+    <div className="flex flex-wrap sm:flex-nowrap justify-start gap-3 mb-6">
+      <img
+        src={googlereview}
+        alt="Reviews"
+        className="h-14 md:h-18 lg:h-20 w-auto"
+      />
+      <img
+        src={fbreview}
+        alt="Reviews"
+        className="h-14 md:h-18 lg:h-20 w-auto"
+      />
+      <img
+        src={yelpreview}
+        alt="Reviews"
+        className="h-14 md:h-18 lg:h-20 w-auto"
+      />
+    </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            Celebrating 15 Years of Excellence
-          </h1>
+    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
+      Celebrating 15 Years of Excellence
+    </h1>
 
-          <p className="text-2xl md:text-4xl font-semibold mb-8">
-            Proudly Serving Fort Worth Since 2013
-          </p>
+    <p className="text-xl md:text-3xl lg:text-4xl font-semibold mb-8">
+      Proudly Serving Fort Worth Since 2013
+    </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-start mb-16">
+    <div className="flex flex-col sm:flex-row gap-4 justify-start mb-16">
+
+
   {/* Request Service button triggers HCP modal */}
   <button
     onClick={() => window.HCPWidget && window.HCPWidget.openModal()}

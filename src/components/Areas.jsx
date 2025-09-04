@@ -34,6 +34,11 @@ const Areas = () => {
     </svg>
   );
 
+  // Function to convert city names to URL-friendly slugs
+  const generateSlug = (cityName) => {
+    return cityName.toLowerCase().replace(/\s+/g, '-');
+  };
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="w-full px-4 sm:px-6 lg:px-16">
@@ -48,7 +53,7 @@ const Areas = () => {
               {tarrantCountyCities.map((city) => (
                 <Link
                   key={city}
-                  to={`/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                  to={`/${generateSlug(city)}`}
                   className="flex items-center p-1 hover:bg-gray-50 rounded transition-colors duration-200 group"
                 >
                   <MapPin className="h-4 w-4 mr-2 text-gray-400 group-hover:text-gray-600 flex-shrink-0" />
@@ -67,16 +72,7 @@ const Areas = () => {
 
           {/* Right Column - Google Map Embed */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden min-h-[500px]">
-            <iframe
-              src="https://www.google.com/maps/d/u/1/embed?mid=1LHaKSnUYOIoPu1zLhrsszO3ei-q14Fk&ehbc=2E312F&noprof=1"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Service Area Map"
-            ></iframe>
+            <iframe src="https://www.google.com/maps/d/u/3/embed?mid=1LHaKSnUYOIoPu1zLhrsszO3ei-q14Fk&ehbc=2E312F&noprof=1" width="640" height="780"></iframe>
           </div>
         </div>
       </div>

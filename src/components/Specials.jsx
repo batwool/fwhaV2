@@ -1,31 +1,54 @@
 import React, { useState, useEffect } from 'react';
 
 const Specials = () => {
-  const [days, setDays] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  
-  // Set the target date for the grand slam deal (example: 2 weeks from now)
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
   useEffect(() => {
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 14);
-    
-    const updateCountdown = () => {
+    const TARGET_DATE_KEY = "grandSlamDealTargetDate";
+    let targetDate = localStorage.getItem(TARGET_DATE_KEY);
+
+    if (!targetDate) {
+      const date = new Date();
+      date.setDate(date.getDate() + 14); // example: 2 weeks from now
+      targetDate = date.toISOString();
+      localStorage.setItem(TARGET_DATE_KEY, targetDate);
+    }
+
+    const countdown = setInterval(() => {
       const now = new Date();
-      const difference = targetDate - now;
-      
-      if (difference > 0) {
-        setDays(Math.floor(difference / (1000 * 60 * 60 * 24)));
-        setHours(Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-        setMinutes(Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)));
+      const difference = new Date(targetDate) - now;
+
+      if (difference <= 0) {
+        clearInterval(countdown);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      } else {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setTimeLeft({ days, hours, minutes, seconds });
       }
-    };
-    
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 60000);
-    
-    return () => clearInterval(timer);
+    }, 1000);
+
+    return () => clearInterval(countdown);
   }, []);
+
+  const { days, hours, minutes, seconds } = timeLeft;
+
+  const TimerBlock = ({ label, value }) => (
+    <div className="flex flex-col items-center">
+      <div className="text-5xl font-bold bg-[#003049] rounded-lg p-4 min-w-[80px] text-center">
+        {value.toString().padStart(2, "0")}
+      </div>
+      <div className="text-sm mt-2 uppercase">{label}</div>
+    </div>
+  );
 
   return (
     <section 
@@ -62,24 +85,14 @@ const Specials = () => {
 
         {/* Countdown Timer */}
         <div className="flex justify-center mb-16">
-          <div className="bg-black/30 backdrop-blur-sm rounded-xl p-8 border-2 border-[#f77f00] shadow-2xl">
-            <h3 className="text-2xl text-center text-white mb-6 uppercase">Deal launches in:</h3>
-            <div className="flex gap-6 justify-center">
-              <div className="flex flex-col items-center">
-                <div className="text-5xl font-bold bg-[#003049] rounded-lg p-4 min-w-[80px] text-center">{days}</div>
-                <div className="text-sm mt-2 uppercase">Days</div>
-              </div>
-              <div className="text-5xl font-bold self-center">:</div>
-              <div className="flex flex-col items-center">
-                <div className="text-5xl font-bold bg-[#003049] rounded-lg p-4 min-w-[80px] text-center">{hours}</div>
-                <div className="text-sm mt-2 uppercase">Hours</div>
-              </div>
-              <div className="text-5xl font-bold self-center">:</div>
-              <div className="flex flex-col items-center">
-                <div className="text-5xl font-bold bg-[#003049] rounded-lg p-4 min-w-[80px] text-center">{minutes}</div>
-                <div className="text-sm mt-2 uppercase">Minutes</div>
-              </div>
-            </div>
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl p-8 border-2 border-[#f77f00] shadow-2xl flex gap-6 justify-center">
+            <TimerBlock label="Days" value={days} />
+            <div className="text-5xl font-bold self-center">:</div>
+            <TimerBlock label="Hours" value={hours} />
+            <div className="text-5xl font-bold self-center">:</div>
+            <TimerBlock label="Minutes" value={minutes} />
+            <div className="text-5xl font-bold self-center">:</div>
+            <TimerBlock label="Seconds" value={seconds} />
           </div>
         </div>
 

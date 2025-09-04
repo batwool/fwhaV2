@@ -15,15 +15,15 @@ const Header = () => {
         { name: "AC Repair", href: "/ac-repair" },
         { name: "AC Replacement", href: "/ac-replacement" },
          { name: "AC Installation", href: "/ac-installation" },
-        { name: "AC Maintenance", href: "/ac-maintenance" },
+        { name: "Preventative Maintenance", href: "/ac-maintenance" },
       ],
     },
     {
       label: "Heating",
       links: [
         { name: "Heater Repair", href: "/heater-repair" },
-        { name: "Heater Installation", href: "/heater-replacement" },
-        { name: "Heater Maintenance", href: "/heater-maintenance" },
+        { name: "Heater Replacement", href: "/heater-replacement" },
+        { name: "Preventative Maintenance", href: "/heater-maintenance" },
       ],
     },
     {
@@ -47,6 +47,7 @@ const Header = () => {
         { name: "Blog", href: "/blog" },
         { name: "Specials", href: "/specials" },
         { name: "Certifications", href: "/certifications" },
+        { name: "Service Area", href: "/servicearea" },
       ],
     },
   ];
