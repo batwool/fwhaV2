@@ -36,11 +36,17 @@ import Watauga from './pages/Watauga';
 import WestworthVillage from './pages/WestworthVillage';
 import Bedford from './pages/Bedford';
 import Burleson from './pages/Burleson';
+import DalworthingtonGardens from './pages/DalworthingtonGardens';
+import Everman from './pages/Everman';
+import FortWorth from './pages/FortWorth';
+import Haslet from './pages/Haslet';
+import Kennedale from './pages/Kennedale';
+import NorthRichlandHills from './pages/NorthRichlandHills';
+import RiverOaks from './pages/RiverOaks';
+import Southlake from './pages/Southlake';
+import Westlake from './pages/Westlake';
 
 import './index.css';
-
-
-
 
 
 
@@ -95,6 +101,15 @@ function App() {
         <Route path="/westworth-village" element={<WestworthVillage />} />
         <Route path="/bedford" element={<Bedford />} />
         <Route path="/burleson" element={<Burleson />} />
+        <Route path="/dalworthington-gardens" element={<DalworthingtonGardens />} />
+        <Route path="/everman" element={<Everman />} />
+        <Route path="/fort-worth" element={<FortWorth />} />
+        <Route path="/haslet" element={<Haslet />} />
+        <Route path="/kennedale" element={<Kennedale />} />
+        <Route path="/north-richland-hills" element={<NorthRichlandHills />} />
+        <Route path="/river-oaks" element={<RiverOaks />} />
+        <Route path="/southlake" element={<Southlake />} />
+        <Route path="/westlake" element={<Westlake />} />
       </Routes>
       <Footer />
     </div>
