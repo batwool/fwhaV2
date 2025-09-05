@@ -84,17 +84,18 @@ const Specials = () => {
         </div>
 
         {/* Countdown Timer */}
-        <div className="flex justify-center mb-16">
-          <div className="bg-black/30 backdrop-blur-sm rounded-xl p-8 border-2 border-[#f77f00] shadow-2xl flex gap-6 justify-center">
-            <TimerBlock label="Days" value={days} />
-            <div className="text-5xl font-bold self-center">:</div>
-            <TimerBlock label="Hours" value={hours} />
-            <div className="text-5xl font-bold self-center">:</div>
-            <TimerBlock label="Minutes" value={minutes} />
-            <div className="text-5xl font-bold self-center">:</div>
-            <TimerBlock label="Seconds" value={seconds} />
-          </div>
-        </div>
+<div className="flex justify-center mb-16">
+  <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 sm:p-8 border-2 border-[#f77f00] shadow-2xl flex flex-wrap sm:flex-nowrap gap-4 sm:gap-6 justify-center">
+    <TimerBlock label="Days" value={days} />
+    <div className="text-4xl sm:text-5xl font-bold self-center">:</div>
+    <TimerBlock label="Hours" value={hours} />
+    <div className="text-4xl sm:text-5xl font-bold self-center">:</div>
+    <TimerBlock label="Minutes" value={minutes} />
+    <div className="text-4xl sm:text-5xl font-bold self-center">:</div>
+    <TimerBlock label="Seconds" value={seconds} />
+  </div>
+</div>
+
 
         {/* Teaser Cards */}
         <div className="grid md:grid-cols-3 gap-8 items-stretch mb-16">
