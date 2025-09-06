@@ -622,18 +622,18 @@ const ACRepair = () => {
       </section>
 
       {/* CITYSCAPE WITH GRADIENT BLEND */}
-      <div className="w-full relative overflow-hidden">
-        <div className="relative">
-          <img 
-            src={cityscape}
-            alt="Fort Worth cityscape" 
-            className="w-full h-auto object-cover"
-            style={{ minHeight: '150px', maxHeight: '400px' }}
-          />
-          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#003049] to-transparent"></div>
-        </div>
-      </div>
-    </div>
+<div className="w-full relative overflow-hidden hidden md:block">
+  <div className="relative">
+    <img 
+      src={cityscape}
+      alt="Fort Worth cityscape" 
+      className="w-full h-auto object-cover"
+      style={{ minHeight: '150px', maxHeight: '400px' }}
+    />
+    <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#003049] to-transparent"></div>
+  </div>
+</div>
+</div>
   );
 };
 

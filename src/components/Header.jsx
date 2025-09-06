@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "/src/assets/logo5.png";
 
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -29,7 +28,8 @@ const Header = () => {
     {
       label: "Indoor Air Quality",
       links: [
-         { name: "Testing", href: "/iaq" },
+         { name: "Residential", href: "/iaq" },
+         { name: "Commercial", href: "/commericial-iaq" },
       ],
     },
     {
@@ -72,11 +72,11 @@ const Header = () => {
       {/* Logo: hard left */}
       <Link to="/" className="absolute inset-y-0 left-0 flex items-center pl-4">
         <img
-  src={logo}
-  alt="Fort Worth Heat & Air"
-  className="h-16 md:h-20 w-auto object-contain transform -translate-y-0.5"
-  style={{ maxWidth: "220px" }}
-/>
+          src={logo}
+          alt="Fort Worth Heat & Air"
+          className="h-16 md:h-20 w-auto object-contain transform -translate-y-0.5"
+          style={{ maxWidth: "220px" }}
+        />
       </Link>
 
       {/* Main content area with more flexible layout */}
@@ -132,9 +132,8 @@ const Header = () => {
           <button onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
           className="bg-[#780000] text-white px-5 py-3 rounded-md hover:bg-[#8B0000] transition-colors text-lg whitespace-nowrap mr-4"
           >
-  Request Service
-</button>
-
+            Request Service
+          </button>
         </div>
 
         {/* Mobile Hamburger - positioned absolutely on the right */}
@@ -147,6 +146,9 @@ const Header = () => {
           </svg>
         </button>
       </div>
+
+      {/* Gradient separator bar at the bottom of the header */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#780000] via-[#003049] to-[#78caff] z-30"></div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (

@@ -21,6 +21,11 @@ import ACMaintenance from './pages/ACMaintenance';
 import HeaterRepair from './pages/HeaterRepair';
 import HeaterReplacement from './pages/HeaterReplacement';
 
+import IAQ from './pages/IndoorAirQuality.jsx';
+import CommercialIAQ from './pages/CommercialIAQ.jsx';
+
+import CommercialACServices from './pages/CommercialACServices.jsx';
+
 // City Pages
 import Arlington from './pages/Arlington';
 import BlueMound from './pages/BlueMound';
@@ -85,6 +90,13 @@ function App() {
         {/* Heating Services */}
         <Route path="/heater-repair" element={<HeaterRepair />} />
         <Route path="/heater-replacement" element={<HeaterReplacement />} />
+
+        {/* Indoor Air Quality */}
+        <Route path="/iaq" element={<IAQ />} />
+        <Route path="/commericial-iaq" element={<CommercialIAQ />} />
+
+         {/* Commercial Services */}
+          <Route path="/commercial-ac-services" element={<CommercialACServices />} />
         
         {/* City Pages */}
         <Route path="/arlington" element={<Arlington />} />
