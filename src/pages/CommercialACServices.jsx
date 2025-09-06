@@ -610,8 +610,8 @@ const CommercialACServices = () => {
                 </svg>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Office Building Retrofit</h3>
-                <p className="text-gray-700">Downtown Fort Worth office building with complete HVAC system replacement and zoning implementation.</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">AOA Orthopedic</h3>
+                <p className="text-gray-700">We've proudly serviced Arlington Orthopedic Associates, providing comprehensive HVAC maintenance to ensure optimal performance and a comfortable environment for both staff and patients.</p>
                 <div className="mt-4 flex items-center text-sm text-gray-600">
                   <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -629,8 +629,8 @@ const CommercialACServices = () => {
                 </svg>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Retail Center Maintenance</h3>
-                <p className="text-gray-700">Scheduled maintenance program for a 20-unit retail center with varied HVAC system types.</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Sea Life</h3>
+                <p className="text-gray-700">For over a decade, we've proudly serviced Sea Life, providing comprehensive HVAC maintenance to ensure optimal performance and a comfortable environment for both staff and visitors.</p>
                 <div className="mt-4 flex items-center text-sm text-gray-600">
                   <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -648,8 +648,8 @@ const CommercialACServices = () => {
                 </svg>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Restaurant HVAC Installation</h3>
-                <p className="text-gray-700">Complete kitchen ventilation and dining area comfort system for a new restaurant location.</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Peppa Pig Theme Park</h3>
+                <p className="text-gray-700">We’ve ensured Peppa Pig Theme Park stays cool, comfortable, and running smoothly. Our reliable HVAC maintenance keeps the environment enjoyable for families, visitors, and staff alike.</p>
                 <div className="mt-4 flex items-center text-sm text-gray-600">
                   <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
