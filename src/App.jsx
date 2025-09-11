@@ -26,6 +26,9 @@ import CommercialIAQ from './pages/CommercialIAQ.jsx';
 
 import CommercialACServices from './pages/CommercialACServices.jsx';
 
+// Resources
+import PaymentPlans from './pages/PaymentPlans.jsx';
+
 // City Pages
 import Arlington from './pages/Arlington';
 import BlueMound from './pages/BlueMound';
@@ -52,6 +55,7 @@ import Southlake from './pages/Southlake';
 import Westlake from './pages/Westlake';
 
 import './index.css';
+
 
 
 
@@ -97,6 +101,9 @@ function App() {
 
          {/* Commercial Services */}
           <Route path="/commercial-ac-services" element={<CommercialACServices />} />
+
+        {/* Resources */}
+        <Route path="/payment-plans" element={<PaymentPlans />} />
         
         {/* City Pages */}
         <Route path="/arlington" element={<Arlington />} />
