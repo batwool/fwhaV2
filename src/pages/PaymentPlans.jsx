@@ -39,7 +39,7 @@ const PaymentPlans = () => {
     },
     {
       id: "wisetack",
-      name: "WiseTack Financing",
+      name: "Wisetack Financing",
       price: "0% to 35.9% APR",
       description: "Flexible payment solutions for your project",
       features: [
@@ -99,7 +99,7 @@ const PaymentPlans = () => {
     },
     {
       question: "What is the maximum loan amount available?",
-      answer: "Through Hearth, we offer loan amounts up to $250,000. WiseTack offers financing from $500 to $25,000."
+      answer: "Through Hearth, we offer loan amounts up to $250,000. Wisetack offers financing from $500 to $25,000."
     },
     {
       question: "How soon can I get funding for my project?",
@@ -259,9 +259,9 @@ const PaymentPlans = () => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-green-500">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">WiseTack Financing Details</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Wisetack Financing Details</h3>
               <p className="text-gray-700 mb-4">
-                WiseTack offers flexible financing options for a wide range of project sizes with transparent terms and no hidden fees.
+                Wisetack offers flexible financing options for a wide range of project sizes with transparent terms and no hidden fees.
               </p>
               <ul className="text-gray-700 space-y-2">
                 <li className="flex items-start">
@@ -351,8 +351,7 @@ const PaymentPlans = () => {
           <div className="text-center mt-12">
             <button 
               className="bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-colors"
-              onClick={handleApplyNow}
-            >
+              onClick={() => document.getElementById("financing-options").scrollIntoView({ behavior: 'smooth' })} >
               Apply for Financing Now
             </button>
           </div>
