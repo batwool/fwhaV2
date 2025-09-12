@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FinalCTA from "../components/FinalCTA";
 
 const PaymentPlans = () => {
-  const [selectedPlan, setSelectedPlan] = useState("standard");
+  const [selectedPlan, setSelectedPlan] = useState("hearth");
   const [openIndex, setOpenIndex] = useState(null);
   const [projectCost, setProjectCost] = useState(5000);
   const [loanTerm, setLoanTerm] = useState("12 months (0% interest)");
@@ -12,55 +12,44 @@ const PaymentPlans = () => {
   };
 
   const calculateMonthlyPayment = () => {
-    // Simple calculation - in a real app, you'd use proper interest calculations
     if (loanTerm.includes("0%")) {
       return (projectCost / 12).toFixed(2);
     }
-    return (projectCost / 24).toFixed(2); // Simplified calculation
+    return (projectCost / 24).toFixed(2);
+  };
+
+  const handleApplyNow = () => {
+    window.open('https://app.gethearth.com/partners/fort-worth-heat-and-air-1/lisa/apply', '_blank');
   };
 
   const plansData = [
     {
-      id: "standard",
-      name: "Standard Financing",
+      id: "hearth",
+      name: "Hearth Financing",
       price: "0% for 12 months",
-      description: "Interest-free financing for qualified customers",
+      description: "Quick approval with no impact to your credit score",
       features: [
-        "No money down",
-        "No interest if paid in full within 12 months",
-        "Fixed monthly payments",
-        "Quick approval process",
-        "No prepayment penalties"
+        "Loan amounts up to $250,000",
+        "Affordable monthly payment options",
+        "Funding within 1-3 days",
+        "No prepayment penalties",
+        "No home equity required"
       ],
-      bestFor: "Medium-sized projects and system replacements"
+      bestFor: "Medium to large projects and system replacements"
     },
     {
-      id: "premium",
-      name: "Premium Financing",
-      price: "Low APR options available",
-      description: "Extended financing for larger projects",
+      id: "wisetack",
+      name: "WiseTack Financing",
+      price: "0% to 35.9% APR",
+      description: "Flexible payment solutions for your project",
       features: [
-        "Up to 60 months financing",
-        "Competitive interest rates",
-        "No down payment required",
-        "Flexible payment options",
-        "Same-as-cash options available"
+        "Financing from $500 - $25,000",
+        "APRs from 0% to 35.9%",
+        "Terms from 3 to 60 months",
+        "No penalties or late fees",
+        "No compounding interest"
       ],
-      bestFor: "Complete system replacements and large commercial projects"
-    },
-    {
-      id: "budget",
-      name: "Budget Plan",
-      price: "Fixed monthly payments",
-      description: "Predictable payments for any budget",
-      features: [
-        "Fixed monthly payments",
-        "No credit check required",
-        "Payment terms up to 24 months",
-        "Easy enrollment process",
-        "No hidden fees"
-      ],
-      bestFor: "Preventative maintenance plans and smaller repairs"
+      bestFor: "Small to medium projects with flexible terms"
     }
   ];
 
@@ -72,7 +61,7 @@ const PaymentPlans = () => {
     },
     {
       title: "Quick Approval",
-      description: "Get approved in minutes, not days. Most applicants receive instant decisions.",
+      description: "See your personalized monthly payment options within minutes without affecting your credit score.",
       icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
     },
     {
@@ -89,41 +78,45 @@ const PaymentPlans = () => {
 
   const faqData = [
     {
-      question: "What credit score is needed for financing?",
-      answer: "We offer financing options for a wide range of credit scores. Our standard 0% financing typically requires a score of 650 or higher, but we have options available for lower scores as well."
+      question: "Will checking my financing options affect my credit score?",
+      answer: "No, you can see your personalized payment plans without affecting your credit score."
+    },
+    {
+      question: "How does the financing approval process work?",
+      answer: "Financing is provided by independent third-party lenders and is subject to credit approval. We are not a lender and do not make credit decisions. All financing terms, rates, conditions, and approvals are solely determined by the third-party financing provider and may vary based on the applicant's credit profile."
     },
     {
       question: "How long does the approval process take?",
-      answer: "Most applications are approved within minutes. Once approved, you can schedule your service immediately."
+      answer: "Most applications are approved within minutes. Once approved, funding typically occurs within 1-3 days."
     },
     {
-      question: "Are there any hidden fees?",
-      answer: "No, we believe in transparent pricing. All terms and conditions are clearly explained before you sign any agreement."
+      question: "Are there any prepayment penalties?",
+      answer: "No, all our financing plans allow early payoff without any penalties or additional fees."
     },
     {
-      question: "Can I pay off my balance early?",
-      answer: "Yes, all our financing plans allow early payoff without any penalties or additional fees."
+      question: "Do I need home equity to qualify?",
+      answer: "No, our financing options do not require home equity."
     },
     {
-      question: "Do you offer financing for emergency repairs?",
-      answer: "Absolutely. We understand that HVAC emergencies happen, and we offer same-day financing approval for emergency services."
+      question: "What is the maximum loan amount available?",
+      answer: "Through Hearth, we offer loan amounts up to $250,000. WiseTack offers financing from $500 to $25,000."
     },
     {
-      question: "What payment methods are accepted?",
-      answer: "We accept all major credit cards, debit cards, checks, and cash. We also offer flexible financing through our partner lenders."
+      question: "How soon can I get funding for my project?",
+      answer: "Once approved, funding typically occurs within 1-3 days, allowing you to start your project quickly."
     }
   ];
 
   const applicationSteps = [
     {
       step: 1,
-      title: "Apply Online or By Phone",
+      title: "Apply Online",
       description: "Complete our simple application in just a few minutes."
     },
     {
       step: 2,
       title: "Get Instant Decision",
-      description: "Receive approval within minutes, not days."
+      description: "See your personalized payment options within minutes without affecting your credit score."
     },
     {
       step: 3,
@@ -132,8 +125,8 @@ const PaymentPlans = () => {
     },
     {
       step: 4,
-      title: "Make Easy Payments",
-      description: "Enjoy fixed monthly payments that fit your budget."
+      title: "Get Funded Quickly",
+      description: "Receive funding within 1-3 days after approval."
     }
   ];
 
@@ -155,14 +148,14 @@ const PaymentPlans = () => {
               Flexible Financing Options for Your HVAC Needs
             </h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Quality comfort shouldn't break the bank. We offer affordable payment plans to fit any budget, with quick approval and flexible terms.
+              See your personalized monthly payment options within minutes and without affecting your credit score. No prepayment penalties. No home equity required.
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
               {[
                 { value: "0%", label: "Interest Financing" },
-                { value: "60", label: "Month Terms" },
-                { value: "$0", label: "Down Payment" },
+                { value: "$250K", label: "Loan Amounts" },
+                { value: "1-3 Days", label: "Funding Time" },
                 { value: "5 min", label: "Approval Process" }
               ].map((stat, index) => (
                 <div key={index} className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
@@ -190,11 +183,11 @@ const PaymentPlans = () => {
               Flexible Payment Plans
             </h2>
             <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
-              Choose the payment option that works best for your budget and needs. All plans come with no hidden fees and transparent terms.
+              Find convenient monthly payment options for your project. See your personalized payment plans without affecting your credit score now.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {plansData.map((plan) => (
               <div 
                 key={plan.id} 
@@ -224,16 +217,79 @@ const PaymentPlans = () => {
                     ))}
                   </ul>
                   
-                  <button className={`w-full mt-6 py-2 px-4 rounded-lg font-medium ${
-                    selectedPlan === plan.id 
-                      ? "bg-[#780000] hover:bg-[#5a0000] text-white" 
-                      : "bg-gray-200 hover:bg-gray-300 text-gray-800"
-                  } transition-colors`}>
-                    Select Plan
+                  <button 
+                    className={`w-full mt-6 py-2 px-4 rounded-lg font-medium ${
+                      selectedPlan === plan.id 
+                        ? "bg-[#780000] hover:bg-[#5a0000] text-white" 
+                        : "bg-gray-200 hover:bg-gray-300 text-gray-800"
+                    } transition-colors`}
+                    onClick={handleApplyNow}
+                  >
+                    Apply Now
                   </button>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Hearth Makes It Easy</h3>
+              <p className="text-gray-700 mb-4">
+                Hearth makes it easy for you to find monthly payment options for your project, with loan amounts up to $250,000, affordable monthly payment options, funding within 1-3 days, no prepayment penalties, and no home equity required.
+              </p>
+              <ul className="text-gray-700 space-y-2">
+                <li className="flex items-start">
+                  <CheckIcon />
+                  <span>Loan amounts up to $250,000</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckIcon />
+                  <span>Funding within 1-3 days</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckIcon />
+                  <span>No prepayment penalties</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckIcon />
+                  <span>No home equity required</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-green-500">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">WiseTack Financing Details</h3>
+              <p className="text-gray-700 mb-4">
+                WiseTack offers flexible financing options for a wide range of project sizes with transparent terms and no hidden fees.
+              </p>
+              <ul className="text-gray-700 space-y-2">
+                <li className="flex items-start">
+                  <CheckIcon />
+                  <span>Financing from $500 to $25,000</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckIcon />
+                  <span>APRs from 0% to 35.9%</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckIcon />
+                  <span>Terms from 3 to 60 months</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckIcon />
+                  <span>No penalties, late fees, or compounding interest</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Financing Disclaimer */}
+          <div className="mt-10 p-6 bg-blue-50 rounded-lg border border-blue-200">
+            <h3 className="text-lg font-semibold text-blue-800 mb-3">Financing Disclaimer</h3>
+            <p className="text-sm text-gray-700">
+              Financing is provided by independent third-party lenders and is subject to credit approval. Fort Worth Heat and Air is not a lender and does not make credit decisions. All financing terms, rates, conditions, and approvals are solely determined by the third-party financing provider and may vary based on the applicant's credit profile. Fort Worth Heat and Air makes no representations or warranties regarding financing, and is not responsible for any decisions, terms, payments, obligations, or disputes that may arise between the customer and the financing provider. Customers are encouraged to carefully review and understand all financing agreements before proceeding.
+            </p>
           </div>
         </div>
       </section>
@@ -293,7 +349,10 @@ const PaymentPlans = () => {
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-colors">
+            <button 
+              className="bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-colors"
+              onClick={handleApplyNow}
+            >
               Apply for Financing Now
             </button>
           </div>
@@ -352,7 +411,10 @@ const PaymentPlans = () => {
                   <div className="text-gray-600 text-sm">
                     For a ${projectCost.toLocaleString()} project with {loanTerm}
                   </div>
-                  <button className="mt-6 bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-2 px-6 rounded-lg transition-colors">
+                  <button 
+                    className="mt-6 bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+                    onClick={handleApplyNow}
+                  >
                     Apply Now
                   </button>
                 </div>
@@ -411,12 +473,15 @@ const PaymentPlans = () => {
             Apply for financing in minutes and get the HVAC services you need with affordable monthly payments.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#003049] font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition-colors">
+            <button 
+              className="bg-white text-[#003049] font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition-colors"
+              onClick={handleApplyNow}
+            >
               Apply for Financing
             </button>
-            <button className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-white hover:text-[#003049] transition-colors">
-              Contact Our Team
-            </button>
+            <a href="tel:8178000340" className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-white hover:text-[#003049] transition-colors inline-block text-center">
+  Contact Our Team
+</a>
           </div>
         </div>
       </section>
