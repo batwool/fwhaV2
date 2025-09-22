@@ -1,5 +1,4 @@
-# Netlify _redirects file
-
+# Specific redirects
 /markdown-elements-demo-post                     /                     301
 /reviews                                         /reviews              301
 /certifications                                  /certifications       301
@@ -47,7 +46,5 @@
 /products/air-handlers/                          /ac-installation      301
 /educational-topics/repair-replace/              /ac-repair            301
 
-# Catch-all: redirect everything else to home
-/*                                             /                     301
+# Catch-all: redirect everything else to index.html for React Router
 /*    /index.html   200
-
