@@ -49,3 +49,5 @@
 
 # Catch-all: redirect everything else to home
 /*                                             /                     301
+/*    /index.html   200
+
