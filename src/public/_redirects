@@ -1,0 +1,51 @@
+# Netlify _redirects file
+
+/markdown-elements-demo-post                     /                     301
+/reviews                                         /reviews              301
+/certifications                                  /certifications       301
+/glossary                                        /                     301
+/products/carbon-monoxide-detectors/             /iaq                  301
+/products/air-conditioners/                      /ac-repair            301
+/financing/                                      /payment-plans        301
+/fort-worth-tx-heating-air-conditioning-contractor/   /fort-worth       301
+/products/ultra-violet-lights/                   /iaq                  301
+/support/furnace-heat-pump-air-conditioning-troubleshooting/   /ac-repair   301
+/grapevine-tx-heating-air-conditioning-contractor/   /grapevine         301
+/about-us/                                       /about                301
+/services/indoor-air-quality-specialists/        /iaq                  301
+/products/duct-free-systems/                     /ac-maintenance       301
+/products/gas-furnaces/                          /heater-repair        301
+/about/history/                                  /about                301
+/services/commercial-hvac/                       /commercial-ac-services 301
+/heating-air-conditioning-products/              /ac-repair            301
+/products/cooling/                               /ac-repair            301
+/about/contact-us/                               /contact              301
+/southlake-tx-heating-air-conditioning-contractor/   /southlake         301
+/products/thermostats/                           /heater-repair        301
+/products/zoning/                                /iaq                  301
+/educational-topics/select-new-system/           /ac-installation      301
+/services/preventive-maintenance/                /ac-maintenance       301
+/educational-topics/healthier-home/              /iaq                  301
+/products/heat-pumps/                            /heater-maintenance   301
+/services/air-duct-sealing/                      /iaq                  301
+/support/product-knowledge/                      /ac-installation      301
+/support/ask-expert/                             /heater-replacement   301
+/about/service-area/                             /about                301
+/about/photo-gallery/                            /about                301
+/about/reviews/                                  /reviews              301
+/heating-air-conditioning-services/              /ac-repair            301
+/products/nest-thermostats/                      /ac-repair            301
+/about/qualifications/                           /certifications       301
+/services/repair/                                /ac-repair            301
+/support/                                        /contact              301
+/products/indoor-air-quality-heating-air-conditioning/   /iaq           301
+/privacy-policy/                                 /privacy-policy       301
+/products/air-cleaners/                          /iaq                  301
+/products/thermostats-zoning/                    /iaq                  301
+/educational-topics/ready-maintenance/           /ac-maintenance       301
+/commercial-hvac/                                /commercial-ac-services 301
+/products/air-handlers/                          /ac-installation      301
+/educational-topics/repair-replace/              /ac-repair            301
+
+# Catch-all: redirect everything else to home
+/*                                             /                     301

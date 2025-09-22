@@ -260,10 +260,10 @@ const HeaterRepair = () => {
               {/* COUPON */}
               <div className="mt-8 p-6 bg-white border-4 border-dotted border-[#780000] text-center w-full max-w-5xl mx-auto rounded-lg shadow-md">
                 <h3 className="text-3xl font-bold text-[#780000] mb-2">
-                  $50 Off Any Heater Repair
+                  We Have Financing Options!
                 </h3>
                 <p className="text-lg text-gray-700 mb-4">
-                  Keep your family warm this winter. New customer special. Limit one per customer. Call for details.
+                  Keep your family warm this winter. Call for details. 
                 </p>
                 <a href="tel:8178000340" className="inline-block bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-6 rounded-md transition-colors">
                   KEEP YOUR FAMILY WARM - CALL NOW
