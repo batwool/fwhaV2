@@ -1,5 +1,4 @@
-# Netlify _redirects file
-
+# Specific 301 redirects
 /markdown-elements-demo-post                     /                     301
 /reviews                                         /reviews              301
 /certifications                                  /certifications       301
@@ -47,7 +46,24 @@
 /products/air-handlers/                          /ac-installation      301
 /educational-topics/repair-replace/              /ac-repair            301
 
-# Catch-all: redirect everything else to home
-/*                                             /                     301
-/*    /index.html   200
+# SPA fallback - serve index.html for React routes
+/ac-repair    /index.html   200
+/payment-plans    /index.html   200
+/fort-worth    /index.html   200
+/grapevine    /index.html   200
+/southlake    /index.html   200
+/about    /index.html   200
+/contact    /index.html   200
+/reviews    /index.html   200
+/certifications    /index.html   200
+/iaq    /index.html   200
+/ac-maintenance    /index.html   200
+/heater-repair    /index.html   200
+/commercial-ac-services    /index.html   200
+/ac-installation    /index.html   200
+/heater-maintenance    /index.html   200
+/heater-replacement    /index.html   200
+/privacy-policy    /index.html   200
 
+# Catch-all: redirect everything else to home with 301
+/*    /    301
