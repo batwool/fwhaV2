@@ -10,22 +10,29 @@ const Specials = () => {
 
   useEffect(() => {
     const TARGET_DATE_KEY = "grandSlamDealTargetDate";
-    let targetDate = localStorage.getItem(TARGET_DATE_KEY);
-
-    if (!targetDate) {
-      const date = new Date();
-      date.setDate(date.getDate() + 14); // example: 2 weeks from now
-      targetDate = date.toISOString();
-      localStorage.setItem(TARGET_DATE_KEY, targetDate);
+    
+    // Set target date to October 15th of the current year
+    const now = new Date();
+    const targetDate = new Date(now.getFullYear(), 9, 15); // Month is 0-indexed (9 = October)
+    
+    // If October 15th has already passed this year, set it for next year
+    if (now > targetDate) {
+      targetDate.setFullYear(now.getFullYear() + 1);
     }
+    
+    localStorage.setItem(TARGET_DATE_KEY, targetDate.toISOString());
 
     const countdown = setInterval(() => {
       const now = new Date();
-      const difference = new Date(targetDate) - now;
+      const difference = targetDate - now;
 
       if (difference <= 0) {
         clearInterval(countdown);
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        
+        // Reset to next year if the date has passed
+        targetDate.setFullYear(now.getFullYear() + 1);
+        localStorage.setItem(TARGET_DATE_KEY, targetDate.toISOString());
       } else {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -84,18 +91,17 @@ const Specials = () => {
         </div>
 
         {/* Countdown Timer */}
-<div className="flex justify-center mb-16">
-  <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 sm:p-8 border-2 border-[#f77f00] shadow-2xl flex flex-wrap sm:flex-nowrap gap-4 sm:gap-6 justify-center">
-    <TimerBlock label="Days" value={days} />
-    <div className="text-4xl sm:text-5xl font-bold self-center">:</div>
-    <TimerBlock label="Hours" value={hours} />
-    <div className="text-4xl sm:text-5xl font-bold self-center">:</div>
-    <TimerBlock label="Minutes" value={minutes} />
-    <div className="text-4xl sm:text-5xl font-bold self-center">:</div>
-    <TimerBlock label="Seconds" value={seconds} />
-  </div>
-</div>
-
+        <div className="flex justify-center mb-16">
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 sm:p-8 border-2 border-[#f77f00] shadow-2xl flex flex-wrap sm:flex-nowrap gap-4 sm:gap-6 justify-center">
+            <TimerBlock label="Days" value={days} />
+            <div className="text-4xl sm:text-5xl font-bold self-center">:</div>
+            <TimerBlock label="Hours" value={hours} />
+            <div className="text-4xl sm:text-5xl font-bold self-center">:</div>
+            <TimerBlock label="Minutes" value={minutes} />
+            <div className="text-4xl sm:text-5xl font-bold self-center">:</div>
+            <TimerBlock label="Seconds" value={seconds} />
+          </div>
+        </div>
 
         {/* Teaser Cards */}
         <div className="grid md:grid-cols-3 gap-8 items-stretch mb-16">
