@@ -97,7 +97,7 @@ const Services = () => {
           {/* Heating Column */}
           <div className="flex flex-col items-center w-full">
             <Link
-              to="/heating-repair"
+              to="/heater-repair"
               className="relative w-full max-w-[calc(100%-1rem)] group rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:brightness-90"
             >
               <img

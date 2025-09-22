@@ -22,28 +22,28 @@ const HeaterRepair = () => {
 
   const faqData = [
     {
-      question: "How often should I have my HVAC system serviced?",
-      answer: "We recommend having your HVAC system serviced at least once a year, ideally in the spring for AC and fall for heating. Regular maintenance helps prevent breakdowns, improves efficiency, and extends the lifespan of your system."
+      question: "How often should I have my heating system serviced?",
+      answer: "We recommend having your heating system serviced at least once a year, ideally in the fall before cold weather sets in. Regular maintenance helps prevent breakdowns, improves efficiency, and ensures your family stays warm and safe during Texas winters."
     },
     {
-      question: "What are the signs that my AC needs repair?",
-      answer: "Common signs include warm air blowing from vents, unusual noises (grinding, squealing), strange odors, reduced airflow, frequent cycling on/off, higher than normal energy bills, and water leaks around the unit."
+      question: "What are the signs that my heater needs repair?",
+      answer: "Common signs include cold air blowing from vents, unusual noises (banging, rattling, squealing), strange odors (especially burning smells), reduced airflow, frequent cycling on/off, higher than normal energy bills, and your system struggling to maintain temperature."
     },
     {
-      question: "How long does an average AC repair take?",
-      answer: "Most common AC repairs can be completed within 2-4 hours. However, more complex issues like compressor replacement or refrigerant leak repairs may take longer, typically 4-8 hours. We'll provide you with a timeframe after diagnosing the problem."
+      question: "How long does an average heater repair take?",
+      answer: "Most common heater repairs can be completed within 2-4 hours. However, more complex issues like heat exchanger replacement or gas valve repairs may take longer, typically 4-8 hours. We'll provide you with a timeframe after diagnosing the problem to get your heat restored quickly."
     },
     {
-      question: "What's the average lifespan of an air conditioner?",
-      answer: "A well-maintained air conditioner typically lasts 10-15 years. Regular maintenance, proper installation, and usage patterns all affect lifespan. If your AC is over 10 years old and requiring frequent repairs, it might be more cost-effective to consider replacement."
+      question: "What's the average lifespan of a heating system?",
+      answer: "A well-maintained heater typically lasts 15-20 years. Regular maintenance, proper installation, and usage patterns all affect lifespan. If your heater is over 15 years old and requiring frequent repairs, it might be more cost-effective to consider replacement with a more efficient model."
     },
     {
-      question: "Do you offer emergency service after hours?",
-      answer: "Yes! We offer 24/7 emergency AC repair service. Texas heat doesn't keep business hours, and neither do we. Call us anytime at (817) 800-0340 for immediate assistance with your heating or cooling emergency."
+      question: "Do you offer emergency heater service after hours?",
+      answer: "Yes! We offer 24/7 emergency heater repair service. Texas cold snaps don't keep business hours, and neither do we. Call us anytime at (817) 800-0340 for immediate assistance with your heating emergency. Remember the 2021 Texas freeze - don't risk being without heat!"
     },
     {
-      question: "Are your technicians licensed and insured?",
-      answer: "Absolutely. All our technicians are fully licensed, certified, and insured. We carry comprehensive liability insurance and workers' compensation to protect your home and our team. We also conduct thorough background checks and provide ongoing training to ensure top-quality service."
+      question: "Are your technicians licensed and insured for heater repair?",
+      answer: "Absolutely. All our technicians are fully licensed, certified, and insured for all types of heating systems. We carry comprehensive liability insurance and workers' compensation to protect your home and our team. We specialize in furnace repair, heat pumps, and all heating systems common in North Texas."
     }
   ];
 
@@ -52,36 +52,36 @@ const HeaterRepair = () => {
       name: "Sarah J.",
       location: "Fort Worth, TX",
       rating: 5,
-      review: "My AC went out during the hottest week of the year. Fort Worth Heat and Air responded within an hour and had it fixed quickly. Professional and fair pricing. Highly recommend!",
-      date: "July 2023"
+      review: "My furnace went out during a cold snap right before the holidays. Fort Worth Heat and Air responded within an hour and had it fixed quickly. Professional and fair pricing. Highly recommend!",
+      date: "December 2023"
     },
     {
       name: "Michael T.",
       location: "Arlington, TX",
       rating: 5,
-      review: "These folks are the real deal. Honest assessment, didn't try to upsell me on anything I didn't need. Fixed my compressor issue at a reasonable price.",
-      date: "August 2023"
+      review: "These folks are the real deal. Honest assessment of my aging furnace, didn't try to upsell me on anything I didn't need. Fixed my ignition issue at a reasonable price and got our heat back on.",
+      date: "January 2024"
     },
     {
       name: "Jennifer L.",
       location: "North Richland Hills, TX",
       rating: 5,
-      review: "24/7 service is no joke. Our AC died at 10pm on a Saturday and they had someone here by 11pm. Amazing service when you need it most!",
-      date: "June 2023"
+      review: "24/7 service is no joke. Our heater died at 10pm when temperatures dropped below freezing and they had someone here by 11pm. Amazing service when you need it most!",
+      date: "February 2023"
     },
     {
       name: "Robert K.",
       location: "Mansfield, TX",
       rating: 5,
-      review: "I've used them for both AC repair and annual maintenance. Always punctual, professional, and thorough. My go-to HVAC company in the area.",
-      date: "May 2023"
+      review: "I've used them for both heater repair and annual maintenance. Always punctual, professional, and thorough. My go-to heating company in the area, especially after seeing what happened in 2021.",
+      date: "November 2023"
     },
     {
       name: "Amanda W.",
       location: "Euless, TX",
       rating: 5,
-      review: "Quick response time and excellent service. They explained everything clearly and didn't charge an arm and a leg. Will definitely use them again.",
-      date: "April 2023"
+      review: "Quick response time and excellent service when our heat went out. They explained everything clearly and didn't charge an arm and a leg. Will definitely use them again for all our heating needs.",
+      date: "October 2023"
     }
   ];
 
@@ -106,7 +106,7 @@ const HeaterRepair = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
           style={{
-            backgroundImage: `url('https://genzryan.com/wp-content/uploads/2024/10/twin-cities-ac-repair-scaled.jpeg')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
           }}
         />
         <div className="absolute inset-0 bg-[#003049] opacity-50" />
@@ -120,6 +120,21 @@ const HeaterRepair = () => {
             <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Heater Repair Experts Serving Fort Worth, TX
             </h2>
+
+            {/* TEXAS FREEZE WARNING */}
+            <div className="bg-red-600 border-l-4 border-yellow-400 p-4 mb-6 rounded">
+              <div className="flex items-start">
+                <div className="flex-shrink-0">
+                  <svg className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div className="ml-3">
+                  <p className="text-white font-bold">Remember the 2021 Texas Freeze?</p>
+                  <p className="text-white mt-1">Don't let your family suffer through another winter without reliable heat. Ensure your heating system is ready for whatever winter brings.</p>
+                </div>
+              </div>
+            </div>
 
             {/* STACKED FEATURE SVG ITEMS */}
             <div className="mt-8 flex flex-col gap-4 max-w-md">
@@ -143,11 +158,10 @@ const HeaterRepair = () => {
                 Rotating Monthly Deals
               </div>
               <div className="flex items-center gap-3 text-white text-lg font-semibold">
-                {/* Changed this SVG to a shield icon */}
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
-                24-Hour Emergency Service Available
+                24-Hour Emergency Heating Service
               </div>
               <div className="flex items-center gap-3 text-white text-lg font-semibold">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -166,38 +180,42 @@ const HeaterRepair = () => {
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             {/* LEFT COLUMN: Long content */}
             <div className="lg:w-[65%]">
-              {/* NEW SECTION ADDED HERE */}
               <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-                Professional Heater Repair Services
+                Professional Heater Repair Services to Keep Your Family Warm
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-  For dependable AC repair service in Fort Worth, TX, call Fort Worth Heat and Air. Proudly serving Texas homeowners for over a decade.
-</p>
-<p className="mt-4 text-lg text-gray-600">
-  Texas summers are no joke, and a broken AC can make your home unbearable. Cracking the windows only does so much when the heat sets in. That's why having a trusted, local AC repair team matters. At Fort Worth Heat and Air, we know how to handle the Texas heat, and we'll get your air conditioner running so your home stays comfortable all season long.
-</p>
-<p className="mt-4 text-lg text-gray-600">
-  Fort Worth Heat and Air has been proudly serving Fort Worth and nearby communities for over 10 years. We may not be the biggest name in town, but our customers consistently rate us 5 stars for reliable, professional AC services. We focus on quality and care, making sure every repair and installation keeps your home comfortable. If you want dependable service from a team that truly cares, give us a call today!
-</p>
-{/* NEW ROUNDED RECTANGLE ADDED HERE */}
-<div className="my-8 max-w-5xl">
-  <div className="p-10 bg-[#003049] text-white rounded-xl text-left">
-    <h3 className="text-2xl font-bold mb-2">Schedule Your AC Repair Service Today!</h3>
-    <p className="mb-4">Ready to get started with your service or repairs? Schedule your appointment online, or give us a call at <span className="font-semibold">(817) 800-0340</span>.</p>
-    <button className="bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-6 rounded-md transition-colors">
-      Schedule Service
-    </button>
-  </div>
-  {/* RED DIVIDER ADDED HERE */}
-  <div className="h-1 w-full bg-[#780000] rounded-full mt-8"></div>
-</div>
-{/* END OF NEW CONTENT */}
+                For dependable heater repair service in Fort Worth, TX, call Fort Worth Heat and Air. Proudly serving Texas homeowners for over a decade, keeping families warm through cold Texas winters.
+              </p>
+              
+              <p className="mt-4 text-lg text-gray-600">
+                <strong>Remember the 2021 Texas Freeze?</strong> Millions of Texans experienced dangerous conditions when heating systems failed during unprecedented cold temperatures. Families suffered through freezing homes, burst pipes, and unsafe conditions. Don't let that happen to you this winter.
+              </p>
+
+              <p className="mt-4 text-lg text-gray-600">
+                Texas winters can be unpredictable, and a broken heater can make your home dangerously cold. Space heaters only do so much when the temperature drops below freezing. That's why having a trusted, local heater repair team matters. At Fort Worth Heat and Air, we know how to handle Texas winter weather, and we'll get your heating system running so your family stays warm and safe all season long.
+              </p>
+
+              <p className="mt-4 text-lg text-gray-600">
+                Fort Worth Heat and Air has been proudly serving Fort Worth and nearby communities for over 10 years. We may not be the biggest name in town, but our customers consistently rate us 5 stars for reliable, professional heating services. We focus on quality and care, making sure every repair and installation keeps your home comfortable and safe. If you want dependable service from a team that truly cares about keeping your family warm, give us a call today!
+              </p>
+
+              {/* SCHEDULE SERVICE BOX */}
+              <div className="my-8 max-w-5xl">
+                <div className="p-10 bg-[#003049] text-white rounded-xl text-left">
+                  <h3 className="text-2xl font-bold mb-2">Schedule Your Heater Repair Service Today!</h3>
+                  <p className="mb-4">Don't wait for the next cold snap! Ensure your heating system is ready for winter. Schedule your appointment online, or give us a call at <span className="font-semibold">(817) 800-0340</span>.</p>
+                  <button className="bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-6 rounded-md transition-colors">
+                    Schedule Service
+                  </button>
+                </div>
+                <div className="h-1 w-full bg-[#780000] rounded-full mt-8"></div>
+              </div>
 
               <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-                24/7 Emergency AC Repair Service
+                24/7 Emergency Heater Repair Service
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                We understand that your home comfort is important after a long day. When your AC fails, it can disrupt your routine and create stress. That's why Fort Worth Heat and Air provides on-call technicians and customer support 24/7 to ensure your cooling system is repaired promptly.
+                We understand that your family's warmth and safety are non-negotiable. When your heater fails during cold weather, it creates dangerous conditions. That's why Fort Worth Heat and Air provides on-call technicians and customer support 24/7 to ensure your heating system is repaired promptly, no matter when disaster strikes.
               </p>
 
               <h3 className="mt-8 text-2xl font-semibold">
@@ -218,74 +236,78 @@ const HeaterRepair = () => {
               </ul>
 
               <p className="mt-6 text-lg text-gray-600">
-                Need immediate AC service? Call us at <span className="font-semibold">(817) 800-0340</span> or submit an online request. Fort Worth Heat and Air is here to help!
+                Need immediate heating service? Call us at <span className="font-semibold">(817) 800-0340</span> or submit an online request. Fort Worth Heat and Air is here to keep your family warm!
               </p>
 
               <h3 className="mt-10 text-2xl font-semibold">
-                Why does my AC need repair?
+                Why does my heater need repair?
               </h3>
               <p className="mt-4 text-gray-600">
-                Even with proper maintenance, air conditioners will eventually need repairs. Parts wear over time, and issues can arise due to leaks, age, dust, electrical problems, or faulty installation.
+                Even with proper maintenance, heaters will eventually need repairs. Parts wear over time, and issues can arise due to age, dust accumulation, electrical problems, gas line issues, or faulty installation. Regular maintenance is your best defense against unexpected breakdowns during cold weather.
               </p>
               <p className="mt-4 text-gray-600">
-                Some problems are simple, others more complex. Our certified technicians can evaluate your system and provide a clear solution to restore optimal cooling and heating.
+                Some heating problems are simple, others more complex. Our certified technicians can evaluate your system and provide a clear solution to restore optimal heating and keep your home comfortable.
               </p>
 
               <h3 className="mt-10 text-2xl font-semibold">How soon can we get to you?</h3>
               <p className="mt-4 text-gray-600">
-                No matter the time, Fort Worth Heat and Air is ready to respond. From early mornings to late nights, call us at <span className="font-semibold">(817) 800-0340</span> to dispatch a technician to your home quickly.
+                No matter the time or temperature, Fort Worth Heat and Air is ready to respond. From early mornings to late nights, call us at <span className="font-semibold">(817) 800-0340</span> to dispatch a heating technician to your home quickly. We prioritize emergency calls during cold weather events.
               </p>
               <p className="mt-4 text-gray-600">
-                We aim to fix most issues in one visit, with fully stocked trucks and certified techs prepared to restore your home comfort.
+                We aim to fix most heating issues in one visit, with fully stocked trucks and certified techs prepared to restore your home's warmth and safety.
               </p>
 
-              {/* UPDATED COUPON - MATCHES SCHEDULE BOX WIDTH */}
-<div className="mt-8 p-6 bg-white border-4 border-dotted border-[#780000] text-center w-full max-w-5xl mx-auto rounded-lg shadow-md">
-  <h3 className="text-3xl font-bold text-[#780000] mb-2">
-    $50 Off Any HVAC Repair
-  </h3>
-  <p className="text-lg text-gray-700 mb-4">
-    New customer special. Limit one per customer. Call for details.
-  </p>
-  <a href="tel:8178000340" className="inline-block bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-6 rounded-md transition-colors">
-    GIVE US A CALL
-  </a>
-</div>
+              {/* COUPON */}
+              <div className="mt-8 p-6 bg-white border-4 border-dotted border-[#780000] text-center w-full max-w-5xl mx-auto rounded-lg shadow-md">
+                <h3 className="text-3xl font-bold text-[#780000] mb-2">
+                  $50 Off Any Heater Repair
+                </h3>
+                <p className="text-lg text-gray-700 mb-4">
+                  Keep your family warm this winter. New customer special. Limit one per customer. Call for details.
+                </p>
+                <a href="tel:8178000340" className="inline-block bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-6 rounded-md transition-colors">
+                  KEEP YOUR FAMILY WARM - CALL NOW
+                </a>
+              </div>
 
               <h3 className="mt-10 text-2xl font-semibold">
-                Common Air Conditioner Repairs
+                Common Heater Repairs
               </h3>
               <p className="mt-4 text-gray-600">
-                Some of the most frequent AC issues we handle include:
+                Some of the most frequent heating issues we handle include:
               </p>
               <ul className="list-disc list-inside mt-4 text-gray-600 space-y-2">
                 <li>
-                  <strong>Refrigerant Leaks:</strong> Reduces cooling efficiency. We locate, seal, and refill refrigerant.
+                  <strong>Ignition Problems:</strong> Pilot light or electronic ignition failures prevent your heater from starting. We diagnose and repair ignition systems quickly.
                 </li>
                 <li>
-                  <strong>Drainage Problems:</strong> Clogged drain pans or pipes can prevent your AC from working properly.
+                  <strong>Thermostat Malfunctions:</strong> Your thermostat controls your heating system. When it fails, your heater won't turn on or maintain temperature properly.
                 </li>
                 <li>
-                  <strong>Broken Condenser Fan:</strong> The outdoor fan cools refrigerant. Motor or blade issues can cause failure.
+                  <strong>Blower Motor Issues:</strong> The blower circulates warm air throughout your home. Motor or capacitor problems can reduce airflow or stop heating entirely.
                 </li>
                 <li>
-                  <strong>Compressor Issues:</strong> The heart of your AC. If it fails, replacement may be required.
+                  <strong>Heat Exchanger Cracks:</strong> Dangerous cracks can develop in heat exchangers, potentially leaking carbon monoxide into your home. We perform safety inspections and replacements.
+                </li>
+                <li>
+                  <strong>Gas Valve Problems:</strong> For gas furnaces, faulty gas valves prevent proper fuel delivery, leaving you without heat.
                 </li>
               </ul>
 
-              <h3 className="mt-10 text-2xl font-semibold">The Best AC Repair in Fort Worth, TX</h3>
+              <h3 className="mt-10 text-2xl font-semibold">The Best Heater Repair in Fort Worth, TX</h3>
               <p className="mt-4 text-gray-600">
-                Fort Worth Heat and Air has completed countless AC service calls. When you work with us, you can expect:
+                Fort Worth Heat and Air has completed countless heating service calls throughout North Texas. When you work with us, you can expect:
               </p>
               <ul className="list-disc list-inside mt-4 text-gray-600 space-y-2">
-                <li>Friendly, professional customer service</li>
-                <li>Certified and trained technicians</li>
-                <li>Fully stocked service vehicles</li>
-                <li>24/7 emergency service, year-round</li>
-                <li>100% satisfaction guaranteed</li>
+                <li>Friendly, professional customer service focused on your comfort</li>
+                <li>Certified and trained heating specialists</li>
+                <li>Fully stocked service vehicles with common heating parts</li>
+                <li>24/7 emergency heating service, year-round</li>
+                <li>100% satisfaction guaranteed on all repairs</li>
+                <li>Safety-first approach to all heating system work</li>
               </ul>
               <p className="mt-6 text-gray-600 font-semibold">
-                Don't wait! Call Fort Worth Heat and Air at (817) 800-0340 to get your AC and heating system running smoothly.
+                Don't risk being without heat this winter! Call Fort Worth Heat and Air at (817) 800-0340 to get your heating system running reliably and keep your family warm.
               </p>
             </div>
 
@@ -297,7 +319,7 @@ const HeaterRepair = () => {
         </div>
       </section>
 
-      {/* REVIEWS SECTION (UPDATED WITH CAROUSEL) */}
+      {/* REVIEWS SECTION */}
       <section className="w-full bg-[#003049] py-12">
         <div className="px-4 sm:px-8 lg:px-16 mx-auto">
           <h2 className="text-3xl font-bold text-white sm:text-4xl text-center mb-8">
@@ -325,7 +347,6 @@ const HeaterRepair = () => {
           
           {/* Desktop view - carousel */}
           <div className="hidden lg:block relative max-w-6xl mx-auto">
-            {/* Carousel container */}
             <div className="overflow-hidden">
               <div 
                 className="flex transition-transform duration-500 ease-in-out"
@@ -387,11 +408,11 @@ const HeaterRepair = () => {
         </div>
       </section>
 
-      {/* FAQ SECTION (UPDATED) */}
+      {/* FAQ SECTION */}
       <section className="w-full bg-white py-16">
         <div className="px-4 sm:px-8 lg:px-16 mx-auto">
           <h2 className="text-3xl font-bold text-[#003049] sm:text-4xl text-center mb-8">
-            Frequently Asked Questions
+            Frequently Asked Questions About Heater Repair
           </h2>
           <div className="space-y-4 max-w-4xl mx-auto">
             {faqData.map((faq, index) => (
@@ -431,7 +452,7 @@ const ServiceForm = () => {
       onSubmit={handleSubmit}
       className="bg-[#003049] p-6 rounded-lg shadow-md w-full"
     >
-      <h3 className="text-xl font-semibold mb-4 text-white">Request Service</h3>
+      <h3 className="text-xl font-semibold mb-4 text-white">Request Heating Service</h3>
 
       <div className="mb-4">
         <label className="block text-sm font-medium text-white mb-2">
@@ -475,7 +496,7 @@ const ServiceForm = () => {
           maxLength={600}
           required
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="0 of 600 max characters"
+          placeholder="Describe your heating issue... (0 of 600 max characters)"
         />
       </div>
 
