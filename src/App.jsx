@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -57,6 +57,10 @@ import Westlake from './pages/Westlake';
 import './index.css';
 
 
+
+
+
+
 // Home page layout
 function HomePage() {
   return (
@@ -75,61 +79,59 @@ function HomePage() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-white text-gray-900">
-        <Header />
-        <Routes>
-          {/* Home */}
-          <Route path="/" element={<HomePage />} />
+    <div className="min-h-screen bg-white text-gray-900">
+      <Header />
+      <Routes>
+        {/* Home */}
+        <Route path="/" element={<HomePage />} />
 
-          {/* AC Services */}
-          <Route path="/ac-repair" element={<ACRepair />} />
-          <Route path="/ac-installation" element={<ACInstallation />} />
-          <Route path="/ac-maintenance" element={<ACMaintenance />} />
-          <Route path="/ac-replacement" element={<ACReplacement />} />
+        {/* AC Services */}
+        <Route path="/ac-repair" element={<ACRepair />} />
+        <Route path="/ac-installation" element={<ACInstallation />} />
+        <Route path="/ac-maintenance" element={<ACMaintenance />} />
+        <Route path="/ac-replacement" element={<ACReplacement />} />
 
-          {/* Heating Services */}
-          <Route path="/heater-repair" element={<HeaterRepair />} />
-          <Route path="/heater-replacement" element={<HeaterReplacement />} />
+        {/* Heating Services */}
+        <Route path="/heater-repair" element={<HeaterRepair />} />
+        <Route path="/heater-replacement" element={<HeaterReplacement />} />
 
-          {/* Indoor Air Quality */}
-          <Route path="/iaq" element={<IAQ />} />
-          <Route path="/commericial-iaq" element={<CommercialIAQ />} />
+        {/* Indoor Air Quality */}
+        <Route path="/iaq" element={<IAQ />} />
+        <Route path="/commericial-iaq" element={<CommercialIAQ />} />
 
-          {/* Commercial Services */}
+         {/* Commercial Services */}
           <Route path="/commercial-ac-services" element={<CommercialACServices />} />
 
-          {/* Resources */}
-          <Route path="/payment-plans" element={<PaymentPlans />} />
-          
-          {/* City Pages */}
-          <Route path="/arlington" element={<Arlington />} />
-          <Route path="/blue-mound" element={<BlueMound />} />
-          <Route path="/crowley" element={<Crowley />} />
-          <Route path="/euless" element={<Euless />} />
-          <Route path="/forest-hill" element={<ForestHill />} />
-          <Route path="/haltom-city" element={<HaltomCity />} />
-          <Route path="/keller" element={<Keller />} />
-          <Route path="/mansfield" element={<Mansfield />} />
-          <Route path="/richland-hills" element={<RichlandHills />} />
-          <Route path="/sansom-park" element={<SansomPark />} />
-          <Route path="/watauga" element={<Watauga />} />
-          <Route path="/westworth-village" element={<WestworthVillage />} />
-          <Route path="/bedford" element={<Bedford />} />
-          <Route path="/burleson" element={<Burleson />} />
-          <Route path="/dalworthington-gardens" element={<DalworthingtonGardens />} />
-          <Route path="/everman" element={<Everman />} />
-          <Route path="/fort-worth" element={<FortWorth />} />
-          <Route path="/haslet" element={<Haslet />} />
-          <Route path="/kennedale" element={<Kennedale />} />
-          <Route path="/north-richland-hills" element={<NorthRichlandHills />} />
-          <Route path="/river-oaks" element={<RiverOaks />} />
-          <Route path="/southlake" element={<Southlake />} />
-          <Route path="/westlake" element={<Westlake />} />
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
+        {/* Resources */}
+        <Route path="/payment-plans" element={<PaymentPlans />} />
+        
+        {/* City Pages */}
+        <Route path="/arlington" element={<Arlington />} />
+        <Route path="/blue-mound" element={<BlueMound />} />
+        <Route path="/crowley" element={<Crowley />} />
+        <Route path="/euless" element={<Euless />} />
+        <Route path="/forest-hill" element={<ForestHill />} />
+        <Route path="/haltom-city" element={<HaltomCity />} />
+        <Route path="/keller" element={<Keller />} />
+        <Route path="/mansfield" element={<Mansfield />} />
+        <Route path="/richland-hills" element={<RichlandHills />} />
+        <Route path="/sansom-park" element={<SansomPark />} />
+        <Route path="/watauga" element={<Watauga />} />
+        <Route path="/westworth-village" element={<WestworthVillage />} />
+        <Route path="/bedford" element={<Bedford />} />
+        <Route path="/burleson" element={<Burleson />} />
+        <Route path="/dalworthington-gardens" element={<DalworthingtonGardens />} />
+        <Route path="/everman" element={<Everman />} />
+        <Route path="/fort-worth" element={<FortWorth />} />
+        <Route path="/haslet" element={<Haslet />} />
+        <Route path="/kennedale" element={<Kennedale />} />
+        <Route path="/north-richland-hills" element={<NorthRichlandHills />} />
+        <Route path="/river-oaks" element={<RiverOaks />} />
+        <Route path="/southlake" element={<Southlake />} />
+        <Route path="/westlake" element={<Westlake />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 
