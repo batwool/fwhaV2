@@ -111,6 +111,7 @@ const Footer = () => {
               <li><a href="/specials" className="text-gray-300 hover:text-white transition-colors">Specials</a></li>
               <li><a href="/certifications" className="text-gray-300 hover:text-white transition-colors">Certifications</a></li>
               <li><a href="/servicearea" className="text-gray-300 hover:text-white transition-colors">Service Area</a></li>
+              <li><a href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
             </ul>
             
             <h3 className="text-xl font-bold mb-2 text-white border-b border-[#780000] pb-2">Service Areas</h3>
@@ -129,7 +130,7 @@ const Footer = () => {
             © 2025 Fort Worth Heat & Air. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+            <a href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">License Info</a>
           </div>

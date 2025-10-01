@@ -28,6 +28,7 @@ import CommercialACServices from './pages/CommercialACServices.jsx';
 
 // Resources
 import PaymentPlans from './pages/PaymentPlans.jsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 
 // City Pages
 import Arlington from './pages/Arlington';
@@ -104,6 +105,7 @@ function App() {
 
         {/* Resources */}
         <Route path="/payment-plans" element={<PaymentPlans />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         
         {/* City Pages */}
         <Route path="/arlington" element={<Arlington />} />
