@@ -46,6 +46,7 @@ const Header = () => {
       label: "Resources",
       links: [
         { name: "Blog", href: "/blog" },
+        { name: "Abous Us", href: "/about-us" },
         { name: "Specials", href: "/specials" },
         { name: "Certifications", href: "/certifications" },
         { name: "Service Area", href: "/servicearea" },

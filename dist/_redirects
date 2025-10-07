@@ -10,11 +10,11 @@
 /products/ultra-violet-lights/                   /iaq                  301
 /support/furnace-heat-pump-air-conditioning-troubleshooting/   /ac-repair   301
 /grapevine-tx-heating-air-conditioning-contractor/   /grapevine         301
-/about-us/                                       /about                301
+/about-us/                                       /about-us                301
 /services/indoor-air-quality-specialists/        /iaq                  301
 /products/duct-free-systems/                     /ac-maintenance       301
 /products/gas-furnaces/                          /heater-repair        301
-/about/history/                                  /about                301
+/about/history/                                  /about-us                301
 /services/commercial-hvac/                       /commercial-ac-services 301
 /heating-air-conditioning-products/              /ac-repair            301
 /products/cooling/                               /ac-repair            301
@@ -29,8 +29,8 @@
 /services/air-duct-sealing/                      /iaq                  301
 /support/product-knowledge/                      /ac-installation      301
 /support/ask-expert/                             /heater-replacement   301
-/about/service-area/                             /about                301
-/about/photo-gallery/                            /about                301
+/about/service-area/                             /about-us                301
+/about/photo-gallery/                            /about-us                301
 /about/reviews/                                  /reviews              301
 /heating-air-conditioning-services/              /ac-repair            301
 /products/nest-thermostats/                      /ac-repair            301
@@ -51,7 +51,7 @@
 /fort-worth    /index.html   200
 /grapevine    /index.html   200
 /southlake    /index.html   200
-/about    /index.html   200
+/about-us    /index.html   200
 /contact    /index.html   200
 /reviews    /index.html   200
 /certifications    /index.html   200
