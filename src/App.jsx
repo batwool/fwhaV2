@@ -30,6 +30,7 @@ import CommercialACServices from './pages/CommercialACServices.jsx';
 import PaymentPlans from './pages/PaymentPlans.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import AboutUs from './pages/AboutUs.jsx';
+import BookNow from './pages/BookNow.jsx';
 
 // City Pages
 import Arlington from './pages/Arlington';
@@ -108,6 +109,7 @@ function App() {
         <Route path="/payment-plans" element={<PaymentPlans />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/book-now" element={<BookNow />} />
         
         {/* City Pages */}
         <Route path="/arlington" element={<Arlington />} />

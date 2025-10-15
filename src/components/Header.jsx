@@ -91,7 +91,7 @@ const Header = () => {
   return (
     <header className="bg-[#003049] sticky top-0 z-50 w-full relative h-24">
       {/* Logo: hard left */}
-      <Link to="/" className="absolute inset-y-0 left-0 flex items-center pl-4 z-50">
+      <Link to="/" className="absolute inset-y-0 left-0 flex items-center pl-6 z-50">
         <img
           src={logo}
           alt="Fort Worth Heat & Air"
@@ -107,7 +107,17 @@ const Header = () => {
         {/* Desktop Nav - only show on large screens */}
         {!isMobileView && (
           <>
-            <nav className="flex space-x-8 items-center mr-14">
+            {/* Book Now Button - positioned between logo and nav items */}
+            <div className="flex items-center mr-8">
+              <Link 
+                to="/book-now"
+                className="bg-[#780000] text-white px-5 py-3 rounded-md hover:bg-[#8B0000] transition-colors text-lg whitespace-nowrap"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <nav className="flex space-x-8 items-center mr-16">
               {navItems.map((item, idx) => (
                 <div
                   key={idx}
@@ -145,15 +155,29 @@ const Header = () => {
             </nav>
 
             {/* Phone + CTA - pushed to the far right */}
-            <div className="flex items-center space-x-6 mr-8">
+            <div className="flex items-center space-x-6 mr-10">
               <a
                 href="tel:8178000340"
-                className="text-lg text-gray-200 hover:text-white transition-colors whitespace-nowrap"
+                className="text-gray-200 hover:text-white transition-colors p-2 rounded-full hover:bg-[#780000]/20"
+                title="Call (817) 800-0340"
               >
-                (817) 800-0340
+                <svg 
+                  className="w-6 h-6" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
+                  />
+                </svg>
               </a>
               <button onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
-              className="bg-[#780000] text-white px-5 py-3 rounded-md hover:bg-[#8B0000] transition-colors text-lg whitespace-nowrap mr-4"
+              className="bg-[#780000] text-white px-5 py-3 rounded-md hover:bg-[#8B0000] transition-colors text-lg whitespace-nowrap"
               >
                 Request Service
               </button>
@@ -164,7 +188,7 @@ const Header = () => {
         {/* Mobile Hamburger Menu - show on screens below 1340px */}
         {isMobileView && (
           <button
-            className="text-white absolute right-4 top-1/2 transform -translate-y-1/2 z-50"
+            className="text-white absolute right-6 top-1/2 transform -translate-y-1/2 z-50"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -187,7 +211,7 @@ const Header = () => {
       {/* Mobile Menu - show on screens below 1340px when menu is open */}
       {isMenuOpen && isMobileView && (
         <div className="fixed top-24 left-0 right-0 bottom-0 bg-[#003049] z-40 overflow-y-auto">
-          <div className="py-4 px-4">
+          <div className="py-4 px-6">
             {navItems.map((item, idx) => (
               <div key={idx} className="mb-4">
                 <div className="text-gray-200 font-semibold text-lg py-2 border-b border-gray-700">
@@ -208,11 +232,33 @@ const Header = () => {
               </div>
             ))}
             <div className="mt-6 pt-4 border-t border-gray-700">
-              <a 
-                href="tel:8178000340" 
-                className="block text-gray-200 text-lg py-3 hover:text-white"
+              {/* Book Now Button for Mobile */}
+              <Link
+                to="/book-now"
+                className="block bg-[#780000] text-white w-full py-3 rounded-md text-lg text-center mb-4"
                 onClick={handleMobileLinkClick}
               >
+                Book Now
+              </Link>
+              <a 
+                href="tel:8178000340" 
+                className="flex items-center justify-center text-gray-200 text-lg py-3 hover:text-white"
+                onClick={handleMobileLinkClick}
+              >
+                <svg 
+                  className="w-5 h-5 mr-2" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
+                  />
+                </svg>
                 (817) 800-0340
               </a>
               <button 
