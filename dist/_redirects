@@ -67,4 +67,4 @@
 /book-now    /index.html   200
 
 # Catch-all: redirect everything else to home with 301
-/*    /    301
+/*    /index.html   200
