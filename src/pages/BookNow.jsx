@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import sendBookingEmail from "../email";
+import ourLogo from '../assets/logo5.png';
 
 
 const BookNow = () => {
@@ -55,11 +56,12 @@ const BookNow = () => {
             {/* Logo and Title */}
             <div className="lg:flex lg:flex-col lg:items-center lg:mt-8">
               <div className="flex justify-center mb-4">
-                <img 
-                  src="src/assets/logo5.png" 
-                  alt="Company Logo" 
-                  className="h-20 object-contain"
-                />
+            <img 
+  src={OurLogo} 
+  alt="Company Logo" 
+  className="h-20 object-contain"
+/>
+
               </div>
               <h1 className="text-2xl font-bold text-white">Book Your Service</h1>
               <p className="text-blue-100 mt-2">Fill out the form and we'll contact you soon</p>
