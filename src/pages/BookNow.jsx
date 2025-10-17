@@ -39,7 +39,7 @@ const BookNow = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-gray-300 transform rotate-1 transition-transform duration-300 hover:rotate-0 lg:flex lg:flex-row">
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-gray-300 transform lg:flex lg:flex-row">
           {/* Left Side */}
           <div className="bg-[#003049] py-8 px-6 text-center lg:w-2/5 lg:flex lg:flex-col lg:justify-between relative">
             <div className="absolute top-4 right-4 lg:top-3 lg:right-6 w-16 h-16 bg-[#780000] rounded-full flex items-center justify-center text-white font-bold text-xs border-2 border-white shadow-md">
