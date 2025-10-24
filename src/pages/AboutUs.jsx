@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import cityscape from "../assets/cityscapes.png";
 import teamPhoto from '../assets/groupphoto1.jpeg';
-import technicianWorking from '../assets/checkingac.jpg';
-import companyTruck from '../assets/hvac2.jpg';
-import serviceCall from '../assets/hvac1.jpg';
+import technicianWorking from "../assets/checkingac.jpg";
+import companyTruck from "../assets/hvac2.jpg";
+import serviceCall from "../assets/hvac1.jpg";
 
 const AboutUs = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -132,154 +132,68 @@ const AboutUs = () => {
   
   return (
     <div className="bg-[#003049]">
-      {/* ENHANCED HERO SECTION */}
-      <div className="relative overflow-hidden">
-        {/* Background with enhanced gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#001c2c] via-[#00283e] to-[#003049] opacity-98"></div>
-        <ParticleBackground />
-        
-        <div className="relative px-4 sm:px-8 lg:px-16 py-20 lg:py-28">
+      {/* SIMPLIFIED HERO SECTION */}
+      <div className="relative bg-gradient-to-br from-[#001c2c] to-[#003049]">
+        <div className="px-4 sm:px-8 lg:px-16 py-16 lg:py-24">
           <div className="max-w-7xl mx-auto">
-            {/* Content card with subtle background */}
-            <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 lg:p-12 border border-white/10 shadow-2xl">
-              <div className="flex flex-col lg:flex-row items-center gap-12">
-                {/* Left column - text content */}
-                <div className="lg:w-1/2 z-10">
-                  <div className="inline-flex items-center bg-white/20 backdrop-blur-md px-5 py-3 mb-8 rounded-2xl border border-white/30 shadow-lg">
-                    <svg className="w-6 h-6 mr-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <h1 className="text-xl font-bold text-white tracking-wide">
-                      YOUR FORT WORTH HVAC EXPERTS
-                    </h1>
-                  </div>
-                  
-                  <h2 className="text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-                    Trusted <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#78caff] to-[#4da9ff]">Fort Worth HVAC</span> Company Serving Our Community Since 2013
-                  </h2>
-                  
-                  <p className="text-xl mb-10 text-white opacity-95 leading-relaxed max-w-lg">
-                    Family-owned and operated right here in Fort Worth, we've been keeping homes comfortable through Texas summers and winters with honest service, expert craftsmanship, and genuine care for our neighbors.
-                  </p>
-                  
-                  {/* Modern stats with icons */}
-                  <div className="flex gap-8 mb-10">
-                    <div className="flex items-center">
-                      <div className="bg-white/25 p-3 rounded-xl mr-4">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">100+</div>
-                        <div className="text-sm text-white opacity-90">Happy Customers</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="bg-white/25 p-3 rounded-xl mr-4">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">24/7</div>
-                        <div className="text-sm text-white opacity-90">Emergency Service</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="bg-white/25 p-3 rounded-xl mr-4">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">12</div>
-                        <div className="text-sm text-white opacity-90">Years in Business</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-col sm:flex-row gap-5">
-                    <button
-                      type="button"
-                      onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
-                      className="bg-gradient-to-r from-[#780000] to-[#a00000] hover:from-[#5a0000] hover:to-[#800000] text-white font-bold py-4 px-10 rounded-xl shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group"
-                    >
-                      <svg className="w-5 h-5 mr-3 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                      Schedule Service Today
-                    </button>
-                    
-                    <a href="tel:8178000340" className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-xl shadow-lg transition-all duration-300 border border-white/30 flex items-center justify-center group">
-                      <svg className="w-5 h-5 mr-3 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                      <span className="">Call (817) 800-0340</span>
-                    </a>
-                  </div>
-                </div>
+            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+              {/* Left Content */}
+              <div className="lg:w-1/2">
+                <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                  Fort Worth's Trusted HVAC Experts
+                </h1>
                 
-                {/* Right column - visual elements */}
-                <div className="lg:w-1/2 relative">
-                  <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-700">
-                    <img 
-                      src={teamPhoto} 
-                      alt="Fort Worth Heat and Air professional HVAC technicians team" 
-                      className="w-full h-auto"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#003049] via-transparent to-transparent opacity-70"></div>
-                    
-                    {/* Floating badge */}
-                    <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-md py-3 px-5 rounded-2xl shadow-lg">
-                      <div className="flex items-center">
-                        <div className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                        <span className="text-sm font-bold text-[#003049]">LOCAL FORT WORTH COMPANY</span>
-                      </div>
-                    </div>
-                  </div>
+                <p className="text-lg lg:text-xl text-gray-200 mb-8 leading-relaxed">
+                  Family-owned and serving our community since 2013. Honest service, expert craftsmanship, and genuine care for our neighbors.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button
+                    type="button"
+                    onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+                    className="bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-8 rounded-lg transition-colors flex items-center justify-center"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    Schedule Service
+                  </button>
                   
-                  {/* Decorative elements */}
-                  <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#78caff] rounded-full opacity-20 blur-xl"></div>
-                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#780000] rounded-full opacity-20 blur-xl"></div>
+                  <a href="tel:8178000340" className="bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-8 rounded-lg transition-colors border border-white/30 flex items-center justify-center">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    (817) 800-0340
+                  </a>
+                </div>
+
+                {/* Simple Trust Badges */}
+                <div className="flex flex-wrap gap-6 mt-8">
+                  <div className="flex items-center text-white">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                    <span className="text-sm">Local & Family-Owned</span>
+                  </div>
+                  <div className="flex items-center text-white">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                    <span className="text-sm">24/7 Emergency Service</span>
+                  </div>
+                  <div className="flex items-center text-white">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                    <span className="text-sm">NATE Certified</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Trust indicators - modernized */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/20">
-              {[
-                {
-                  icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-                  title: "NATE Certified",
-                  desc: "Expert Technicians"
-                },
-                {
-                  icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
-                  title: "Fully Insured",
-                  desc: "Peace of Mind"
-                },
-                {
-                  icon: "M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z",
-                  title: "24/7 Emergency",
-                  desc: "Always Available"
-                },
-                {
-                  icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-                  title: "A+ BBB Rating",
-                  desc: "Trusted Reputation"
-                }
-              ].map((item, index) => (
-                <div key={index} className="text-center group">
-                  <div className="bg-white/20 backdrop-blur-md w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
-                    </svg>
-                  </div>
-                  <h3 className="font-semibold text-lg mb-1 text-white">{item.title}</h3>
-                  <p className="text-sm text-white opacity-80">{item.desc}</p>
+
+              {/* Right Image */}
+              <div className="lg:w-1/2">
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src={teamPhoto} 
+                    alt="Fort Worth Heat and Air professional HVAC technicians" 
+                    className="w-full h-auto"
+                  />
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
@@ -746,73 +660,6 @@ const AboutUs = () => {
   );
 };
 
-// Enhanced Particle Background Component
-const ParticleBackground = () => {
-  const [particles, setParticles] = useState([]);
-  
-  useEffect(() => {
-    // Create initial particles with different types
-    const initialParticles = Array.from({ length: 40 }, (_, i) => ({
-      id: i,
-      size: Math.random() * 5 + 1,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      speedX: (Math.random() - 0.5) * 0.3,
-      speedY: (Math.random() - 0.5) * 0.3,
-      opacity: Math.random() * 0.1 + 0.05,
-      type: Math.random() > 0.7 ? 'circle' : 'blob'
-    }));
-    
-    setParticles(initialParticles);
-    
-    // Animation loop
-    const interval = setInterval(() => {
-      setParticles(prev => prev.map(p => ({
-        ...p,
-        x: (p.x + p.speedX + 100) % 100,
-        y: (p.y + p.speedY + 100) % 100,
-      })));
-    }, 100);
-    
-    return () => clearInterval(interval);
-  }, []);
-  
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      {particles.map(p => (
-        p.type === 'circle' ? (
-          <div
-            key={p.id}
-            className="absolute rounded-full bg-white"
-            style={{
-              width: `${p.size}px`,
-              height: `${p.size}px`,
-              left: `${p.x}%`,
-              top: `${p.y}%`,
-              opacity: p.opacity,
-              transition: 'all 0.5s ease',
-            }}
-          />
-        ) : (
-          <div
-            key={p.id}
-            className="absolute bg-white"
-            style={{
-              width: `${p.size}px`,
-              height: `${p.size * 0.3}px`,
-              left: `${p.x}%`,
-              top: `${p.y}%`,
-              opacity: p.opacity,
-              borderRadius: '50%',
-              transform: 'rotate(45deg)',
-              transition: 'all 0.5s ease',
-            }}
-          />
-        )
-      ))}
-    </div>
-  );
-};
 
 /** Service Form */
 const ServiceForm = () => {

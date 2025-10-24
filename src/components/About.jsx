@@ -1,8 +1,7 @@
 import React from 'react';
 
 // ✅ Import images
-import groupPhoto from '../assets/groupphoto1.jpeg';
-import ginoPhoto from '../assets/ginophoto.jpeg';
+import newGroupPhoto from '../assets/newGroup.jpg';
 import canonPhoto from '../assets/canonphoto3.jpeg';
 
 const About = () => {
@@ -14,13 +13,13 @@ const About = () => {
           {/* Images */}
           <div className="lg:-ml-14 max-w-[116%]">
             <img
-              src={groupPhoto}
+              src={newGroupPhoto}
               alt="Fort Worth Heat & Air Team"
               className="w-full rounded-lg shadow-lg"
             />
             <div className="grid grid-cols-2 gap-4 mt-4">
               <img
-                src={ginoPhoto}
+                src={newGroupPhoto}
                 alt="Technician Gino"
                 className="w-full rounded-lg shadow-md"
               />
