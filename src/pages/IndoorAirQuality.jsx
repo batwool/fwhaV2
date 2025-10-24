@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import cityscape from "../assets/cityscapes.png";
-import indoorAirQuality from '../assets/groupphoto1.jpeg';
-import airDuctCleaning from '../assets/checkingac.jpg';
-import airPurifier from '../assets/hvac2.jpg';
-import moldRemediation from '../assets/hvac1.jpg';
+import indoorAirQuality from '../assets/newGroup.jpg';
+
 
 const IndoorAirQuality = () => {
   const [openIndex, setOpenIndex] = useState(null);
