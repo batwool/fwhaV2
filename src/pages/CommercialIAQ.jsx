@@ -4,20 +4,33 @@ import commercialBuilding from '../assets/tallbuildingppl.jpg';
 const CommercialIAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const [currentReview, setCurrentReview] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   const nextReview = () => {
+    const itemsPerView = isMobile ? 1 : 3;
     setCurrentReview((prev) =>
-      prev + 3 >= reviewsData.length ? 0 : prev + 3
+      prev + itemsPerView >= reviewsData.length ? 0 : prev + itemsPerView
     );
   };
 
   const prevReview = () => {
+    const itemsPerView = isMobile ? 1 : 3;
     setCurrentReview((prev) =>
-      prev === 0 ? Math.floor((reviewsData.length - 1) / 3) * 3 : prev - 3
+      prev === 0 ? Math.floor((reviewsData.length - 1) / itemsPerView) * itemsPerView : prev - itemsPerView
     );
   };
 
@@ -97,29 +110,6 @@ const CommercialIAQ = () => {
     }
   ];
 
-  const servicesData = [
-    {
-      icon: "M12 6v6l4 2",
-      title: "Commercial HVAC Hygiene",
-      description: "Comprehensive cleaning and maintenance of commercial HVAC systems to optimize performance and indoor air quality."
-    },
-    {
-      icon: "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z",
-      title: "Advanced Air Purification",
-      description: "Hospital-grade air purification technologies including UV-C, bipolar ionization, and HEPA filtration systems."
-    },
-    {
-      icon: "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z",
-      title: "IAQ Monitoring & Analytics",
-      description: "Continuous monitoring of air quality parameters with real-time reporting and data-driven recommendations."
-    },
-    {
-      icon: "M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z",
-      title: "Ventilation Optimization",
-      description: "Balancing building pressure and ventilation rates to ensure optimal fresh air delivery and contaminant removal."
-    }
-  ];
-
   // Function to render star ratings
   const renderStars = (rating) => {
     return Array(5)
@@ -136,100 +126,81 @@ const CommercialIAQ = () => {
       ));
   };
 
-  
   return (
-    <div className="bg-[#003049]">
-      {/* ENHANCED HERO SECTION WITH SEPARATION */}
+    <div className="bg-[#003049] overflow-x-hidden">
+      {/* ENHANCED HERO SECTION */}
       <div className="relative overflow-hidden">
-        {/* Background with enhanced gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#001c2c] via-[#00283e] to-[#003049] opacity-98"></div>
         <ParticleBackground />
         
-        <div className="relative px-4 sm:px-8 lg:px-16 py-20 lg:py-28">
+        <div className="relative px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
           <div className="max-w-7xl mx-auto">
-            {/* Content card with subtle background */}
-            <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 lg:p-12 border border-white/10 shadow-2xl">
-              <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="bg-white/5 backdrop-blur-md rounded-2xl lg:rounded-3xl p-6 lg:p-12 border border-white/10 shadow-xl">
+              <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                 {/* Left column - text content */}
-                <div className="lg:w-1/2 z-10">
-                  <div className="inline-flex items-center bg-white/20 backdrop-blur-md px-5 py-3 mb-8 rounded-2xl border border-white/30 shadow-lg">
-                    <svg className="w-6 h-6 mr-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="lg:w-1/2 z-10 w-full">
+                  <div className="inline-flex items-center bg-white/20 backdrop-blur-md px-4 py-2 lg:px-5 lg:py-3 mb-6 rounded-xl lg:rounded-2xl border border-white/30 shadow-lg w-full lg:w-auto">
+                    <svg className="w-5 h-5 lg:w-6 lg:h-6 mr-2 lg:mr-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-2m2 0V9m0 0H5m14 0V3M5 21h2m-2 0h-2m2 0V9m0 0h14M9 21h6M9 17h6" />
                     </svg>
-                    <h1 className="text-xl font-bold text-white tracking-wide">
+                    <h1 className="text-lg lg:text-xl font-bold text-white tracking-wide text-center lg:text-left">
                       COMMERCIAL INDOOR AIR QUALITY SOLUTIONS
                     </h1>
                   </div>
                   
-                  <h2 className="text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-                    Elevate Workplace Health & Productivity With <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#78caff] to-[#4da9ff]">Fort Worth's Premier</span> Commercial IAQ Services
+                  <h2 className="text-3xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 lg:mb-8 leading-tight">
+                    Elevate Workplace Health & Productivity With <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#78caff] to-[#4da9ff] block lg:inline">Fort Worth's Premier</span> Commercial IAQ Services
                   </h2>
                   
-                  <p className="text-xl mb-10 text-white opacity-95 leading-relaxed max-w-lg">
+                  <p className="text-base lg:text-xl mb-8 lg:mb-10 text-white opacity-95 leading-relaxed">
                     Specialized air quality solutions for Fort Worth offices, healthcare facilities, schools, and commercial properties. Reduce sick days, improve cognitive function, and create healthier environments.
                   </p>
                   
                   {/* Modern stats with icons */}
-                  <div className="flex gap-8 mb-10">
-                    <div className="flex items-center">
-                      <div className="bg-white/25 p-3 rounded-xl mr-4">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
+                  <div className="flex flex-wrap gap-4 lg:gap-8 mb-8 lg:mb-10">
+                    {[
+                      { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", value: "27%", label: "Reduced Absenteeism" },
+                      { icon: "M13 10V3L4 14h7v7l9-11h-7z", value: "15%", label: "Productivity Increase" },
+                      { icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z", value: "100%", label: "Customer Satisfaction" }
+                    ].map((stat, index) => (
+                      <div key={index} className="flex items-center flex-1 min-w-[120px]">
+                        <div className="bg-white/25 p-2 lg:p-3 rounded-lg lg:rounded-xl mr-3">
+                          <svg className="w-4 h-4 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={stat.icon} />
+                          </svg>
+                        </div>
+                        <div>
+                          <div className="text-lg lg:text-2xl font-bold text-white">{stat.value}</div>
+                          <div className="text-xs lg:text-sm text-white opacity-90">{stat.label}</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">27%</div>
-                        <div className="text-sm text-white opacity-90">Reduced Absenteeism</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="bg-white/25 p-3 rounded-xl mr-4">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">15%</div>
-                        <div className="text-sm text-white opacity-90">Productivity Increase</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="bg-white/25 p-3 rounded-xl mr-4">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">100%</div>
-                        <div className="text-sm text-white opacity-90">Customer Satisfaction</div>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                   
-                  <div className="flex flex-col sm:flex-row gap-5">
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <button
                       type="button"
                       onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
-                      className="bg-gradient-to-r from-[#780000] to-[#a00000] hover:from-[#5a0000] hover:to-[#800000] text-white font-bold py-4 px-10 rounded-xl shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group"
+                      className="bg-gradient-to-r from-[#780000] to-[#a00000] hover:from-[#5a0000] hover:to-[#800000] text-white font-bold py-3 lg:py-4 px-6 lg:px-10 rounded-xl shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group text-sm lg:text-base"
                     >
-                      <svg className="w-5 h-5 mr-3 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-2m2 0V9m0 0H5m14 0V3M5 21h2m-2 0h-2m2 0V9m0 0h14M9 21h6M9 17h6" />
                       </svg>
                       Schedule Commercial Assessment
                     </button>
                     
-                    <a href="tel:8178000340" className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-xl shadow-lg transition-all duration-300 border border-white/30 flex items-center justify-center group">
-                      <svg className="w-5 h-5 mr-3 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="tel:8178000340" className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-3 lg:py-4 px-6 lg:px-8 rounded-xl shadow-lg transition-all duration-300 border border-white/30 flex items-center justify-center group text-sm lg:text-base">
+                      <svg className="w-4 h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
-                      <span className="">Call For Business Quotes</span>
+                      <span>Call For Business Quotes</span>
                     </a>
                   </div>
                 </div>
                 
                 {/* Right column - visual elements */}
-                <div className="lg:w-1/2 relative">
-                  <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-700">
+                <div className="lg:w-1/2 relative w-full mt-8 lg:mt-0">
+                  <div className="relative z-10 rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl">
                     <img 
                       src={commercialBuilding} 
                       alt="Commercial building air quality services in Fort Worth" 
@@ -238,53 +209,33 @@ const CommercialIAQ = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#003049] via-transparent to-transparent opacity-70"></div>
                     
                     {/* Floating badge */}
-                    <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-md py-3 px-5 rounded-2xl shadow-lg">
+                    <div className="absolute top-4 right-4 lg:top-6 lg:right-6 bg-white/95 backdrop-blur-md py-2 px-3 lg:py-3 lg:px-5 rounded-xl lg:rounded-2xl shadow-lg">
                       <div className="flex items-center">
-                        <div className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                        <span className="text-sm font-bold text-[#003049]">SERVING FORT WORTH BUSINESSES SINCE 2013</span>
+                        <div className="w-2 h-2 lg:w-3 lg:h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                        <span className="text-xs lg:text-sm font-bold text-[#003049]">SERVING FORT WORTH BUSINESSES</span>
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Decorative elements */}
-                  <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#78caff] rounded-full opacity-20 blur-xl"></div>
-                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#780000] rounded-full opacity-20 blur-xl"></div>
                 </div>
               </div>
             </div>
             
-            {/* Trust indicators - modernized */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/20">
+            {/* Trust indicators */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 mt-12 lg:mt-20 pt-8 lg:pt-10 border-t border-white/20">
               {[
-                {
-                  icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-                  title: "Commercial Certified",
-                  desc: "NATE & EPA Certified"
-                },
-                {
-                  icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
-                  title: "Advanced Analytics",
-                  desc: "Data-Driven Solutions"
-                },
-                {
-                  icon: "M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z",
-                  title: "24/7 Business Support",
-                  desc: "Minimal Disruption"
-                },
-                {
-                  icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-                  title: "A+ BBB Rating",
-                  desc: "Commercial Excellence"
-                }
+                { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", title: "Commercial", desc: "NATE & EPA Certified" },
+                { icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z", title: "Advanced", desc: "Analytics" },
+                { icon: "M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z", title: "24/7 Business", desc: "Support" },
+                { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", title: "A+ BBB", desc: "Rating" }
               ].map((item, index) => (
                 <div key={index} className="text-center group">
-                  <div className="bg-white/20 backdrop-blur-md w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="bg-white/20 backdrop-blur-md w-12 h-12 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl flex items-center justify-center mx-auto mb-2 lg:mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-6 h-6 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                     </svg>
                   </div>
-                  <h3 className="font-semibold text-lg mb-1 text-white">{item.title}</h3>
-                  <p className="text-sm text-white opacity-80">{item.desc}</p>
+                  <h3 className="font-semibold text-sm lg:text-lg mb-1 text-white">{item.title}</h3>
+                  <p className="text-xs lg:text-sm text-white opacity-80">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -292,129 +243,81 @@ const CommercialIAQ = () => {
         </div>
       </div>
 
-      {/* TWO COLUMN SECTION - FIXED TEXT COLORS */}
-      <section className="py-16 bg-white relative">
-        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-gray-50 to-transparent opacity-50"></div>
-        <div className="relative px-4 sm:px-8 lg:px-16">
-          <div className="flex flex-col lg:flex-row gap-10 items-start">
+      {/* TWO COLUMN SECTION */}
+      <section className="py-12 lg:py-16 bg-white relative">
+        <div className="absolute top-0 left-0 w-full h-32 lg:h-64 bg-gradient-to-b from-gray-50 to-transparent opacity-50"></div>
+        <div className="relative px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
             {/* LEFT COLUMN: Content */}
-            <div className="lg:w-[70%]">
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            <div className="lg:w-[70%] w-full">
+              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-4">
                 Why Fort Worth Businesses Need Specialized Air Quality Solutions
               </h2>
-              <p className="mt-4 text-lg text-gray-700">
-                The Fort Worth metro area faces unique commercial air quality challenges including industrial pollutants, high pollen counts, temperature extremes, and urban construction. These factors significantly impact employee health, productivity, and operational costs. Our specialized commercial solutions address these regional concerns with data-driven approaches.
+              <p className="text-base lg:text-lg text-gray-700 mb-6">
+                The Fort Worth metro area faces unique commercial air quality challenges including industrial pollutants, high pollen counts, temperature extremes, and urban construction. These factors significantly impact employee health, productivity, and operational costs.
               </p>
 
-              <div className="bg-white p-6 rounded-xl shadow-md mt-8 border border-gray-100">
-                <h3 className="text-2xl font-semibold text-[#003049] mb-4">The Business Impact of Optimal Indoor Air Quality</h3>
-                <p className="text-gray-700">
-                  Superior indoor air quality directly impacts your bottom line. Studies show optimal IAQ can reduce sick days by 27%, improve cognitive function by 15-20%, and increase overall productivity by 8-11%. For a 100-person company, this translates to approximately $500,000 in annual savings and productivity gains. Additionally, proper IAQ management extends HVAC system life, reduces energy costs, and enhances tenant satisfaction in commercial properties.
+              <div className="bg-white p-4 lg:p-6 rounded-xl shadow-md mb-6 lg:mb-8 border border-gray-100">
+                <h3 className="text-xl lg:text-2xl font-semibold text-[#003049] mb-3 lg:mb-4">The Business Impact of Optimal Indoor Air Quality</h3>
+                <p className="text-gray-700 text-sm lg:text-base">
+                  Superior indoor air quality directly impacts your bottom line. Studies show optimal IAQ can reduce sick days by 27%, improve cognitive function by 15-20%, and increase overall productivity by 8-11%. For a 100-person company, this translates to approximately $500,000 in annual savings and productivity gains.
                 </p>
               </div>
 
-              <div className="my-8">
-                <div className="p-8 bg-gradient-to-r from-[#003049] to-[#00283e] text-white rounded-xl shadow-xl">
-                  <h3 className="text-2xl font-bold mb-4">Schedule Your Commercial Air Quality Assessment Today!</h3>
-                  <p className="mb-6">Create healthier, more productive environments. Book your commercial assessment or call <span className="font-semibold">(817) 800-0340</span>. We service all of Fort Worth and surrounding business districts.</p>
+              <div className="my-6 lg:my-8">
+                <div className="p-6 lg:p-8 bg-gradient-to-r from-[#003049] to-[#00283e] text-white rounded-xl shadow-xl">
+                  <h3 className="text-xl lg:text-2xl font-bold mb-3 lg:mb-4">Schedule Your Commercial Air Quality Assessment Today!</h3>
+                  <p className="mb-4 lg:mb-6 text-sm lg:text-base">Create healthier, more productive environments. Book your commercial assessment or call <span className="font-semibold">(817) 800-0340</span>.</p>
                   <button
                     type="button"
                     onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
-                    className="bg-white text-[#003049] font-semibold py-3 px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors"
+                    className="bg-white text-[#003049] font-semibold py-2 lg:py-3 px-4 lg:px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors text-sm lg:text-base w-full lg:w-auto"
                   >
                     Book Commercial IAQ Service
                   </button>
                 </div>
-                <div className="h-2 w-full bg-[#780000] rounded-full mt-8"></div>
+                <div className="h-2 w-full bg-[#780000] rounded-full mt-6 lg:mt-8"></div>
               </div>
 
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mt-12">
+              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-4 mt-8 lg:mt-12">
                 The Fort Worth Commercial Air Quality Advantage
               </h2>
-              <p className="mt-4 text-lg text-gray-700">
-                While many companies offer basic filter changes, we provide comprehensive commercial solutions that address the root causes of poor indoor air quality in North Texas businesses, healthcare facilities, educational institutions, and industrial properties.
+              <p className="text-base lg:text-lg text-gray-700 mb-6">
+                While many companies offer basic filter changes, we provide comprehensive commercial solutions that address the root causes of poor indoor air quality in North Texas businesses.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <div className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-[#003049]">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Advanced Commercial Air Testing</h4>
-                  <p className="text-gray-700">We use industrial-grade monitoring equipment to identify specific pollutants in your facility, including VOCs, particulate matter, CO2 levels, and microbial contaminants.</p>
-                </div>
-                <div className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-[#003049]">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Customized Commercial Solutions</h4>
-                  <p className="text-gray-700">Based on your facility's specific usage patterns and test results, we design tailored approaches that address your unique air quality challenges and business objectives.</p>
-                </div>
-                <div className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-[#003049]">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Ongoing Commercial Maintenance</h4>
-                  <p className="text-gray-700">We don't just install equipment—we provide comprehensive maintenance programs to ensure your air quality remains optimal with minimal business disruption.</p>
-                </div>
-                <div className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-[#003049]">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-2">ROI-Focused Approach</h4>
-                  <p className="text-gray-700">Our solutions prioritize your return on investment, with documented improvements in productivity, reduced absenteeism, and lower operational costs.</p>
-                </div>
+              <div className="grid grid-cols-1 gap-4 lg:gap-6 mb-8 lg:mb-12">
+                {[
+                  { title: "Advanced Commercial Air Testing", desc: "We use industrial-grade monitoring equipment to identify specific pollutants in your facility." },
+                  { title: "Customized Commercial Solutions", desc: "Based on your facility's usage patterns, we design tailored approaches for your business objectives." },
+                  { title: "Ongoing Commercial Maintenance", desc: "We provide comprehensive maintenance programs to ensure optimal air quality with minimal disruption." },
+                  { title: "ROI-Focused Approach", desc: "Our solutions prioritize your return on investment with documented improvements in productivity." }
+                ].map((item, index) => (
+                  <div key={index} className="bg-white p-4 lg:p-5 rounded-lg shadow-sm border-l-4 border-[#003049]">
+                    <h4 className="text-lg lg:text-xl font-semibold text-gray-800 mb-2">{item.title}</h4>
+                    <p className="text-gray-700 text-sm lg:text-base">{item.desc}</p>
+                  </div>
+                ))}
               </div>
 
-              <h3 className="mt-12 text-2xl font-semibold text-gray-900">
-                Benefits of Professional Commercial Air Quality Services
-              </h3>
-              
-              <div className="mt-6 bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
-                <div className="p-6 border-b">
-                  <h4 className="text-xl font-semibold text-[#003049] flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Reduced Employee Absenteeism
-                  </h4>
-                  <p className="mt-2 text-gray-700">Our systems reduce airborne pathogens and allergens, leading to fewer sick days and lower healthcare costs for your organization.</p>
-                </div>
-                <div className="p-6 border-b">
-                  <h4 className="text-xl font-semibold text-[#003049] flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Enhanced Cognitive Function
-                  </h4>
-                  <p className="mt-2 text-gray-700">Optimal CO2 levels and reduced VOCs improve decision-making performance and focus, leading to better business outcomes.</p>
-                </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-semibold text-[#003049] flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Improved HVAC Efficiency
-                  </h4>
-                  <p className="mt-2 text-gray-700">Clean air systems help your commercial HVAC run more efficiently, potentially lowering energy costs by 15-20% and extending equipment life.</p>
-                </div>
-              </div>
-
-              <h3 className="mt-12 text-2xl font-semibold text-gray-900">
+              {/* Service Areas */}
+              <h3 className="text-xl lg:text-2xl font-semibold text-gray-900 mb-4">
                 Our Commercial Service Areas in North Texas
               </h3>
-              <p className="mt-4 text-gray-700">
-                We proudly provide comprehensive commercial indoor air quality services throughout the Fort Worth metroplex and surrounding business districts:
+              <p className="text-gray-700 mb-4 text-sm lg:text-base">
+                We proudly provide comprehensive commercial indoor air quality services throughout the Fort Worth metroplex:
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-3 mb-8">
                 {[
-                  "Downtown Fort Worth",
-                  "Fort Worth Medical District",
-                  "Alliance Corridor",
-                  "West 7th District",
-                  "Cultural District",
-                  "Sundance Square",
-                  "Arlington Entertainment District",
-                  "DFW Airport Area",
-                  "Las Colinas",
-                  "Grapevine",
-                  "Southlake",
-                  "Keller",
-                  "North Richland Hills",
-                  "Hurst-Euless-Bedford",
-                  "Mansfield"
+                  "Downtown Fort Worth", "Fort Worth Medical District", "Alliance Corridor", 
+                  "West 7th District", "Cultural District", "Sundance Square",
+                  "Arlington Entertainment District", "DFW Airport Area", "Las Colinas",
+                  "Grapevine", "Southlake", "Keller", "North Richland Hills", 
+                  "Hurst-Euless-Bedford", "Mansfield"
                 ].map((area) => (
-                  <div key={area} className="flex items-center text-gray-700">
-                    <svg className="w-4 h-4 mr-2 text-[#003049]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 111.314 0z" />
+                  <div key={area} className="flex items-center text-gray-700 text-sm">
+                    <svg className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2 text-[#003049] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     {area}
@@ -423,44 +326,39 @@ const CommercialIAQ = () => {
               </div>
 
               {/* Industry Specialization */}
-              <h3 className="mt-12 text-2xl font-semibold text-gray-900">
+              <h3 className="text-xl lg:text-2xl font-semibold text-gray-900 mb-4">
                 Industry-Specific Solutions
               </h3>
-              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
-                  <h4 className="text-xl font-semibold text-[#003049] mb-2">Office Buildings</h4>
-                  <p className="text-gray-700">Boost productivity and reduce sick days with targeted IAQ solutions for high-occupancy spaces.</p>
-                </div>
-                <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
-                  <h4 className="text-xl font-semibold text-[#003049] mb-2">Healthcare Facilities</h4>
-                  <p className="text-gray-700">Meet strict infection control standards with hospital-grade air purification and monitoring.</p>
-                </div>
-                <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
-                  <h4 className="text-xl font-semibold text-[#003049] mb-2">Educational Institutions</h4>
-                  <p className="text-gray-700">Create optimal learning environments with improved air quality that enhances concentration and reduces illness transmission.</p>
-                </div>
-                <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
-                  <h4 className="text-xl font-semibold text-[#003049] mb-2">Retail & Hospitality</h4>
-                  <p className="text-gray-700">Enhance customer experience and employee comfort with fresh, clean air throughout your facilities.</p>
-                </div>
+              <div className="mt-4 lg:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+                {[
+                  { title: "Office Buildings", desc: "Boost productivity and reduce sick days with targeted IAQ solutions for high-occupancy spaces." },
+                  { title: "Healthcare Facilities", desc: "Meet strict infection control standards with hospital-grade air purification and monitoring." },
+                  { title: "Educational Institutions", desc: "Create optimal learning environments with improved air quality that enhances concentration." },
+                  { title: "Retail & Hospitality", desc: "Enhance customer experience and employee comfort with fresh, clean air throughout your facilities." }
+                ].map((industry, index) => (
+                  <div key={index} className="bg-blue-50 p-4 lg:p-5 rounded-lg border border-blue-100">
+                    <h4 className="text-lg lg:text-xl font-semibold text-[#003049] mb-2">{industry.title}</h4>
+                    <p className="text-gray-700 text-sm lg:text-base">{industry.desc}</p>
+                  </div>
+                ))}
               </div>
 
-              {/* Financing Options CTA */}
-              <div className="mt-8 p-6 bg-gradient-to-r from-[#780000] to-[#5a0000] text-white text-center rounded-xl shadow-lg">
-                <h3 className="text-2xl font-bold mb-2">
+              {/* Financing CTA */}
+              <div className="mt-8 p-4 lg:p-6 bg-gradient-to-r from-[#780000] to-[#5a0000] text-white text-center rounded-xl shadow-lg">
+                <h3 className="text-xl lg:text-2xl font-bold mb-2">
                   Invest in Your Workplace With Flexible Commercial Financing
                 </h3>
-                <p className="mb-4">
-                  Improve air quality without capital expenditure. We offer convenient leasing and payment options for businesses of all sizes, with demonstrated ROI through improved productivity and reduced costs.
+                <p className="mb-4 text-sm lg:text-base">
+                  Improve air quality without capital expenditure. We offer convenient leasing and payment options for businesses of all sizes.
                 </p>
-                <a href="tel:8178000340" className="inline-block bg-white text-[#780000] font-semibold py-2 px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors">
+                <a href="tel:8178000340" className="inline-block bg-white text-[#780000] font-semibold py-2 px-4 lg:px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors text-sm lg:text-base">
                   CALL FOR COMMERCIAL FINANCING: (817) 800-0340
                 </a>
               </div>
             </div>
 
             {/* RIGHT COLUMN: Form */}
-            <div className="lg:w-[30%] lg:sticky lg:top-6 self-start">
+            <div className="lg:w-[30%] w-full lg:sticky lg:top-6 self-start">
               <CommercialServiceForm />
             </div>
           </div>
@@ -468,77 +366,60 @@ const CommercialIAQ = () => {
       </section>
 
       {/* STATISTICS SECTION */}
-      <section className="py-16 bg-gradient-to-r from-[#003049] to-[#00283e] text-white">
-        <div className="px-4 sm:px-8 lg:px-16 mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold sm:text-4xl mb-4">
+      <section className="py-12 lg:py-16 bg-gradient-to-r from-[#003049] to-[#00283e] text-white">
+        <div className="px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
+          <div className="text-center mb-8 lg:mb-12">
+            <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-4">
               Why Commercial Indoor Air Quality Matters in Fort Worth
             </h2>
-            <p className="text-blue-200 max-w-3xl mx-auto">
-              The Harvard Business Review estimates that optimal indoor air quality can return $6,500 per employee annually in productivity gains and reduced healthcare costs. In Fort Worth's competitive business environment, this advantage is critical.
+            <p className="text-blue-200 max-w-3xl mx-auto text-sm lg:text-base">
+              The Harvard Business Review estimates that optimal indoor air quality can return $6,500 per employee annually in productivity gains and reduced healthcare costs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-6 bg-white bg-opacity-10 rounded-xl">
-              <div className="text-4xl font-bold mb-2">27%</div>
-              <p>reduction in sick days with optimized indoor air quality</p>
-            </div>
-            <div className="p-6 bg-white bg-opacity-10 rounded-xl">
-              <div className="text-4xl font-bold mb-2">15%</div>
-              <p>improvement in cognitive function scores with better IAQ</p>
-            </div>
-            <div className="p-6 bg-white bg-opacity-10 rounded-xl">
-              <div className="text-4xl font-bold mb-2">20%</div>
-              <p>energy savings potential with optimized ventilation strategies</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 text-center">
+            {[
+              { value: "27%", desc: "reduction in sick days with optimized indoor air quality" },
+              { value: "15%", desc: "improvement in cognitive function scores with better IAQ" },
+              { value: "20%", desc: "energy savings potential with optimized ventilation strategies" }
+            ].map((stat, index) => (
+              <div key={index} className="p-4 lg:p-6 bg-white bg-opacity-10 rounded-xl">
+                <div className="text-2xl lg:text-4xl font-bold mb-2">{stat.value}</div>
+                <p className="text-sm lg:text-base">{stat.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* REVIEWS SECTION */}
-      <section className="w-full bg-[#003049] py-16">
-        <div className="px-4 sm:px-8 lg:px-16 mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl text-center mb-4">
+      <section className="w-full bg-[#003049] py-12 lg:py-16">
+        <div className="px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
+          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white text-center mb-4">
             Trusted by Fort Worth Businesses
           </h2>
-          <p className="text-blue-200 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-blue-200 text-center mb-8 lg:mb-12 max-w-2xl mx-auto text-sm lg:text-base">
             Don't just take our word for it. Here's what our commercial clients have to say:
           </p>
           
-          {/* Mobile view - stacked vertically */}
-          <div className="lg:hidden space-y-6 max-w-2xl mx-auto">
-            {reviewsData.map((review, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-md">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 className="text-md font-semibold text-[#003049]">{review.name}</h3>
-                    <p className="text-xs text-gray-600">{review.company}</p>
-                  </div>
-                  <div className="text-xs text-gray-500">{review.date}</div>
-                </div>
-                <div className="flex mb-3">
-                  {renderStars(review.rating)}
-                </div>
-                <p className="text-sm text-gray-700 italic">"{review.review}"</p>
-              </div>
-            ))}
-          </div>
-          
-          {/* Desktop view - carousel */}
-          <div className="hidden lg:block relative max-w-6xl mx-auto">
-            {/* Carousel container */}
-            <div className="overflow-hidden">
+          {/* Carousel for all screens */}
+          <div className="relative max-w-6xl mx-auto">
+            <div className="overflow-hidden px-2">
               <div 
                 className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentReview * (100/3)}%)` }}
+                style={{ 
+                  transform: `translateX(-${currentReview * (100/(isMobile ? 1 : 3))}%)` 
+                }}
               >
                 {reviewsData.map((review, index) => (
-                  <div key={index} className="w-1/3 flex-shrink-0 px-4">
-                    <div className="bg-white rounded-lg p-6 shadow-md h-full">
+                  <div 
+                    key={index} 
+                    className={`${isMobile ? 'w-full' : 'w-1/3'} flex-shrink-0 px-2 lg:px-4`}
+                  >
+                    <div className="bg-white rounded-lg p-4 lg:p-6 shadow-md h-full">
                       <div className="flex justify-between items-start mb-3">
                         <div>
-                          <h3 className="text-md font-semibold text-[#003049]">{review.name}</h3>
+                          <h3 className="text-sm lg:text-md font-semibold text-[#003049]">{review.name}</h3>
                           <p className="text-xs text-gray-600">{review.company}</p>
                         </div>
                         <div className="text-xs text-gray-500">{review.date}</div>
@@ -546,7 +427,7 @@ const CommercialIAQ = () => {
                       <div className="flex mb-3">
                         {renderStars(review.rating)}
                       </div>
-                      <p className="text-sm text-gray-700 italic">"{review.review}"</p>
+                      <p className="text-xs lg:text-sm text-gray-700 italic">"{review.review}"</p>
                     </div>
                   </div>
                 ))}
@@ -556,31 +437,31 @@ const CommercialIAQ = () => {
             {/* Navigation buttons */}
             <button 
               onClick={prevReview}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-2 lg:-translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
               aria-label="Previous review"
             >
-              <svg className="w-5 h-5 text-[#003049]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 lg:w-5 lg:h-5 text-[#003049]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             
             <button 
               onClick={nextReview}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-2 lg:translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
               aria-label="Next review"
             >
-              <svg className="w-5 h-5 text-[#003049]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 lg:w-5 lg:h-5 text-[#003049]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7-7" />
               </svg>
             </button>
             
             {/* Indicator dots */}
-            <div className="flex justify-center mt-6 space-x-2">
-              {Array(Math.ceil(reviewsData.length / 3)).fill(0).map((_, index) => (
+            <div className="flex justify-center mt-4 lg:mt-6 space-x-2">
+              {Array(Math.ceil(reviewsData.length / (isMobile ? 1 : 3))).fill(0).map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => setCurrentReview(index * 3)}
-                  className={`w-3 h-3 rounded-full ${Math.floor(currentReview / 3) === index ? 'bg-white' : 'bg-[#00283e]'}`}
+                  onClick={() => setCurrentReview(index * (isMobile ? 1 : 3))}
+                  className={`w-2 h-2 lg:w-3 lg:h-3 rounded-full ${Math.floor(currentReview / (isMobile ? 1 : 3)) === index ? 'bg-white' : 'bg-[#00283e]'}`}
                   aria-label={`Go to review group ${index + 1}`}
                 />
               ))}
@@ -590,40 +471,34 @@ const CommercialIAQ = () => {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="w-full bg-white py-16 relative">
+      <section className="w-full bg-white py-12 lg:py-16 relative">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#003049] to-[#780000] opacity-30"></div>
-        <div className="absolute top-10 right-10 opacity-5">
-          <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100 200C155.228 200 200 155.228 200 100C200 44.7715 155.228 0 100 0C44.7715 0 0 44.7715 0 100C0 155.228 44.7715 200 100 200Z" fill="#003049"/>
-            <path d="M100 180C144.183 180 180 144.183 180 100C180 55.8172 144.183 20 100 20C55.8172 20 20 55.8172 20 100C20 144.183 55.8172 180 100 180Z" stroke="#780000" strokeWidth="2"/>
-          </svg>
-        </div>
-        <div className="px-4 sm:px-8 lg:px-16 mx-auto max-w-4xl relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center bg-blue-50 px-4 py-2 rounded-full mb-4">
-              <svg className="w-5 h-5 mr-2 text-[#003049]" fill="currentColor" viewBox="0 0 20 20">
+        <div className="px-4 sm:px-6 lg:px-8 mx-auto max-w-4xl relative z-10">
+          <div className="text-center mb-8 lg:mb-12">
+            <div className="inline-flex items-center justify-center bg-blue-50 px-3 py-1 lg:px-4 lg:py-2 rounded-full mb-3 lg:mb-4">
+              <svg className="w-4 h-4 lg:w-5 lg:h-5 mr-1 lg:mr-2 text-[#003049]" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
               </svg>
-              <span className="text-[#003049] font-medium">Frequently Asked Questions</span>
+              <span className="text-[#003049] font-medium text-sm lg:text-base">Frequently Asked Questions</span>
             </div>
-            <h2 className="text-3xl font-bold text-[#003049] sm:text-4xl mb-4">
+            <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-[#003049] mb-3 lg:mb-4">
               Commercial Air Quality Questions Answered
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm lg:text-base">
               We've compiled clear answers to common commercial indoor air quality questions for Fort Worth businesses.
             </p>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-4 lg:space-y-6">
             {faqData.map((faq, index) => (
               <div key={index} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md">
                 <button
-                  className="w-full px-6 py-5 text-left text-white font-semibold text-lg flex justify-between items-center focus:outline-none bg-gradient-to-r from-[#003049] to-[#00283e] hover:from-[#00283e] hover:to-[#001f33] transition-colors"
+                  className="w-full px-4 lg:px-6 py-3 lg:py-5 text-left text-white font-semibold text-base lg:text-lg flex justify-between items-center focus:outline-none bg-gradient-to-r from-[#003049] to-[#00283e] hover:from-[#00283e] hover:to-[#001f33] transition-colors"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <span className="pr-4">{faq.question}</span>
+                  <span className="pr-4 text-sm lg:text-base text-left">{faq.question}</span>
                   <svg
-                    className={`w-5 h-5 transform transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`}
+                    className={`w-4 h-4 lg:w-5 lg:h-5 transform transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -631,31 +506,31 @@ const CommercialIAQ = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className={`px-6 pb-5 pt-4 text-gray-700 transition-all duration-300 ease-in-out bg-blue-50 ${openIndex === index ? 'block' : 'hidden'}`}>
+                <div className={`px-4 lg:px-6 pb-4 lg:pb-5 pt-3 lg:pt-4 text-gray-700 transition-all duration-300 ease-in-out bg-blue-50 ${openIndex === index ? 'block' : 'hidden'}`}>
                   <div className="flex">
-                    <div className="flex-shrink-0 mr-4">
-                      <div className="w-8 h-8 rounded-full bg-[#003049] flex items-center justify-center">
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="flex-shrink-0 mr-3">
+                      <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-[#003049] flex items-center justify-center">
+                        <svg className="w-3 h-3 lg:w-4 lg:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
                       </div>
                     </div>
-                    <p className="text-gray-700">{faq.answer}</p>
+                    <p className="text-gray-700 text-sm lg:text-base">{faq.answer}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
           
-          <div className="mt-12 text-center bg-blue-50 p-8 rounded-xl border border-blue-100">
-            <div className="inline-flex items-center justify-center bg-white px-4 py-2 rounded-full mb-4 shadow-sm">
-              <svg className="w-5 h-5 mr-2 text-[#780000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="mt-8 lg:mt-12 text-center bg-blue-50 p-4 lg:p-8 rounded-xl border border-blue-100">
+            <div className="inline-flex items-center justify-center bg-white px-3 py-1 lg:px-4 lg:py-2 rounded-full mb-3 lg:mb-4 shadow-sm">
+              <svg className="w-4 h-4 lg:w-5 lg:h-5 mr-1 lg:mr-2 text-[#780000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <span className="text-[#003049] font-medium">Still have questions?</span>
+              <span className="text-[#003049] font-medium text-sm lg:text-base">Still have questions?</span>
             </div>
-            <p className="text-gray-700 mb-6">Our commercial air quality experts are ready to help with any questions.</p>
-            <a href="tel:8178000340" className="inline-block bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-colors transform hover:scale-105">
+            <p className="text-gray-700 mb-4 lg:mb-6 text-sm lg:text-base">Our commercial air quality experts are ready to help with any questions.</p>
+            <a href="tel:8178000340" className="inline-block bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-2 lg:py-3 px-4 lg:px-8 rounded-lg shadow-md transition-colors transform hover:scale-105 text-sm lg:text-base">
               Call Our Experts: (817) 800-0340
             </a>
           </div>
@@ -663,28 +538,23 @@ const CommercialIAQ = () => {
       </section>
       
       {/* CTA SECTION */}
-      <section className="w-full bg-gradient-to-r from-[#003049] to-[#00283e] py-16 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
-        </div>
-        <div className="relative px-4 sm:px-8 lg:px-16 mx-auto max-w-5xl text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl mb-6">
+      <section className="w-full bg-gradient-to-r from-[#003049] to-[#00283e] py-12 lg:py-16 relative overflow-hidden">
+        <div className="relative px-4 sm:px-6 lg:px-8 mx-auto max-w-5xl text-center">
+          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-4 lg:mb-6">
             Ready to Transform Your Workplace Air Quality?
           </h2>
-          <p className="text-blue-100 text-xl mb-8 max-w-3xl mx-auto">
+          <p className="text-blue-100 text-lg lg:text-xl mb-6 lg:mb-8 max-w-3xl mx-auto">
             Don't wait to improve your commercial indoor air quality. Schedule your assessment today and start creating a healthier, more productive environment tomorrow.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
             <button
               type="button"
               onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
-              className="bg-white text-[#003049] font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-105"
+              className="bg-white text-[#003049] font-semibold py-2 lg:py-3 px-6 lg:px-8 rounded-lg shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-105 text-sm lg:text-base"
             >
               Schedule Commercial Assessment
             </button>
-            <a href="tel:8178000340" className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-white hover:text-[#003049] transition-colors transform hover:scale-105">
+            <a href="tel:8178000340" className="bg-transparent border-2 border-white text-white font-semibold py-2 lg:py-3 px-6 lg:px-8 rounded-lg shadow-lg hover:bg-white hover:text-[#003049] transition-colors transform hover:scale-105 text-sm lg:text-base">
               Or Call: (817) 800-0340
             </a>
           </div>
@@ -692,65 +562,64 @@ const CommercialIAQ = () => {
       </section>
 
       {/* FINAL CTA SECTION */}
-      <section className="w-full bg-white py-16 relative">
+      <section className="w-full bg-white py-12 lg:py-16 relative">
         <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-[#003049] to-transparent opacity-20"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-50 rounded-full -mr-32 -mb-32 opacity-50"></div>
-        <div className="relative px-4 sm:px-8 lg:px-16 mx-auto max-w-5xl text-center z-10">
-          <div className="inline-flex items-center justify-center mb-4 bg-blue-50 px-4 py-2 rounded-full">
-            <svg className="w-5 h-5 mr-2 text-[#003049]" fill="currentColor" viewBox="0 0 20 20">
+        <div className="relative px-4 sm:px-6 lg:px-8 mx-auto max-w-5xl text-center z-10">
+          <div className="inline-flex items-center justify-center mb-3 lg:mb-4 bg-blue-50 px-3 py-1 lg:px-4 lg:py-2 rounded-full">
+            <svg className="w-4 h-4 lg:w-5 lg:h-5 mr-1 lg:mr-2 text-[#003049]" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
             </svg>
-            <span className="text-[#003049] font-medium">Commercial-Grade Solutions</span>
+            <span className="text-[#003049] font-medium text-sm lg:text-base">Commercial-Grade Solutions</span>
           </div>
           
-          <h2 className="text-3xl font-bold text-[#003049] sm:text-4xl mb-6">
+          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-[#003049] mb-4 lg:mb-6">
             We Specialize in Commercial IAQ Solutions
           </h2>
-          <p className="text-xl mb-3 max-w-3xl mx-auto text-gray-800 font-semibold">
+          <p className="text-lg lg:text-xl mb-2 max-w-3xl mx-auto text-gray-800 font-semibold">
             Schedule Your Commercial Air Quality Assessment Today
           </p>
-          <p className="text-lg mb-10 max-w-2xl mx-auto text-gray-600">
+          <p className="text-base lg:text-lg mb-8 lg:mb-10 max-w-2xl mx-auto text-gray-600">
             Your employees' health and productivity are our priority. Our certified commercial team will assess your air quality and provide enterprise-grade solutions tailored to your Fort Worth business.
           </p>
           
-          <div className="bg-blue-50 p-6 rounded-xl mb-10 border border-blue-100">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+          <div className="bg-blue-50 p-4 lg:p-6 rounded-xl mb-8 lg:mb-10 border border-blue-100">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 lg:gap-6">
               <div className="flex items-center">
-                <div className="bg-white p-3 rounded-full shadow-md mr-4">
-                  <svg className="w-6 h-6 text-[#780000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-white p-2 lg:p-3 rounded-full shadow-md mr-3 lg:mr-4">
+                  <svg className="w-5 h-5 lg:w-6 lg:h-6 text-[#780000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div className="text-left">
-                  <p className="text-sm text-gray-600">Call our commercial team at</p>
-                  <a href="tel:8178000340" className="text-xl font-bold text-[#003049] hover:text-[#780000] transition-colors">(817) 800-0340</a>
+                  <p className="text-xs lg:text-sm text-gray-600">Call our commercial team at</p>
+                  <a href="tel:8178000340" className="text-lg lg:text-xl font-bold text-[#003049] hover:text-[#780000] transition-colors">(817) 800-0340</a>
                 </div>
               </div>
               
-              <div className="hidden md:block h-12 w-px bg-blue-200"></div>
+              <div className="hidden md:block h-8 lg:h-12 w-px bg-blue-200"></div>
               
               <div className="flex items-center">
-                <div className="bg-white p-3 rounded-full shadow-md mr-4">
-                  <svg className="w-6 h-6 text-[#780000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-white p-2 lg:p-3 rounded-full shadow-md mr-3 lg:mr-4">
+                  <svg className="w-5 h-5 lg:w-6 lg:h-6 text-[#780000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div className="text-left">
-                  <p className="text-sm text-gray-600">Schedule commercial service</p>
-                  <p className="text-md font-medium text-[#003049]">After-Hours Available</p>
+                  <p className="text-xs lg:text-sm text-gray-600">Schedule commercial service</p>
+                  <p className="text-sm lg:text-md font-medium text-[#003049]">After-Hours Available</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
             <button
               type="button"
               onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
-              className="bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center"
+              className="bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-2 lg:py-3 px-6 lg:px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center text-sm lg:text-base"
             >
               <svg
-                className="w-5 h-5 mr-2"
+                className="w-4 h-4 lg:w-5 lg:h-5 mr-2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -764,8 +633,8 @@ const CommercialIAQ = () => {
               </svg>
               Book Commercial Assessment
             </button>
-            <a href="tel:8178000340" className="bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="tel:8178000340" className="bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-2 lg:py-3 px-6 lg:px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center text-sm lg:text-base">
+              <svg className="w-4 h-4 lg:w-5 lg:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               Call Commercial Team
@@ -783,9 +652,9 @@ const ParticleBackground = () => {
   
   useEffect(() => {
     // Create initial particles with different types
-    const initialParticles = Array.from({ length: 40 }, (_, i) => ({
+    const initialParticles = Array.from({ length: 30 }, (_, i) => ({
       id: i,
-      size: Math.random() * 5 + 1,
+      size: Math.random() * 4 + 1,
       x: Math.random() * 100,
       y: Math.random() * 100,
       speedX: (Math.random() - 0.5) * 0.3,
@@ -852,63 +721,63 @@ const CommercialServiceForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 w-full"
+      className="bg-white p-4 lg:p-6 rounded-xl shadow-lg border border-gray-200 w-full"
     >
-      <h3 className="text-2xl font-bold text-[#003049] mb-6 text-center">Request Commercial IAQ Assessment</h3>
+      <h3 className="text-xl lg:text-2xl font-bold text-[#003049] mb-4 lg:mb-6 text-center">Request Commercial IAQ Assessment</h3>
 
-      <div className="mb-5">
+      <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Contact Name <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
+          className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049] text-sm lg:text-base"
           placeholder="Your name"
         />
       </div>
 
-      <div className="mb-5">
+      <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Company Name <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
+          className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049] text-sm lg:text-base"
           placeholder="Your company"
         />
       </div>
 
-      <div className="mb-5">
+      <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Email Address <span className="text-red-500">*</span>
         </label>
         <input
           type="email"
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
+          className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049] text-sm lg:text-base"
           placeholder="Your business email"
         />
       </div>
 
-      <div className="mb-5">
+      <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Phone Number <span className="text-red-500">*</span>
         </label>
         <input
           type="tel"
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
+          className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049] text-sm lg:text-base"
           placeholder="(817) 000-0000"
         />
       </div>
 
-      <div className="mb-5">
+      <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Property Type <span className="text-red-500">*</span>
         </label>
-        <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]">
+        <select className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049] text-sm lg:text-base">
           <option value="">Select property type</option>
           <option value="office">Office Building</option>
           <option value="medical">Medical Facility</option>
@@ -920,11 +789,11 @@ const CommercialServiceForm = () => {
         </select>
       </div>
 
-      <div className="mb-5">
+      <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Square Footage <span className="text-red-500">*</span>
         </label>
-        <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]">
+        <select className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049] text-sm lg:text-base">
           <option value="">Select range</option>
           <option value="5000">Under 5,000 sq ft</option>
           <option value="10000">5,000 - 10,000 sq ft</option>
@@ -935,11 +804,11 @@ const CommercialServiceForm = () => {
         </select>
       </div>
 
-      <div className="mb-5">
+      <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Primary Air Quality Concerns
         </label>
-        <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]">
+        <select className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049] text-sm lg:text-base">
           <option value="">Select primary concern</option>
           <option value="odors">Persistent Odors</option>
           <option value="mold">Mold Concerns</option>
@@ -952,20 +821,20 @@ const CommercialServiceForm = () => {
         </select>
       </div>
 
-      <div className="mb-5">
+      <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Additional Details
         </label>
         <textarea
           rows={3}
           maxLength={500}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
+          className="w-full px-3 lg:px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049] text-sm lg:text-base"
           placeholder="Tell us about your commercial air quality needs"
         />
         <p className="text-xs text-gray-500 mt-1">0 of 500 max characters</p>
       </div>
 
-      <div className="mb-6">
+      <div className="mb-4 lg:mb-6">
         <div className="flex items-start">
           <div className="flex items-center h-5">
             <input
@@ -977,8 +846,8 @@ const CommercialServiceForm = () => {
             />
           </div>
           <div className="ml-3 text-sm">
-            <label htmlFor="consent" className="text-gray-700">
-              I consent to receive communications about my commercial service request. Message and data rates may apply.
+            <label htmlFor="consent" className="text-gray-700 text-xs lg:text-sm">
+              I consent to receive communications about my commercial service request.
             </label>
           </div>
         </div>
@@ -986,12 +855,12 @@ const CommercialServiceForm = () => {
 
       <button
         type="submit"
-        className="w-full bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#003049] focus:ring-offset-2"
+        className="w-full bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-2 lg:py-3 px-4 rounded-lg shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#003049] focus:ring-offset-2 text-sm lg:text-base"
       >
         Request Commercial Assessment
       </button>
       
-      <p className="text-xs text-gray-500 mt-4 text-center">
+      <p className="text-xs text-gray-500 mt-3 text-center">
         We respect your privacy. Your information will never be shared with third parties.
       </p>
     </form>
