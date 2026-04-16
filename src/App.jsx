@@ -31,6 +31,8 @@ import PaymentPlans from './pages/PaymentPlans.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import AboutUs from './pages/AboutUs.jsx';
 import BookNow from './pages/BookNow.jsx';
+import SMSTerms from './pages/SMSTerms.jsx';
+import SMSOptIn from './pages/SMSOptIn.jsx';
 
 // City Pages
 import Arlington from './pages/Arlington';
@@ -110,6 +112,9 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/book-now" element={<BookNow />} />
+        <Route path="/sms-terms" element={<SMSTerms />} />
+        <Route path="/sms-optin" element={<SMSOptIn />} />
+    
         
         {/* City Pages */}
         <Route path="/arlington" element={<Arlington />} />

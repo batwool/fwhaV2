@@ -112,6 +112,8 @@ const Footer = () => {
               <li><a href="/certifications" className="text-gray-300 hover:text-white transition-colors">Certifications</a></li>
               <li><a href="/servicearea" className="text-gray-300 hover:text-white transition-colors">Service Area</a></li>
               <li><a href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="/sms-terms" className="text-gray-300 hover:text-white transition-colors">SMS Terms</a></li>
+              <li><a href="/sms-optin" className="text-gray-300 hover:text-white transition-colors">SMS Opt In</a></li>
             </ul>
             
             <h3 className="text-xl font-bold mb-2 text-white border-b border-[#780000] pb-2">Service Areas</h3>
