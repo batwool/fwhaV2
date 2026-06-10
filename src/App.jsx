@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Homepage from './pages/Homepage.jsx';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
@@ -9,8 +10,10 @@ import Reviews from './components/Reviews';
 import Areas from './components/Areas';
 import Specials from './components/Specials';
 import Contact from './components/Contact';
+import Offers from './components/Offers.jsx';
 import Footer from './components/Footer';
 import FinalCTA from './components/FinalCTA';
+import ComfortClub from './pages/ComfortClub.jsx';  // <-- ADD THIS IMPORT
 
 // Service Pages
 import ACRepair from './pages/ACRepair';
@@ -61,23 +64,18 @@ import Westlake from './pages/Westlake';
 
 import './index.css';
 
-
-
-
-
-
 // Home page layout
 function HomePage() {
   return (
     <>
       <Hero />
+      <Offers />
       <About />
       <Services />
       <ACInstallSection />
       <Reviews />
       <Areas />
       <Specials />
-      <FinalCTA />
     </>
   );
 }
@@ -104,8 +102,8 @@ function App() {
         <Route path="/iaq" element={<IAQ />} />
         <Route path="/commericial-iaq" element={<CommercialIAQ />} />
 
-         {/* Commercial Services */}
-          <Route path="/commercial-ac-services" element={<CommercialACServices />} />
+        {/* Commercial Services */}
+        <Route path="/commercial-ac-services" element={<CommercialACServices />} />
 
         {/* Resources */}
         <Route path="/payment-plans" element={<PaymentPlans />} />
@@ -114,8 +112,10 @@ function App() {
         <Route path="/book-now" element={<BookNow />} />
         <Route path="/sms-terms" element={<SMSTerms />} />
         <Route path="/sms-optin" element={<SMSOptIn />} />
-    
-        
+
+        {/* Comfort Club */}
+        <Route path="/comfort-club" element={<ComfortClub />} />  {/* <-- ADD THIS ROUTE */}
+
         {/* City Pages */}
         <Route path="/arlington" element={<Arlington />} />
         <Route path="/blue-mound" element={<BlueMound />} />

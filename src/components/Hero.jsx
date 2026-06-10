@@ -50,11 +50,11 @@ const Hero = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
-            Celebrating 15 Years of Excellence
+            Honest, Expert HVAC
           </h1>
 
           <p className="text-xl md:text-3xl lg:text-4xl font-semibold mb-8">
-            Proudly Serving Fort Worth Since 2013
+            Proudly Serving Fort Worth & Tarrant County Homes
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-start mb-16">
