@@ -24,8 +24,8 @@ const PaymentPlans = () => {
 
   const plansData = [
     {
-      id: "hearth",
-      name: "Hearth Financing",
+      id: "Acorn",
+      name: "Acorn",
       price: "0% for 12 months",
       description: "Quick approval with no impact to your credit score",
       features: [
@@ -38,8 +38,8 @@ const PaymentPlans = () => {
       bestFor: "Medium to large projects and system replacements"
     },
     {
-      id: "wisetack",
-      name: "Wisetack Financing",
+      id: "TBD",
+      name: "TBD",
       price: "0% to 35.9% APR",
       description: "Flexible payment solutions for your project",
       features: [
