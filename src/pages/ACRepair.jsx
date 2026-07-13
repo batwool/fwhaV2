@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import cityscape from "../assets/cityscapes.png";
-import checkingAC from '../assets/checkingac.jpg';
+import checkingAC from "../assets/checkingac.jpg";
 
 const ACRepair = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -24,7 +24,7 @@ const ACRepair = () => {
 
   const faqData = [
     {
-      question: "How often should I schedule AC repairs in Fort Worth's climate?",
+      question: "How often should I schedule AC repairs in Fort Worth’s climate?",
       answer:
         "North Texas summers are unforgiving. A preseason check and quick repairs as issues pop up keep minor problems from becoming major breakdowns and help your system run reliably."
     },
@@ -51,7 +51,43 @@ const ACRepair = () => {
     {
       question: "Are your technicians certified for my system?",
       answer:
-        "Yes. Our team is NATE-certified and trained on all major brands, with specific experience handling the heat, dust, and long run-times common in North Texas."
+        "Yes. Our team is NATE‑certified and trained on all major brands, with specific experience handling the heat, dust, and long run‑times common in North Texas."
+    },
+    // HIGH‑VALUE FAQS ADDED FOR AI SEARCH & LOCAL SEO
+    {
+      question: "What are the most common signs my AC needs repair?",
+      answer:
+        "Look for warm air blowing from vents, weak airflow, strange noises, frequent cycling, bad odors, or higher energy bills. If you notice any of these in your Fort Worth home, call us immediately—early repairs prevent costly breakdowns."
+    },
+    {
+      question: "How much does AC repair cost in Fort Worth, TX?",
+      answer:
+        "Costs vary by issue, but typical repairs in Fort Worth range from $150 for minor fixes to $1,500+ for major component replacements. We provide upfront, transparent pricing and financing options to fit your budget."
+    },
+    {
+      question: "Do you offer same‑day AC repair in Fort Worth?",
+      answer:
+        "Yes—we prioritize same‑day and next‑day service across Tarrant County. When the Fort Worth heat hits, we dispatch technicians quickly so you don’t wait in discomfort."
+    },
+    {
+      question: "Why choose a local Fort Worth HVAC company over a national chain?",
+      answer:
+        "As your neighbors, we understand the unique demands of North Texas weather. We’re invested in our community, respond faster, and tailor repairs to the dusty, high‑usage conditions that wear out AC units here."
+    },
+    {
+      question: "Can you repair all AC brands, including Trane, Carrier, and Lennox?",
+      answer:
+        "Absolutely. Our techs are factory‑trained and experienced with all major brands found in Fort Worth homes. Whether it’s a Trane, Carrier, Lennox, or a lesser‑known unit, we have the expertise and parts to fix it."
+    },
+    {
+      question: "How long does a typical AC repair take?",
+      answer:
+        "Most repairs are completed in 1–2 hours once we arrive. More complex jobs (like compressor replacements) may take 3–4 hours. We’ll always give you a clear time estimate before we begin."
+    },
+    {
+      question: "Is it better to repair or replace my old air conditioner?",
+      answer:
+        "If your system is over 10–12 years old and needs expensive repairs, replacement might be more cost‑effective. We’ll give you an honest assessment—no pressure, just what’s best for your Fort Worth home and budget."
     }
   ];
 
@@ -121,7 +157,7 @@ const ACRepair = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-6"
           style={{
-        backgroundImage: `url(${checkingAC})`,
+            backgroundImage: `url(${checkingAC})`,
           }}
         />
         <div className="absolute inset-0 bg-[#001f33] opacity-70" />
@@ -149,7 +185,6 @@ const ACRepair = () => {
                 </div>
                 <span className="font-semibold">Prompt Service</span>
               </div>
-              
               <div className="flex items-center gap-4 p-4 bg-[#003049] bg-opacity-50 rounded-lg">
                 <div className="bg-[#00283e] p-3 rounded-full">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -158,7 +193,6 @@ const ACRepair = () => {
                 </div>
                 <span className="font-semibold">Certified Technicians</span>
               </div>
-              
               <div className="flex items-center gap-4 p-4 bg-[#003049] bg-opacity-50 rounded-lg">
                 <div className="bg-[#00283e] p-3 rounded-full">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,7 +201,6 @@ const ACRepair = () => {
                 </div>
                 <span className="font-semibold">24/7 Emergency Support</span>
               </div>
-              
               <div className="flex items-center gap-4 p-4 bg-[#003049] bg-opacity-50 rounded-lg">
                 <div className="bg-[#00283e] p-3 rounded-full">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,16 +210,14 @@ const ACRepair = () => {
                 <span className="font-semibold">A+ BBB Rating</span>
               </div>
             </div>
-            
             <div className="mt-10">
               <button
                 type="button"
-                 onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+                onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
                 className="bg-[#780000] hover:bg-[#5a0000] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105"
-                >
+              >
                 Schedule Repair Now
               </button>
-
             </div>
           </div>
         </div>
@@ -217,13 +248,12 @@ const ACRepair = () => {
                   <h3 className="text-2xl font-bold mb-4">Schedule Your AC Repair Today!</h3>
                   <p className="mb-6">Need help now? Book a visit or call <span className="font-semibold">(817) 800-0340</span>. We service all major brands.</p>
                   <button
-  type="button"
-  onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
-  className="bg-white text-[#003049] font-semibold py-3 px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors"
->
-  Book Repair Service
-</button>
-
+                    type="button"
+                    onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+                    className="bg-white text-[#003049] font-semibold py-3 px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors"
+                  >
+                    Book Repair Service
+                  </button>
                 </div>
                 <div className="h-2 w-full bg-[#780000] rounded-full mt-8"></div>
               </div>
@@ -257,7 +287,6 @@ const ACRepair = () => {
               <h3 className="mt-12 text-2xl font-semibold text-gray-900">
                 Comprehensive Repair Benefits for Fort Worth Homeowners
               </h3>
-              
               <div className="mt-6 bg-white rounded-xl shadow-md overflow-hidden">
                 <div className="p-6 border-b">
                   <h4 className="text-xl font-semibold text[#003049] flex items-center">
@@ -319,11 +348,9 @@ const ACRepair = () => {
                 ))}
               </div>
 
-              {/* Financing Options CTA (replaces Grand Slam Deal) */}
+              {/* Financing Options CTA */}
               <div className="mt-8 p-6 bg-gradient-to-r from-[#780000] to-[#5a0000] text-white text-center rounded-xl shadow-lg">
-                <h3 className="text-2xl font-bold mb-2">
-                  We Have Financing Options
-                </h3>
+                <h3 className="text-2xl font-bold mb-2">We Have Financing Options</h3>
                 <p className="mb-4">
                   Manage repair costs with convenient monthly payments on approved credit. Ask about current plans and quick approvals.
                 </p>
@@ -333,9 +360,9 @@ const ACRepair = () => {
               </div>
             </div>
 
-            {/* RIGHT COLUMN: Form */}
+            {/* RIGHT COLUMN – NEW CTA PANEL (replaces the form) */}
             <div className="lg:w-[30%] lg:sticky lg:top-6 self-start">
-              <ServiceForm />
+              <RightCTAPanel />
             </div>
           </div>
         </div>
@@ -348,9 +375,8 @@ const ACRepair = () => {
             Trusted by Fort Worth Homeowners
           </h2>
           <p className="text-blue-200 text-center mb-12 max-w-2xl mx-auto">
-            Don&apos;t just take our word for it. Here&apos;s what our repair customers have to say:
+            Don't just take our word for it. Here's what our repair customers have to say:
           </p>
-          
           {/* Mobile view - stacked vertically */}
           <div className="lg:hidden space-y-6 max-w-2xl mx-auto">
             {reviewsData.map((review, index) => (
@@ -369,14 +395,12 @@ const ACRepair = () => {
               </div>
             ))}
           </div>
-          
           {/* Desktop view - carousel */}
           <div className="hidden lg:block relative max-w-6xl mx-auto">
-            {/* Carousel container */}
             <div className="overflow-hidden">
-              <div 
+              <div
                 className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentReview * (100/3)}%)` }}
+                style={{ transform: `translateX(-${currentReview * (100 / 3)}%)` }}
               >
                 {reviewsData.map((review, index) => (
                   <div key={index} className="w-1/3 flex-shrink-0 px-4">
@@ -397,9 +421,7 @@ const ACRepair = () => {
                 ))}
               </div>
             </div>
-            
-            {/* Navigation buttons */}
-            <button 
+            <button
               onClick={prevReview}
               className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
               aria-label="Previous review"
@@ -408,8 +430,7 @@ const ACRepair = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            
-            <button 
+            <button
               onClick={nextReview}
               className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
               aria-label="Next review"
@@ -418,8 +439,6 @@ const ACRepair = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7-7" />
               </svg>
             </button>
-            
-            {/* Indicator dots */}
             <div className="flex justify-center mt-6 space-x-2">
               {Array(Math.ceil(reviewsData.length / 3)).fill(0).map((_, index) => (
                 <button
@@ -434,8 +453,8 @@ const ACRepair = () => {
         </div>
       </section>
 
-      {/* FAQ SECTION - REVAMPED */}
-      <section className="w-full bg-white py-16 relative">
+      {/* FAQ SECTION – ENHANCED WITH SCHEMA & NEW FAQs */}
+      <section className="w-full bg-white py-16 relative" itemScope itemType="https://schema.org/FAQPage">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#003049] to-[#780000] opacity-30"></div>
         <div className="absolute top-10 right-10 opacity-5">
           <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -458,15 +477,15 @@ const ACRepair = () => {
               We’ve compiled clear answers to common repair questions for Fort Worth homeowners.
             </p>
           </div>
-          
           <div className="space-y-6">
             {faqData.map((faq, index) => (
-              <div key={index} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md">
+              <div key={index} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md"
+                   itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
                 <button
                   className="w-full px-6 py-5 text-left text-white font-semibold text-lg flex justify-between items-center focus:outline-none bg-gradient-to-r from-[#003049] to-[#00283e] hover:from-[#00283e] hover:to-[#001f33] transition-colors"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <span className="pr-4">{faq.question}</span>
+                  <span className="pr-4" itemProp="name">{faq.question}</span>
                   <svg
                     className={`w-5 h-5 transform transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`}
                     fill="none"
@@ -476,7 +495,8 @@ const ACRepair = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className={`px-6 pb-5 pt-4 text-gray-700 transition-all duration-300 ease-in-out bg-blue-50 ${openIndex === index ? 'block' : 'hidden'}`}>
+                <div className={`px-6 pb-5 pt-4 text-gray-700 transition-all duration-300 ease-in-out bg-blue-50 ${openIndex === index ? 'block' : 'hidden'}`}
+                     itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
                   <div className="flex">
                     <div className="flex-shrink-0 mr-4">
                       <div className="w-8 h-8 rounded-full bg-[#003049] flex items-center justify-center">
@@ -485,13 +505,12 @@ const ACRepair = () => {
                         </svg>
                       </div>
                     </div>
-                    <p className="text-gray-700">{faq.answer}</p>
+                    <p itemProp="text">{faq.answer}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          
           <div className="mt-12 text-center bg-blue-50 p-8 rounded-xl border border-blue-100">
             <div className="inline-flex items-center justify-center bg-white px-4 py-2 rounded-full mb-4 shadow-sm">
               <svg className="w-5 h-5 mr-2 text-[#780000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -506,7 +525,7 @@ const ACRepair = () => {
           </div>
         </div>
       </section>
-      
+
       {/* CTA SECTION */}
       <section className="w-full bg-gradient-to-r from-[#003049] to-[#00283e] py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -523,13 +542,12 @@ const ACRepair = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-  type="button"
-  onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
-  className="bg-white text-[#003049] font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-105"
->
-  Schedule Repair Online
-</button>
-
+              type="button"
+              onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+              className="bg-white text-[#003049] font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-105"
+            >
+              Schedule Repair Online
+            </button>
             <a href="tel:8178000340" className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-white hover:text-[#003049] transition-colors transform hover:scale-105">
               Or Call: (817) 800-0340
             </a>
@@ -548,7 +566,6 @@ const ACRepair = () => {
             </svg>
             <span className="text-[#003049] font-medium">Same-Day Availability</span>
           </div>
-          
           <h2 className="text-3xl font-bold text-[#003049] sm:text-4xl mb-6">
             We Are Here For You
           </h2>
@@ -558,7 +575,6 @@ const ACRepair = () => {
           <p className="text-lg mb-10 max-w-2xl mx-auto text-gray-600">
             We aren’t comfortable until you are. Our certified team restores cooling fast and verifies performance before we leave.
           </p>
-          
           <div className="bg-blue-50 p-6 rounded-xl mb-10 border border-blue-100">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
               <div className="flex items-center">
@@ -572,9 +588,7 @@ const ACRepair = () => {
                   <a href="tel:8178000340" className="text-xl font-bold text-[#003049] hover:text-[#780000] transition-colors">(817) 800-0340</a>
                 </div>
               </div>
-              
               <div className="hidden md:block h-12 w-px bg-blue-200"></div>
-              
               <div className="flex items-center">
                 <div className="bg-white p-3 rounded-full shadow-md mr-4">
                   <svg className="w-6 h-6 text-[#780000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -588,29 +602,17 @@ const ACRepair = () => {
               </div>
             </div>
           </div>
-          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-  type="button"
-  onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
-  className="bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center"
->
-  <svg
-    className="w-5 h-5 mr-2"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-    />
-  </svg>
-  Book Online Now
-</button>
-
+              type="button"
+              onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+              className="bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              Book Online Now
+            </button>
             <a href="tel:8178000340" className="bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -620,114 +622,54 @@ const ACRepair = () => {
           </div>
         </div>
       </section>
-
-      {/* CITYSCAPE WITH GRADIENT BLEND */}
-<div className="w-full relative overflow-hidden hidden md:block">
-  <div className="relative">
-    <img 
-      src={cityscape}
-      alt="Fort Worth cityscape" 
-      className="w-full h-auto object-cover"
-      style={{ minHeight: '150px', maxHeight: '400px' }}
-    />
-    <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#003049] to-transparent"></div>
-  </div>
-</div>
-</div>
+    </div>
   );
 };
 
-/** Service Form */
-const ServiceForm = () => {
-  const handleSubmit = (e) => e.preventDefault();
-
+/** RIGHT COLUMN CTA PANEL (replaces the form) */
+const RightCTAPanel = () => {
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 w-full"
-    >
-      <h3 className="text-2xl font-bold text-[#003049] mb-6 text-center">Request Repair Service</h3>
-
-      <div className="mb-5">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Full Name <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="text"
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
-          placeholder="Your name"
-        />
-      </div>
-
-      <div className="mb-5">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Email Address <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="email"
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
-          placeholder="Your email"
-        />
-      </div>
-
-      <div className="mb-5">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Phone Number <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="tel"
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
-          placeholder="(817) 000-0000"
-        />
-      </div>
-
-      <div className="mb-5">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          How Can We Help? <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          rows={4}
-          maxLength={600}
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
-          placeholder="Tell us about your AC repair needs"
-        />
-        <p className="text-xs text-gray-500 mt-1">0 of 600 max characters</p>
-      </div>
-
-      <div className="mb-6">
-        <div className="flex items-start">
-          <div className="flex items-center h-5">
-            <input
-              id="consent"
-              name="consent"
-              type="checkbox"
-              className="focus:ring-[#003049] h-4 w-4 text-[#003049] border-gray-300 rounded"
-              required
-            />
-          </div>
-          <div className="ml-3 text-sm">
-            <label htmlFor="consent" className="text-gray-700">
-              I consent to receive communications from Fort Worth Heat and Air about my service request and promotional offers. Message and data rates may apply.
-            </label>
-          </div>
+    <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 w-full">
+      <div className="text-center">
+        {/* Icon */}
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-full mb-4">
+          <svg className="w-8 h-8 text-[#003049]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
         </div>
-      </div>
+        <h3 className="text-2xl font-bold text-[#003049] mb-2">We’re Ready to Help</h3>
+        <p className="text-gray-600 mb-6">
+          Fast, local AC repair in Fort Worth. We’ll get back to you ASAP.
+        </p>
 
-      <button
-        type="submit"
-        className="w-full bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#003049] focus:ring-offset-2"
-      >
-        Request Repair Quote
-      </button>
-      
-      <p className="text-xs text-gray-500 mt-4 text-center">
-        We respect your privacy. Your information will never be shared with third parties.
-      </p>
-    </form>
+        {/* Schedule Button (FieldPulse modal) */}
+        <button
+          type="button"
+          onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+          className="w-full bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-colors mb-3 flex items-center justify-center"
+        >
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          Schedule Now
+        </button>
+
+        {/* Call Button */}
+        <a
+          href="tel:8178000340"
+          className="w-full bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-colors flex items-center justify-center"
+        >
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          Call (817) 800-0340
+        </a>
+
+        <p className="mt-4 text-xs text-gray-500">
+          Same‑day appointments available. No obligation.
+        </p>
+      </div>
+    </div>
   );
 };
 

@@ -49,12 +49,12 @@ const Hero = () => {
             />
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
-            Honest, Expert HVAC
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4">
+            24/7 AC & Heat Repair in Fort Worth
           </h1>
 
-          <p className="text-xl md:text-3xl lg:text-4xl font-semibold mb-8">
-            Proudly Serving Fort Worth & Tarrant County Homes
+          <p className="text-xl md:text-2xl lg:text-4xl font-semibold mb-8">
+          Emergency service, honest pricing, local techs. Same-day in most cases.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-start mb-16">
@@ -63,7 +63,7 @@ const Hero = () => {
               onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
               className="bg-[#780000] text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-[#650000] transition-colors"
             >
-              Request Service
+              Book in 60 Seconds
             </button>
 
             {/* Call button */}

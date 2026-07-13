@@ -23,6 +23,7 @@ import ACMaintenance from './pages/ACMaintenance';
 
 import HeaterRepair from './pages/HeaterRepair';
 import HeaterReplacement from './pages/HeaterReplacement';
+import HeaterMaintenance from './pages/HeaterMaintenance';
 
 import IAQ from './pages/IndoorAirQuality.jsx';
 import CommercialIAQ from './pages/CommercialIAQ.jsx';
@@ -97,6 +98,7 @@ function App() {
         {/* Heating Services */}
         <Route path="/heater-repair" element={<HeaterRepair />} />
         <Route path="/heater-replacement" element={<HeaterReplacement />} />
+        <Route path="/heater-maintenance" element={<HeaterMaintenance />} />
 
         {/* Indoor Air Quality */}
         <Route path="/iaq" element={<IAQ />} />

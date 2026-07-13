@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import cityscape from "../assets/cityscapes.png";
-import acReplacement from "../assets/acreplacement.jpg"; // ✅ import image
-
+import acReplacement from "../assets/acreplacement.jpg";
 
 const ACReplacement = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -12,42 +11,93 @@ const ACReplacement = () => {
   };
 
   const nextReview = () => {
-    setCurrentReview((prev) => 
+    setCurrentReview((prev) =>
       prev + 3 >= reviewsData.length ? 0 : prev + 3
     );
   };
 
   const prevReview = () => {
-    setCurrentReview((prev) => 
+    setCurrentReview((prev) =>
       prev === 0 ? Math.floor((reviewsData.length - 1) / 3) * 3 : prev - 3
     );
   };
 
   const faqData = [
+    // Original FAQs – kept as baseline
     {
       question: "How do I know if I need AC replacement instead of repair?",
-      answer: "Generally, if your AC is over 10 years old, requires frequent repairs, or isn't cooling efficiently despite repairs, replacement is often more cost-effective. We'll perform a thorough assessment to determine the best solution for your Fort Worth home."
+      answer:
+        "Generally, if your AC is over 10–12 years old, requires frequent repairs, or struggles to maintain comfort despite maintenance, replacement often saves money long‑term. We’ll give you a transparent assessment for your Fort Worth home.",
     },
     {
       question: "What size AC unit does my Fort Worth home need?",
-      answer: "Proper sizing is critical for Texas heat. Our technicians perform detailed load calculations considering your home's square footage, insulation, window placement, and other factors to recommend the perfect size unit for optimal efficiency and comfort."
+      answer:
+        "Proper sizing is critical for Texas heat. Our technicians run Manual J load calculations based on your home’s square footage, insulation, window orientation, and more – so you get a system that cools efficiently without short cycling.",
     },
     {
       question: "How long does a full AC replacement take?",
-      answer: "Most standard AC replacements are completed in 6-8 hours. More complex installations or those requiring ductwork modifications may take longer. We work efficiently to minimize disruption to your household."
+      answer:
+        "Most standard replacements are finished in 6–8 hours. Complex jobs with ductwork modifications may take a day or two. We’ll give you a clear timeline before we begin.",
     },
     {
       question: "Will a new AC system really lower my energy bills?",
-      answer: "Absolutely. Modern AC systems are significantly more efficient than those from 10+ years ago. Fort Worth homeowners typically see 20-40% reduction in cooling costs after upgrading to a new, properly sized system."
+      answer:
+        "Absolutely. Modern systems are far more efficient than those from 10+ years ago. Fort Worth homeowners typically see 20–40% lower cooling costs after upgrading to a properly sized, high‑SEER unit.",
     },
     {
       question: "Do you offer financing options for AC replacement?",
-      answer: "Yes, we offer flexible financing options with approved credit to make your new AC system affordable. Our team can discuss various payment plans that fit your budget."
+      answer:
+        "Yes. We work with multiple lenders to offer flexible financing with approved credit. Ask about low‑monthly‑payment plans that fit your budget.",
     },
     {
       question: "What brands of AC systems do you install?",
-      answer: "We install top-quality, reliable brands that are proven to perform well in the demanding North Texas climate. We'll recommend options that offer the best value, efficiency, and reliability for your specific needs."
-    }
+      answer:
+        "We install top‑tier brands engineered for North Texas conditions, including Trane, Carrier, Lennox, and others. We’ll recommend the best value for your specific needs.",
+    },
+    // ADDED HIGH‑VALUE FAQS for AI Search & Local SEO
+    {
+      question:
+        "What is the average cost of an AC replacement in Fort Worth, TX?",
+      answer:
+        "Costs vary by system size, SEER rating, and installation complexity. In Fort Worth, a full AC replacement typically ranges from $5,000 to $12,000. We provide upfront, no‑surprise pricing and a free estimate tailored to your home.",
+    },
+    {
+      question:
+        "What SEER rating should I look for in a new air conditioner for Texas heat?",
+      answer:
+        "For Fort Worth’s long, hot summers, we recommend a minimum of 16 SEER. Higher SEER ratings (up to 24+) deliver greater energy savings and better humidity control – a smart investment that pays for itself over the system’s life.",
+    },
+    {
+      question: "Do you pull permits and handle inspections?",
+      answer:
+        "Yes. Every replacement we perform complies with local Fort Worth and Tarrant County codes. We handle the permit process and schedule required inspections, so your installation is safe, legal, and worry‑free.",
+    },
+    {
+      question: "Can I replace just the outdoor condenser unit?",
+      answer:
+        "We strongly discourage this. Mismatched indoor and outdoor components reduce efficiency, shorten lifespan, and can void warranties. A complete system replacement ensures peak performance and long‑term reliability.",
+    },
+    {
+      question: "Will a new AC increase my home’s resale value?",
+      answer:
+        "Yes – especially in Texas. A modern, energy‑efficient HVAC system is a key selling point. Many Fort Worth buyers prioritize updated cooling, and an upgraded system can help your home sell faster and at a higher price.",
+    },
+    {
+      question: "Do you offer free estimates for AC replacement?",
+      answer:
+        "Yes. We offer a no‑obligation, in‑home assessment. Our expert will evaluate your current system, discuss your comfort goals, and present several options with transparent pricing.",
+    },
+    {
+      question:
+        "How do I choose the right AC installer in Fort Worth?",
+      answer:
+        "Look for NATE certification, local experience, strong reviews, and a company that performs load calculations – not just a size swap. Fort Worth Heat and Air checks all those boxes, plus we back every install with a satisfaction guarantee.",
+    },
+    {
+      question: "What warranties come with a new AC system?",
+      answer:
+        "You’ll receive a manufacturer’s warranty on parts (usually 10 years) and our workmanship warranty on the installation. We also offer extended labor protection plans for extra peace of mind.",
+    },
   ];
 
   const reviewsData = [
@@ -55,62 +105,66 @@ const ACReplacement = () => {
       name: "Robert D.",
       location: "Fort Worth, TX",
       rating: 5,
-      review: "The team at Fort Worth Heat and Air replaced my aging AC unit with a new efficient system. They showed up on time, explained all my options, and completed the installation professionally. My energy bills have dropped significantly!",
-      date: "August 2025"
+      review:
+        "The team replaced my aging AC unit with a new efficient system. They showed up on time, explained all my options, and completed the installation professionally. My energy bills have dropped significantly!",
+      date: "August 2025",
     },
     {
       name: "Jason M.",
       location: "Arlington, TX",
       rating: 5,
-      review: "After getting multiple quotes, I chose Fort Worth Heat and Air for my AC replacement. Their knowledge of what works best in our Texas heat was impressive. The installation was smooth and my home has never been more comfortable.",
-      date: "July 2024"
+      review:
+        "After getting multiple quotes, I chose Fort Worth Heat and Air for my AC replacement. Their knowledge of what works best in Texas heat was impressive. The installation was smooth and my home has never been more comfortable.",
+      date: "July 2024",
     },
     {
       name: "Debbie N.",
       location: "Fort Worth, TX",
       rating: 5,
-      review: "We're very pleased with our new AC system installation. The technicians were professional, clean, and efficient. They took the time to explain how to use our new smart thermostat too. Highly recommend!",
-      date: "May 2024"
+      review:
+        "We’re very pleased with our new AC system installation. The technicians were professional, clean, and efficient. They took the time to explain how to use our new smart thermostat too. Highly recommend!",
+      date: "May 2024",
     },
     {
       name: "Bryan W.",
       location: "Fort Worth, TX",
       rating: 5,
-      review: "Worked with Canon on a complete AC replacement. Not only could they come help me out within a few hours, he was great to work with & explained everything. Everything was completed by that same afternoon!",
-      date: "April 2025"
+      review:
+        "Canon came out within hours, diagnosed the problem, and we scheduled a complete replacement. He explained everything clearly and had the new unit running by that same afternoon. Couldn’t ask for better service.",
+      date: "April 2025",
     },
     {
       name: "Terry W.",
       location: "Fort Worth, TX",
       rating: 5,
-      review: "Very impressed with F.W. Heat and Air. They arrived on time, diagnosed that my old unit needed replacement, and we scheduled the installation. The owner came and checked out the work. Only positive words for their work.",
-      date: "June 2025"
-    }
+      review:
+        "Very impressed with Fort Worth Heat and Air. They arrived on time, laid out all the options, and the owner even came to inspect the final work. Only positive words for their replacement work.",
+      date: "June 2025",
+    },
   ];
 
-  // Function to render star ratings
   const renderStars = (rating) => {
-    return Array(5).fill(0).map((_, i) => (
-      <svg 
-        key={i} 
-        className={`w-4 h-4 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`} 
-        fill="currentColor" 
-        viewBox="0 0 20 20"
-      >
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-      </svg>
-    ));
+    return Array(5)
+      .fill(0)
+      .map((_, i) => (
+        <svg
+          key={i}
+          className={`w-4 h-4 ${i < rating ? "text-yellow-400" : "text-gray-300"}`}
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ));
   };
 
   return (
     <div className="bg-white">
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="relative bg-gradient-to-r from-[#003049] to-[#00283e] text-white">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-6"
-           style={{
-            backgroundImage: `url(${acReplacement})`,
-          }}
+          style={{ backgroundImage: `url(${acReplacement})` }}
         />
         <div className="absolute inset-0 bg-[#001f33] opacity-70" />
         <div className="relative px-4 sm:px-8 lg:px-16 py-16 lg:py-24">
@@ -124,10 +178,9 @@ const ACReplacement = () => {
               Professional AC Replacement Services in Fort Worth
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              For professional AC replacement services in Fort Worth, TX, call North Texas's most trusted HVAC company: Fort Worth Heat and Air.
+              Expert AC replacement that keeps your Fort Worth home cool and efficient all summer. Trust North Texas’s top‑rated HVAC company.
             </p>
 
-            {/* FEATURES GRID */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mt-10">
               <div className="flex items-center gap-4 p-4 bg-[#003049] bg-opacity-50 rounded-lg">
                 <div className="bg-[#00283e] p-3 rounded-full">
@@ -137,25 +190,22 @@ const ACReplacement = () => {
                 </div>
                 <span className="font-semibold">80+ Years of Experience</span>
               </div>
-              
               <div className="flex items-center gap-4 p-4 bg-[#003049] bg-opacity-50 rounded-lg">
                 <div className="bg-[#00283e] p-3 rounded-full">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <span className="font-semibold">Certified Technicians</span>
+                <span className="font-semibold">NATE‑Certified Technicians</span>
               </div>
-              
               <div className="flex items-center gap-4 p-4 bg-[#003049] bg-opacity-50 rounded-lg">
                 <div className="bg-[#00283e] p-3 rounded-full">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 </div>
-                <span className="font-semibold">24/7 Emergency Support</span>
+                <span className="font-semibold">Free In‑Home Estimates</span>
               </div>
-              
               <div className="flex items-center gap-4 p-4 bg-[#003049] bg-opacity-50 rounded-lg">
                 <div className="bg-[#00283e] p-3 rounded-full">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -165,9 +215,13 @@ const ACReplacement = () => {
                 <span className="font-semibold">A+ BBB Rating</span>
               </div>
             </div>
-            
+
             <div className="mt-10">
-              <button className="bg-[#780000] hover:bg-[#5a0000] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+              <button
+                type="button"
+                onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+                className="bg-[#780000] hover:bg-[#5a0000] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105"
+              >
                 Schedule Replacement Now
               </button>
             </div>
@@ -179,98 +233,103 @@ const ACReplacement = () => {
       <section className="py-16 bg-gray-50 relative">
         <div className="relative px-4 sm:px-8 lg:px-16">
           <div className="flex flex-col lg:flex-row gap-10 items-start">
-            {/* LEFT COLUMN: Content */}
+            {/* LEFT COLUMN – Content */}
             <div className="lg:w-[70%]">
               <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
                 Expert AC Replacement Services in Fort Worth, TX
               </h2>
               <p className="mt-4 text-lg text-gray-700">
-                So your AC is ready for replacement – now you need to find the right contractor. You can stop your searching right here. Fort Worth Heat and Air is the BEST AC replacement team in North Texas. How do we know? We're recognized by both customers and industry organizations for our superior air conditioning services.
+                When it’s time to upgrade, trust the team that knows Fort Worth’s unique cooling demands. We’ll help you choose a system that fits your home, budget, and comfort needs.
               </p>
 
               <div className="bg-white p-6 rounded-xl shadow-md mt-8">
-                <h3 className="text-2xl font-semibold text-[#003049] mb-4">Our Top Rated AC Replacement Service</h3>
+                <h3 className="text-2xl font-semibold text-[#003049] mb-4">Replacement You Can Trust</h3>
                 <p className="text-gray-700">
-                  Investing in a new air conditioner can be nerve-wracking. Your air conditioner will serve your home for the next ten years or longer. At Fort Worth Heat and Air, our goal is to educate our customers. We want to make sure you feel completely confident in choosing the perfect air conditioner for your home.
+                  From the first measurement to the final inspection, we take care of every detail – load calculations, brand recommendations, permits, and a clean installation.
                 </p>
               </div>
 
               <div className="my-8">
                 <div className="p-8 bg-gradient-to-r from-[#003049] to-[#00283e] text-white rounded-xl shadow-xl">
-                  <h3 className="text-2xl font-bold mb-4">Schedule Your AC Replacement Today!</h3>
-                  <p className="mb-6">Beat the heat with a new efficient system. Schedule your AC replacement now or call us at <span className="font-semibold">(817) 800-0340</span>.</p>
-                  <button className="bg-white text-[#003049] font-semibold py-3 px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors">
-                    Book Replacement Service
+                  <h3 className="text-2xl font-bold mb-4">Get a Free Replacement Estimate</h3>
+                  <p className="mb-6">
+                    Call <span className="font-semibold">(817) 800-0340</span> or schedule online. We’ll visit your Fort Worth home, listen to your needs, and provide a detailed, no‑pressure quote.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+                    className="bg-white text-[#003049] font-semibold py-3 px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors"
+                  >
+                    Book Free Estimate
                   </button>
                 </div>
                 <div className="h-2 w-full bg-[#780000] rounded-full mt-8"></div>
               </div>
 
               <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mt-12">
-                Signs That You Need To Replace Your AC System
+                Signs It’s Time to Replace Your AC
               </h2>
               <p className="mt-4 text-lg text-gray-700">
-                Generally speaking, if your air conditioner is older than 10 years old, you should probably begin considering getting it replaced. However, with routine maintenance your system can last longer than that. But, there are some other signs & symptoms that your unit is on a decline and needs to be replaced with a new air conditioner.
+                Beyond age, certain symptoms tell you a replacement is the smarter move. Here’s what Fort Worth homeowners should watch for:
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <div className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-[#003049]">
                   <h4 className="text-xl font-semibold text-gray-800 mb-2">Insufficient Airflow</h4>
-                  <p className="text-gray-700">Weak airflow often indicates compressor problems or ductwork issues that may warrant replacement.</p>
+                  <p className="text-gray-700">Weak airflow often points to a failing compressor or duct issues – repair might not be enough.</p>
                 </div>
                 <div className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-[#003049]">
                   <h4 className="text-xl font-semibold text-gray-800 mb-2">Lack of Cool Air</h4>
-                  <p className="text-gray-700">If your AC is running but not cooling properly, it could be a sign of refrigerant leaks or compressor failure.</p>
+                  <p className="text-gray-700">If your AC runs but can’t keep up, it could be low refrigerant or a dying compressor.</p>
                 </div>
                 <div className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-[#003049]">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Strange Sounds</h4>
-                  <p className="text-gray-700">Grinding, squealing, or rattling noises often indicate serious mechanical problems.</p>
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Strange Noises</h4>
+                  <p className="text-gray-700">Grinding, squealing, or banging often means internal damage that’s not worth repairing.</p>
                 </div>
                 <div className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-[#003049]">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-2">High Energy Bills</h4>
-                  <p className="text-gray-700">Rising cooling costs often mean your system is losing efficiency and may need replacement.</p>
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Rising Energy Bills</h4>
+                  <p className="text-gray-700">An aging system loses efficiency. A new high‑SEER unit can reverse that trend.</p>
                 </div>
               </div>
 
               <h3 className="mt-12 text-2xl font-semibold text-gray-900">
-                Benefits of Replacing Your Air Conditioner
+                What a New AC Means for Your Home
               </h3>
-              
               <div className="mt-6 bg-white rounded-xl shadow-md overflow-hidden">
                 <div className="p-6 border-b">
                   <h4 className="text-xl font-semibold text-[#003049] flex items-center">
                     <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Reduced Energy Costs
+                    Lower Cooling Costs
                   </h4>
-                  <p className="mt-2 text-gray-700">New AC systems are significantly more efficient, with many Fort Worth homeowners seeing 20-40% reduction in cooling costs.</p>
+                  <p className="mt-2 text-gray-700">Modern efficiency can cut your summer electric bills by 20–40%, year after year.</p>
                 </div>
                 <div className="p-6 border-b">
                   <h4 className="text-xl font-semibold text-[#003049] flex items-center">
                     <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Improved Home Comfort
+                    Even, Consistent Comfort
                   </h4>
-                  <p className="mt-2 text-gray-700">Modern systems provide more consistent temperatures and better humidity control throughout your home.</p>
+                  <p className="mt-2 text-gray-700">No more hot and cold spots – advanced humidity control keeps every room just right.</p>
                 </div>
                 <div className="p-6">
                   <h4 className="text-xl font-semibold text-[#003049] flex items-center">
                     <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Enhanced Home Value
+                    Increased Home Value
                   </h4>
-                  <p className="mt-2 text-gray-700">A new, efficient AC system increases your property value and appeal to potential buyers.</p>
+                  <p className="mt-2 text-gray-700">A new AC is a strong selling point in the Fort Worth market and can boost your property’s appeal.</p>
                 </div>
               </div>
 
               <h3 className="mt-12 text-2xl font-semibold text-gray-900">
-                What's Included in an AC Replacement?
+                What’s Included in a Professional AC Replacement?
               </h3>
               <p className="mt-4 text-gray-700">
-                Understanding AC components helps you make informed decisions about your replacement:
+                We don’t just swap boxes. Here’s everything we take care of:
               </p>
               <div className="grid grid-cols-1 gap-3 mt-4">
                 <div className="flex items-start text-gray-700 p-3 bg-blue-50 rounded-lg">
@@ -278,7 +337,7 @@ const ACReplacement = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <span className="font-semibold">Evaporator Coil</span> - The indoor component where refrigerant absorbs heat from your home's air
+                    <span className="font-semibold">Manual J Load Calculation</span> – Ensures the system is perfectly sized for your home.
                   </div>
                 </div>
                 <div className="flex items-start text-gray-700 p-3 bg-blue-50 rounded-lg">
@@ -286,7 +345,7 @@ const ACReplacement = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <span className="font-semibold">Condensing Unit</span> - The outdoor unit that releases heat from your home to the outside air
+                    <span className="font-semibold">Equipment Removal</span> – We haul away your old unit and clean the workspace.
                   </div>
                 </div>
                 <div className="flex items-start text-gray-700 p-3 bg-blue-50 rounded-lg">
@@ -294,7 +353,7 @@ const ACReplacement = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <span className="font-semibold">Refrigerant Lines</span> - Copper piping that carries refrigerant between indoor and outdoor units
+                    <span className="font-semibold">New Refrigerant Lines & Wiring</span> – Where needed, to meet current code.
                   </div>
                 </div>
                 <div className="flex items-start text-gray-700 p-3 bg-blue-50 rounded-lg">
@@ -302,7 +361,15 @@ const ACReplacement = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <span className="font-semibold">Thermostat</span> - The control system that regulates your home's temperature
+                    <span className="font-semibold">Smart Thermostat Setup</span> – Programmable or Wi‑Fi thermostats for modern control.
+                  </div>
+                </div>
+                <div className="flex items-start text-gray-700 p-3 bg-blue-50 rounded-lg">
+                  <svg className="w-5 h-5 mr-2 text-[#003049] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <div>
+                    <span className="font-semibold">Permits & Inspection</span> – We handle all paperwork with Fort Worth and Tarrant County.
                   </div>
                 </div>
               </div>
@@ -311,10 +378,23 @@ const ACReplacement = () => {
                 Our AC Replacement Service Areas in North Texas
               </h3>
               <p className="mt-4 text-gray-700">
-                Fort Worth Heat and Air proudly provides professional AC replacement services throughout the region, including:
+                Fort Worth Heat and Air proudly installs new AC systems throughout:
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
-                {["Fort Worth", "Arlington", "Grand Prairie", "Mansfield", "North Richland Hills", "Euless", "Bedford", "Grapevine", "Haltom City", "Burleson", "Benbrook", "Saginaw"].map((city) => (
+                {[
+                  "Fort Worth",
+                  "Arlington",
+                  "Grand Prairie",
+                  "Mansfield",
+                  "North Richland Hills",
+                  "Euless",
+                  "Bedford",
+                  "Grapevine",
+                  "Haltom City",
+                  "Burleson",
+                  "Benbrook",
+                  "Saginaw",
+                ].map((city) => (
                   <div key={city} className="flex items-center text-gray-700">
                     <svg className="w-4 h-4 mr-2 text-[#003049]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -326,21 +406,22 @@ const ACReplacement = () => {
               </div>
 
               <div className="mt-8 p-6 bg-gradient-to-r from-[#780000] to-[#5a0000] text-white text-center rounded-xl shadow-lg">
-                <h3 className="text-2xl font-bold mb-2">
-                  Flexible Financing Options Available
-                </h3>
+                <h3 className="text-2xl font-bold mb-2">Flexible Financing Options Available</h3>
                 <p className="mb-4">
-                  We offer competitive financing options to make your new AC system affordable. With approved credit, you can get a new energy-efficient cooling system now while paying over time!
+                  Get a new energy‑efficient AC now and pay over time. Approved credit can open doors to low monthly payments – ask us how!
                 </p>
-                <a href="tel:8178000340" className="inline-block bg-white text-[#780000] font-semibold py-2 px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors">
-                  CALL FOR FINANCING INFO: (817) 800-0340
+                <a
+                  href="tel:8178000340"
+                  className="inline-block bg-white text-[#780000] font-semibold py-2 px-6 rounded-md shadow-md hover:bg-gray-100 transition-colors"
+                >
+                  CALL FOR FINANCING: (817) 800-0340
                 </a>
               </div>
             </div>
 
-            {/* RIGHT COLUMN: Form */}
+            {/* RIGHT COLUMN – New CTA Panel (no form) */}
             <div className="lg:w-[30%] lg:sticky lg:top-6 self-start">
-              <ServiceForm />
+              <RightCTAPanel />
             </div>
           </div>
         </div>
@@ -353,10 +434,10 @@ const ACReplacement = () => {
             Trusted by Fort Worth Homeowners
           </h2>
           <p className="text-blue-200 text-center mb-12 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our AC Replacement customers have to say:
+            Don’t just take our word for it – hear from our AC replacement customers.
           </p>
-          
-          {/* Mobile view - stacked vertically */}
+
+          {/* Mobile */}
           <div className="lg:hidden space-y-6 max-w-2xl mx-auto">
             {reviewsData.map((review, index) => (
               <div key={index} className="bg-white rounded-lg p-6 shadow-md">
@@ -367,21 +448,18 @@ const ACReplacement = () => {
                   </div>
                   <div className="text-xs text-gray-500">{review.date}</div>
                 </div>
-                <div className="flex mb-3">
-                  {renderStars(review.rating)}
-                </div>
+                <div className="flex mb-3">{renderStars(review.rating)}</div>
                 <p className="text-sm text-gray-700 italic">"{review.review}"</p>
               </div>
             ))}
           </div>
-          
-          {/* Desktop view - carousel */}
+
+          {/* Desktop Carousel */}
           <div className="hidden lg:block relative max-w-6xl mx-auto">
-            {/* Carousel container */}
             <div className="overflow-hidden">
-              <div 
+              <div
                 className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentReview * (100/3)}%)` }}
+                style={{ transform: `translateX(-${currentReview * (100 / 3)}%)` }}
               >
                 {reviewsData.map((review, index) => (
                   <div key={index} className="w-1/3 flex-shrink-0 px-4">
@@ -393,54 +471,54 @@ const ACReplacement = () => {
                         </div>
                         <div className="text-xs text-gray-500">{review.date}</div>
                       </div>
-                      <div className="flex mb-3">
-                        {renderStars(review.rating)}
-                      </div>
+                      <div className="flex mb-3">{renderStars(review.rating)}</div>
                       <p className="text-sm text-gray-700 italic">"{review.review}"</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            
-            {/* Navigation buttons */}
-            <button 
+            <button
               onClick={prevReview}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gray-100"
               aria-label="Previous review"
             >
               <svg className="w-5 h-5 text-[#003049]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            
-            <button 
+            <button
               onClick={nextReview}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gray-100"
               aria-label="Next review"
             >
               <svg className="w-5 h-5 text-[#003049]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7-7" />
               </svg>
             </button>
-            
-            {/* Indicator dots */}
             <div className="flex justify-center mt-6 space-x-2">
-              {Array(Math.ceil(reviewsData.length / 3)).fill(0).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentReview(index * 3)}
-                  className={`w-3 h-3 rounded-full ${Math.floor(currentReview / 3) === index ? 'bg-white' : 'bg-[#00283e]'}`}
-                  aria-label={`Go to review group ${index + 1}`}
-                />
-              ))}
+              {Array(Math.ceil(reviewsData.length / 3))
+                .fill(0)
+                .map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentReview(index * 3)}
+                    className={`w-3 h-3 rounded-full ${
+                      Math.floor(currentReview / 3) === index ? "bg-white" : "bg-[#00283e]"
+                    }`}
+                  />
+                ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ SECTION - REVAMPED */}
-      <section className="w-full bg-white py-16 relative">
+      {/* FAQ SECTION – Structured for AI & Local SEO */}
+      <section
+        className="w-full bg-white py-16 relative"
+        itemScope
+        itemType="https://schema.org/FAQPage"
+      >
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#003049] to-[#780000] opacity-30"></div>
         <div className="absolute top-10 right-10 opacity-5">
           <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -454,26 +532,36 @@ const ACReplacement = () => {
               <svg className="w-5 h-5 mr-2 text-[#003049]" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
               </svg>
-              <span className="text-[#003049] font-medium">Frequently Asked Questions</span>
+              <span className="text-[#003049] font-medium">AC Replacement FAQ</span>
             </div>
             <h2 className="text-3xl font-bold text-[#003049] sm:text-4xl mb-4">
-              AC Replacement Questions Answered
+              Your AC Replacement Questions, Answered
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We've compiled answers to the most common questions about air conditioner replacement in the Fort Worth area.
+              From cost to installation, we cover everything Fort Worth homeowners need to know.
             </p>
           </div>
-          
+
           <div className="space-y-6">
             {faqData.map((faq, index) => (
-              <div key={index} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md">
+              <div
+                key={index}
+                className="rounded-xl overflow-hidden border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md"
+                itemScope
+                itemProp="mainEntity"
+                itemType="https://schema.org/Question"
+              >
                 <button
                   className="w-full px-6 py-5 text-left text-white font-semibold text-lg flex justify-between items-center focus:outline-none bg-gradient-to-r from-[#003049] to-[#00283e] hover:from-[#00283e] hover:to-[#001f33] transition-colors"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <span className="pr-4">{faq.question}</span>
+                  <span className="pr-4" itemProp="name">
+                    {faq.question}
+                  </span>
                   <svg
-                    className={`w-5 h-5 transform transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`}
+                    className={`w-5 h-5 transform transition-transform duration-300 flex-shrink-0 ${
+                      openIndex === index ? "rotate-180" : ""
+                    }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -481,7 +569,14 @@ const ACReplacement = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className={`px-6 pb-5 pt-4 text-gray-700 transition-all duration-300 ease-in-out bg-blue-50 ${openIndex === index ? 'block' : 'hidden'}`}>
+                <div
+                  className={`px-6 pb-5 pt-4 text-gray-700 transition-all duration-300 ease-in-out bg-blue-50 ${
+                    openIndex === index ? "block" : "hidden"
+                  }`}
+                  itemScope
+                  itemProp="acceptedAnswer"
+                  itemType="https://schema.org/Answer"
+                >
                   <div className="flex">
                     <div className="flex-shrink-0 mr-4">
                       <div className="w-8 h-8 rounded-full bg-[#003049] flex items-center justify-center">
@@ -490,13 +585,13 @@ const ACReplacement = () => {
                         </svg>
                       </div>
                     </div>
-                    <p className="text-gray-700">{faq.answer}</p>
+                    <p itemProp="text">{faq.answer}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          
+
           <div className="mt-12 text-center bg-blue-50 p-8 rounded-xl border border-blue-100">
             <div className="inline-flex items-center justify-center bg-white px-4 py-2 rounded-full mb-4 shadow-sm">
               <svg className="w-5 h-5 mr-2 text-[#780000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -504,40 +599,48 @@ const ACReplacement = () => {
               </svg>
               <span className="text-[#003049] font-medium">Still have questions?</span>
             </div>
-            <p className="text-gray-700 mb-6">Our AC experts are ready to answer all your replacement questions</p>
-            <a href="tel:8178000340" className="inline-block bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-colors transform hover:scale-105">
-              Call Our Experts: (817) 800-0340
-            </a>
-          </div>
-        </div>
-      </section>
-      
-      {/* CTA SECTION */}
-      <section className="w-full bg-gradient-to-r from-[#003049] to-[#00283e] py-16 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
-        </div>
-        <div className="relative px-4 sm:px-8 lg:px-16 mx-auto max-w-5xl text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl mb-6">
-            Ready to Upgrade Your AC System?
-          </h2>
-          <p className="text-blue-100 text-xl mb-8 max-w-3xl mx-auto">
-            Don't wait for the next heatwave to discover your AC isn't ready. Schedule your replacement service today and enjoy peace of mind all season long.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#003049] font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-105">
-              Schedule Replacement Online
-            </button>
-            <a href="tel:8178000340" className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-white hover:text-[#003049] transition-colors transform hover:scale-105">
-              Or Call: (817) 800-0340
+            <p className="text-gray-700 mb-6">Call us for a no‑obligation consultation.</p>
+            <a
+              href="tel:8178000340"
+              className="inline-block bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-colors transform hover:scale-105"
+            >
+              Call: (817) 800-0340
             </a>
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA SECTION */}
+      {/* CTA SECTION */}
+      <section className="w-full bg-gradient-to-r from-[#003049] to-[#00283e] py-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} />
+        </div>
+        <div className="relative px-4 sm:px-8 lg:px-16 mx-auto max-w-5xl text-center">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl mb-6">
+            Ready to Upgrade Your AC?
+          </h2>
+          <p className="text-blue-100 text-xl mb-8 max-w-3xl mx-auto">
+            Don’t wait until it breaks. Schedule your free replacement estimate today and stay cool all summer.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              type="button"
+              onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+              className="bg-white text-[#003049] font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-105"
+            >
+              Schedule Online
+            </button>
+            <a
+              href="tel:8178000340"
+              className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-white hover:text-[#003049] transition-colors transform hover:scale-105"
+            >
+              Call: (817) 800-0340
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
       <section className="w-full bg-white py-16 relative">
         <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-[#003049] to-transparent opacity-20"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-50 rounded-full -mr-32 -mb-32 opacity-50"></div>
@@ -546,19 +649,18 @@ const ACReplacement = () => {
             <svg className="w-5 h-5 mr-2 text-[#003049]" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
             </svg>
-            <span className="text-[#003049] font-medium">Limited Time Offer</span>
+            <span className="text-[#003049] font-medium">Free In‑Home Estimate</span>
           </div>
-          
           <h2 className="text-3xl font-bold text-[#003049] sm:text-4xl mb-6">
-            We Are Here For You
+            We’re Here for Your Fort Worth Home
           </h2>
           <p className="text-xl mb-3 max-w-3xl mx-auto text-gray-800 font-semibold">
             Schedule Your AC Replacement Today
           </p>
           <p className="text-lg mb-10 max-w-2xl mx-auto text-gray-600">
-            We aren't comfortable until you are! Our team of certified technicians is ready to install your new AC system to keep you cool through the hottest Texas summers.
+            Our certified team will help you pick the perfect system and have it installed with minimal disruption. Comfort is just a call or click away.
           </p>
-          
+
           <div className="bg-blue-50 p-6 rounded-xl mb-10 border border-blue-100">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
               <div className="flex items-center">
@@ -568,13 +670,13 @@ const ACReplacement = () => {
                   </svg>
                 </div>
                 <div className="text-left">
-                  <p className="text-sm text-gray-600">Call us directly at</p>
-                  <a href="tel:8178000340" className="text-xl font-bold text-[#003049] hover:text-[#780000] transition-colors">(817) 800-0340</a>
+                  <p className="text-sm text-gray-600">Call us</p>
+                  <a href="tel:8178000340" className="text-xl font-bold text-[#003049] hover:text-[#780000] transition-colors">
+                    (817) 800-0340
+                  </a>
                 </div>
               </div>
-              
               <div className="hidden md:block h-12 w-px bg-blue-200"></div>
-              
               <div className="flex items-center">
                 <div className="bg-white p-3 rounded-full shadow-md mr-4">
                   <svg className="w-6 h-6 text-[#780000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -583,20 +685,27 @@ const ACReplacement = () => {
                 </div>
                 <div className="text-left">
                   <p className="text-sm text-gray-600">Schedule online</p>
-                  <p className="text-md font-medium text-[#003049]">24/7 Availability</p>
+                  <p className="text-md font-medium text-[#003049]">Free estimate</p>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center">
+            <button
+              type="button"
+              onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+              className="bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center"
+            >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               Book Online Now
             </button>
-            <a href="tel:8178000340" className="bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center">
+            <a
+              href="tel:8178000340"
+              className="bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105 flex items-center justify-center"
+            >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
@@ -605,131 +714,55 @@ const ACReplacement = () => {
           </div>
         </div>
       </section>
-
-      {/* CITYSCAPE WITH GRADIENT BLEND */}
-      <div className="w-full relative overflow-hidden">
-        {/* Image container */}
-        <div className="relative">
-          <img 
-            src={cityscape} 
-            alt="Fort Worth cityscape" 
-            className="w-full h-auto object-cover"
-            style={{ minHeight: '150px', maxHeight: '400px' }}
-          />
-          
-          {/* Gradient overlay at bottom to blend with footer */}
-          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#003049] to-transparent"></div>
-        </div>
-      </div>
+      
     </div>
   );
 };
 
-/** Service Form */
-const ServiceForm = () => {
-  const handleSubmit = (e) => e.preventDefault();
-
+/** RIGHT COLUMN CTA PANEL – Clean, conversion-focused */
+const RightCTAPanel = () => {
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 w-full"
-    >
-      <h3 className="text-2xl font-bold text-[#003049] mb-6 text-center">Request Replacement Quote</h3>
-
-      <div className="mb-5">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Full Name <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="text"
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
-          placeholder="Your name"
-        />
-      </div>
-
-      <div className="mb-5">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Email Address <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="email"
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
-          placeholder="Your email"
-        />
-      </div>
-
-      <div className="mb-5">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Phone Number <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="tel"
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
-          placeholder="(817) 000-0000"
-        />
-      </div>
-
-      <div className="mb-5">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          What type of service do you need? <span className="text-red-500">*</span>
-        </label>
-        <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]">
-          <option value="">Select service</option>
-          <option value="ac-replacement">AC Replacement</option>
-          <option value="ac-installation">New AC Installation</option>
-          <option value="ac-repair">AC Repair</option>
-          <option value="maintenance">Maintenance</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-
-      <div className="mb-5">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          How Can We Help? <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          rows={4}
-          maxLength={600}
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-[#003049]"
-          placeholder="Tell us about your AC replacement needs"
-        />
-        <p className="text-xs text-gray-500 mt-1">0 of 600 max characters</p>
-      </div>
-
-      <div className="mb-6">
-        <div className="flex items-start">
-          <div className="flex items-center h-5">
-            <input
-              id="consent"
-              name="consent"
-              type="checkbox"
-              className="focus:ring-[#003049] h-4 w-4 text-[#003049] border-gray-300 rounded"
-              required
-            />
-          </div>
-          <div className="ml-3 text-sm">
-            <label htmlFor="consent" className="text-gray-700">
-              I consent to receive communications from Fort Worth Heat and Air about my service request and promotional offers. Message and data rates may apply.
-            </label>
-          </div>
+    <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 w-full">
+      <div className="text-center">
+        {/* Icon */}
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-full mb-4">
+          <svg className="w-8 h-8 text-[#003049]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
         </div>
-      </div>
+        <h3 className="text-2xl font-bold text-[#003049] mb-2">Ready for a New AC?</h3>
+        <p className="text-gray-600 mb-6">
+          Free in‑home estimate. We’ll get back to you ASAP with options tailored to your Fort Worth home.
+        </p>
 
-      <button
-        type="submit"
-        className="w-full bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#003049] focus:ring-offset-2"
-      >
-        Request Replacement Quote
-      </button>
-      
-      <p className="text-xs text-gray-500 mt-4 text-center">
-        We respect your privacy. Your information will never be shared with third parties.
-      </p>
-    </form>
+        {/* Schedule Button */}
+        <button
+          type="button"
+          onClick={() => window.HCPWidget && window.HCPWidget.openModal()}
+          className="w-full bg-[#003049] hover:bg-[#00283e] text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-colors mb-3 flex items-center justify-center"
+        >
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          Schedule Free Estimate
+        </button>
+
+        {/* Call Button */}
+        <a
+          href="tel:8178000340"
+          className="w-full bg-[#780000] hover:bg-[#5a0000] text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-colors flex items-center justify-center"
+        >
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          Call (817) 800-0340
+        </a>
+
+        <p className="mt-4 text-xs text-gray-500">
+          Same‑day & next‑day appointments available.
+        </p>
+      </div>
+    </div>
   );
 };
 
