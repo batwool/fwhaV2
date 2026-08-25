@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "/src/assets/logo5.png";
+import logo from "/src/assets/logo8.png";
 
 const Footer = () => {
   const serviceAreas = [
