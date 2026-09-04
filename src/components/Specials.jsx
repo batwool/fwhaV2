@@ -10,8 +10,8 @@ const BeatTheHeatAugustSpecial = () => {
   });
 
   useEffect(() => {
-    // Target: August 31, 2026 at 11:59:59 PM CDT (UTC-5) → next day 04:59:59 UTC
-    const targetDate = new Date('2026-09-01T04:59:59Z');
+    // Target: September 30, 2026 at 11:59:59 PM CDT (UTC-5) → next day 04:59:59 UTC
+    const targetDate = new Date('2026-10-01T04:59:59Z');
 
     const countdown = setInterval(() => {
       const now = new Date();
@@ -57,7 +57,7 @@ const BeatTheHeatAugustSpecial = () => {
           background: 'linear-gradient(145deg, #fff5e6 0%, #ffe6cc 50%, #ffd9b3 100%)'
         }}
       >
-        {/* Summer decorative elements */}
+        {/* Summer decorative elements – kept for warmth */}
         <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-[#ffb84d] via-[#ff9f4a] to-[#ff6b35]"></div>
         <div className="absolute top-5 left-2 sm:top-10 sm:left-5 opacity-20 sm:opacity-30 animate-pulse">
           <div className="text-3xl sm:text-5xl">☀️</div>
@@ -78,41 +78,41 @@ const BeatTheHeatAugustSpecial = () => {
         </div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 w-full relative z-10">
-          {/* Header – August Special */}
+          {/* Header – now Fall Special */}
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-              <span className="text-2xl sm:text-3xl md:text-4xl">☀️</span>
+              <span className="text-2xl sm:text-3xl md:text-4xl">🍂</span>
               <span className="inline-block bg-[#ffd9b3] text-[#c44536] px-3 sm:px-5 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider shadow-sm">
-                August Special – $189 Deal
+                Fall Special – $189 Deal
               </span>
-              <span className="text-2xl sm:text-3xl md:text-4xl">🌊</span>
+              <span className="text-2xl sm:text-3xl md:text-4xl">🍁</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#c44536] mb-2 sm:mb-3 uppercase tracking-wide drop-shadow-sm">
-              DON'T LET IT DIE
+              DON'T FALL BEHIND
             </h2>
 
             <div className="relative inline-block mx-auto mt-1 sm:mt-2">
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-[#2c5f2d] uppercase tracking-wider relative z-10 px-2 sm:px-4 py-1 sm:py-2 leading-tight bg-white/30 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-sm">
-                AUGUST <span className="inline-block text-[#c44536]">SURVIVAL</span>
+                FALL <span className="inline-block text-[#c44536]">SURVIVAL</span>
               </h1>
-              <div className="absolute -top-2 -right-1 sm:-top-3 sm:-right-2 text-xl sm:text-2xl md:text-3xl rotate-12">🔥</div>
-              <div className="absolute -bottom-2 -left-1 sm:-bottom-3 sm:-left-2 text-xl sm:text-2xl md:text-3xl -rotate-12">❄️</div>
+              <div className="absolute -top-2 -right-1 sm:-top-3 sm:-right-2 text-xl sm:text-2xl md:text-3xl rotate-12">🍂</div>
+              <div className="absolute -bottom-2 -left-1 sm:-bottom-3 sm:-left-2 text-xl sm:text-2xl md:text-3xl -rotate-12">🍁</div>
             </div>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#2c5f2d] max-w-2xl mx-auto mt-3 sm:mt-5 font-semibold bg-white/40 inline-block px-3 sm:px-5 py-1 sm:py-1.5 rounded-full backdrop-blur-sm shadow-sm">
-              AUGUST EXCLUSIVE: $189 AC TUNE-UP & SYSTEM CHECK
+              FALL EXCLUSIVE: $189 AC TUNE-UP & SYSTEM CHECK
             </p>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#c44536] mt-2 sm:mt-3 font-medium">
-              Keep your system alive through the dog days of August with our limited‑time $189 deal!
+              Don't fall into the Fall trap – keep your system running smoothly with our limited‑time $189 deal!
             </p>
             <div className="w-16 sm:w-24 h-1 mx-auto mt-4 sm:mt-5 rounded-full" style={{ background: 'linear-gradient(to right, #ffb84d, #ff9f4a, #ff6b35)' }}></div>
           </div>
 
-          {/* Countdown Timer */}
+          {/* Countdown Timer – updated label and deadline */}
           <div className="flex justify-center mb-10 sm:mb-14 md:mb-20">
             <div className="bg-white/50 backdrop-blur-md rounded-xl sm:rounded-2xl px-3 sm:px-5 py-4 sm:py-6 md:p-8 border-2 border-[#ffb84d] shadow-xl w-full max-w-3xl relative">
               <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#ffb84d] to-[#ff9f4a] text-[#2c5f2d] px-3 sm:px-5 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-bold whitespace-nowrap shadow-md">
-                ⏳ AUGUST SPECIAL OFFER ENDS IN ⏳
+                ⏳ FALL SPECIAL OFFER ENDS IN ⏳
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 md:gap-6 text-center mt-4 sm:mt-6">
                 <TimerBlock label="DAYS" value={days} />
@@ -121,29 +121,29 @@ const BeatTheHeatAugustSpecial = () => {
                 <TimerBlock label="SECS" value={seconds} />
               </div>
               <p className="text-center text-[#c44536] text-[10px] sm:text-xs mt-3 sm:mt-4 md:mt-6 font-medium bg-white/30 inline-block mx-auto px-2 sm:px-3 py-1 rounded-full">
-                *Valid through August 31, 2026 • 11:59 PM CDT
+                *Valid through September 30, 2026 • 11:59 PM CDT
               </p>
             </div>
           </div>
 
-          {/* Feature Cards */}
+          {/* Feature Cards – small text tweaks */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 items-stretch mb-10 sm:mb-14 md:mb-20">
             <div className="group relative rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 bg-white/60 backdrop-blur-sm border-2 border-[#ffd9b3] h-auto min-h-[220px] sm:min-h-[260px] flex flex-col items-center justify-center text-center transition-all duration-300 hover:scale-[1.02] hover:border-[#ffb84d] shadow-md">
               <div className="absolute -inset-1 bg-[#ffb84d] opacity-0 group-hover:opacity-20 rounded-xl sm:rounded-2xl transition duration-300"></div>
-              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 text-xl sm:text-2xl md:text-3xl">🔥</div>
+              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 text-xl sm:text-2xl md:text-3xl">🍂</div>
               <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4">❄️</div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#2c5f2d] uppercase mb-1 sm:mb-2">$189 SPECIAL</h3>
-              <p className="text-sm sm:text-base md:text-lg text-[#2c5f2d]/80">Lock in your August AC tune‑up at this unbeatable price!</p>
-              <span className="mt-2 sm:mt-3 text-[#c44536] text-xs sm:text-sm font-bold">☀️ Beat the heat, save big</span>
+              <p className="text-sm sm:text-base md:text-lg text-[#2c5f2d]/80">Lock in your Fall AC tune‑up at this unbeatable price!</p>
+              <span className="mt-2 sm:mt-3 text-[#c44536] text-xs sm:text-sm font-bold">🍁 Stay cool, save big</span>
             </div>
 
             <div className="group relative rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 bg-white/60 backdrop-blur-sm border-2 border-[#ffd9b3] h-auto min-h-[220px] sm:min-h-[260px] flex flex-col items-center justify-center text-center transition-all duration-300 hover:scale-[1.02] hover:border-[#ffb84d] shadow-md">
               <div className="absolute -inset-1 bg-[#ffb84d] opacity-0 group-hover:opacity-20 rounded-xl sm:rounded-2xl transition duration-300"></div>
-              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 text-xl sm:text-2xl md:text-3xl">🍉</div>
+              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 text-xl sm:text-2xl md:text-3xl">🍁</div>
               <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4">⚙️</div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#2c5f2d] uppercase mb-1 sm:mb-2">SURVIVAL CHECK</h3>
               <p className="text-sm sm:text-base md:text-lg text-[#2c5f2d]/80">NATE‑certified inspection, coil cleaning & system diagnostics.</p>
-              <span className="mt-2 sm:mt-3 text-[#c44536] text-xs sm:text-sm font-bold">🌊 August priority slots</span>
+              <span className="mt-2 sm:mt-3 text-[#c44536] text-xs sm:text-sm font-bold">🌊 Fall priority slots</span>
             </div>
 
             <div className="group relative rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 bg-white/60 backdrop-blur-sm border-2 border-[#ffd9b3] h-auto min-h-[220px] sm:min-h-[260px] flex flex-col items-center justify-center text-center transition-all duration-300 hover:scale-[1.02] hover:border-[#ffb84d] shadow-md">
@@ -152,35 +152,35 @@ const BeatTheHeatAugustSpecial = () => {
               <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4">⏱️</div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#2c5f2d] uppercase mb-1 sm:mb-2">SAME‑DAY SERVICE</h3>
               <p className="text-sm sm:text-base md:text-lg text-[#2c5f2d]/80">Fast, reliable service to keep your cool before the heat wins.</p>
-              <span className="mt-2 sm:mt-3 text-[#c44536] text-xs sm:text-sm font-bold">⚡ Limited August capacity</span>
+              <span className="mt-2 sm:mt-3 text-[#c44536] text-xs sm:text-sm font-bold">⚡ Limited Fall capacity</span>
             </div>
           </div>
 
-          {/* CTA – $189 Deal */}
+          {/* CTA – updated heading and deadline */}
           <div className="text-center bg-white/50 backdrop-blur-md rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 border-2 border-[#ffb84d] shadow-md">
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#2c5f2d] mb-2 sm:mb-3 flex flex-wrap justify-center items-center gap-2">
-              ☀️ <span>GRAB YOUR $189 AUGUST DEAL</span> 🌊
+              🍂 <span>GRAB YOUR $189 FALL DEAL</span> 🍁
             </p>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#c44536] max-w-2xl mx-auto mb-4 sm:mb-6">
-              Don't let your AC die this month — secure your spot at the special $189 rate before time runs out.
+              Don't fall behind – secure your spot at the special $189 rate before time runs out.
             </p>
             <button
               onClick={openModal}
               className="w-full sm:w-auto bg-gradient-to-r from-[#ffb84d] to-[#ff9f4a] text-[#2c5f2d] px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg md:text-xl font-bold uppercase transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 shadow-sm mx-auto"
             >
               <span>Claim $189 Deal</span>
-              <span className="text-lg sm:text-xl">☀️</span>
+              <span className="text-lg sm:text-xl">🍂</span>
             </button>
             <p className="text-[10px] sm:text-xs text-[#c44536] mt-4 sm:mt-5 bg-white/40 inline-block px-3 sm:px-4 py-1 rounded-full">
-              ⏰ Offer expires August 31, 2026 at 11:59 PM CDT — don't miss out!
+              ⏰ Offer expires September 30, 2026 at 11:59 PM CDT — don't miss out!
             </p>
           </div>
 
-          {/* Summer animated icons */}
+          {/* Summer animated icons – kept for warmth but added fall touches */}
           <div className="flex flex-wrap justify-center mt-8 sm:mt-10 md:mt-12 gap-3 sm:gap-4 md:gap-8 text-2xl sm:text-3xl md:text-4xl">
             <div className="animate-bounce" style={{ animationDelay: '0s' }}>☀️</div>
-            <div className="animate-bounce" style={{ animationDelay: '0.1s' }}>🌊</div>
-            <div className="animate-bounce" style={{ animationDelay: '0.2s' }}>🍉</div>
+            <div className="animate-bounce" style={{ animationDelay: '0.1s' }}>🍂</div>
+            <div className="animate-bounce" style={{ animationDelay: '0.2s' }}>🍁</div>
             <div className="animate-bounce hidden sm:inline-block" style={{ animationDelay: '0.3s' }}>⛱️</div>
             <div className="animate-bounce hidden sm:inline-block" style={{ animationDelay: '0.4s' }}>🍦</div>
           </div>
@@ -211,7 +211,7 @@ const BeatTheHeatAugustSpecial = () => {
         `}</style>
       </section>
 
-      {/* FieldPulse Modal */}
+      {/* FieldPulse Modal – unchanged */}
       {isModalOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-3 sm:p-4"
@@ -233,7 +233,7 @@ const BeatTheHeatAugustSpecial = () => {
               width="100%"
               height="100%"
               style={{ border: 'none' }}
-              title="Request Service – August Special"
+              title="Request Service – Fall Special"
             />
           </div>
         </div>
