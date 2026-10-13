@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import cityscape from "../assets/cityscapes.png";
-import teamPhoto from '../assets/groupphoto1.jpeg';
+import teamPhoto from '../assets/canonphoto2.jpeg';
 import technicianWorking from "../assets/checkingac.jpg";
 import companyTruck from "../assets/hvac2.jpg";
 import serviceCall from "../assets/hvac1.jpg";

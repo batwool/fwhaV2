@@ -1,67 +1,43 @@
 import React from 'react';
 
-// ✅ Import images
-import newGroupPhoto from '../assets/newGroup.jpg';
-import canonPhoto from '../assets/canonphoto3.jpeg';
-
 const About = () => {
   return (
     <section id="about" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Images */}
-          <div className="lg:-ml-14 max-w-[116%]">
-            <img
-              src={newGroupPhoto}
-              alt="Fort Worth Heat & Air Team"
-              className="w-full rounded-lg shadow-lg"
-            />
-            <div className="grid grid-cols-2 gap-4 mt-4">
-              <img
-                src={newGroupPhoto}
-                alt="Technician Gino"
-                className="w-full rounded-lg shadow-md"
-              />
-              <img
-                src={canonPhoto}
-                alt="Technician at work"
-                className="w-full rounded-lg shadow-md"
-              />
-            </div>
-          </div>
-
-          {/* Text */}
-          <div>
-            <div className="mb-6">
-              <div className="flex items-center gap-4">
-                <p className="text-xl text-[#003049] font-bold">Est. 2013</p>
-                <div className="w-64 h-[3px] bg-gray-300"></div>
-              </div>
-              <h2 className="text-4xl font-bold text-[#003049] mb-4 mt-2">
-                Building Our Legacy.<br />
-                Serving With Purpose.<br />
-                <span className="text-[#780000]">Leading The Way Forward.</span>
-              </h2>
-            </div>
-
-            <h3 className="text-3xl font-bold text-[#003049] mb-4">
-              15 Years of Service. A Future Built on Trust.
-            </h3>
-
-            <p className="text-lg text-gray-700 mb-4">
-              This year, Fort Worth Heat & Air proudly celebrates 15 years of serving the Fort Worth community. With over 30 years of combined experience, we've been more than an HVAC company; we've been a trusted neighbor, a problem-solver, and a partner in comfort for homeowners and businesses across the Fort Worth area.
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            About Fort Worth Heat & Air
+          </h2>
+          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+            <p>
+              At Fort Worth Heat & Air, we've built our reputation on one simple
+              principle: treating every customer like family. For years, we've
+              proudly served homeowners and businesses throughout the Fort Worth
+              area, delivering dependable heating, ventilation, and air
+              conditioning services that keep homes comfortable in every season.
+              Whether it's the blistering Texas summer heat or a sudden winter
+              cold snap, our team is ready to keep your indoor environment
+              exactly the way you want it.
             </p>
-
-            <p className="text-lg text-gray-700 mb-4">
-              While we may still be building our name, our commitment is already set in stone: doing the job right, every time. We’re driven to earn the trust of our community through hard work, honest service, and results you can feel.
+            <p>
+              Our certified technicians bring decades of combined experience to
+              every job, big or small. From routine maintenance and tune-ups to
+              full system installations and emergency repairs, we approach each
+              project with the same level of care, precision, and attention to
+              detail. We stay up to date with the latest HVAC technology and
+              energy-efficient solutions, so you can trust that your system is
+              running as smoothly and cost-effectively as possible.
             </p>
-
-            <p className="text-lg text-gray-700">
-              As we look ahead, we’re excited to grow, make our mark, and become the HVAC company Fort Worth knows and relies on for years to come.
+            <p>
+              What truly sets us apart is our commitment to honest, transparent
+              service. We'll never try to sell you something you don't need, and
+              we'll always take the time to explain your options in plain
+              language. When you choose Fort Worth Heat & Air, you're choosing a
+              local team that genuinely cares about your comfort, your budget,
+              and your peace of mind. We're not just fixing air conditioners —
+              we're building lasting relationships with the neighbors we serve.
             </p>
           </div>
-
         </div>
       </div>
     </section>

@@ -14,7 +14,7 @@ const Offers = () => {
         className="py-20 bg-[#003049] border-4 border-dotted border-white"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Heading - no red line */}
+          {/* Section Heading */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
               Exclusive Offers Just for You
@@ -23,7 +23,7 @@ const Offers = () => {
 
           {/* Three Card Strip */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1 - AC Safety & Summer Survival Visit */}
+            {/* Card 1 - Winter Home Shield Inspection */}
             <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full overflow-hidden group">
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center justify-between mb-4">
@@ -44,24 +44,39 @@ const Offers = () => {
                     </svg>
                   </div>
                   <span className="text-xs font-semibold text-[#780000] bg-[#780000]/10 px-2.5 py-1 rounded-full">
-                    Limited Time
+                    $199 Winter Special
                   </span>
                 </div>
 
                 <h3 className="text-xl font-bold text-[#003049] mb-2">
-                  AC Safety & Summer Survival Visit
+                  Winter Home Shield Inspection
                 </h3>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  Pre-season check for your system so it's ready for Texas heat. We inspect, clean key
-                  components, and give you a written health report.
+                <p className="text-gray-600 mb-3 text-sm leading-relaxed">
+                  Don't let it freeze in February. A heating safety & freeze‑readiness visit:
                 </p>
+                <ul className="text-gray-600 text-sm space-y-1 mb-4 list-disc list-inside">
+                  <li>CO & heat exchanger check</li>
+                  <li>Gas, refrigerant & condensate leak check</li>
+                  <li>Air quality & airflow inspection</li>
+                  <li>Freeze readiness + photo report</li>
+                </ul>
+                <p className="text-gray-600 text-sm mb-4">
+                  <span className="font-semibold text-[#003049]">$75 back</span> toward any repair.
+                  Second system <span className="font-semibold text-[#003049]">$95</span>.
+                </p>
+
+                <div className="mb-6 mt-2">
+                  <span className="inline-block bg-[#003049]/10 text-[#003049] text-xs font-medium px-2.5 py-1 rounded-full">
+                    Valid Oct 15 – Feb 28
+                  </span>
+                </div>
 
                 <div className="mt-auto">
                   <button
                     onClick={openModal}
                     className="inline-flex items-center justify-center w-full bg-[#780000] text-white px-4 py-3 rounded-md font-semibold hover:bg-[#660000] transition-colors duration-200 text-center"
                   >
-                    Book Your Visit
+                    Book Winter Shield – $199
                     <svg
                       className="w-4 h-4 ml-2"
                       fill="none"
@@ -223,7 +238,7 @@ const Offers = () => {
               width="100%"
               height="100%"
               style={{ border: 'none' }}
-              title="Request Service"
+              title="Request Service – Winter Home Shield Inspection"
             />
           </div>
         </div>

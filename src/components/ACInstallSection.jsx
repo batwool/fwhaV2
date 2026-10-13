@@ -1,5 +1,5 @@
 import React from 'react';
-import mikePhoto from '../assets/mikephoto1.jpeg'; // ✅ Import the image
+import canonPhoto from '../assets/canonphoto.jpeg'; // ✅ Import the image
 
 const ACInstallSection = () => {
   return (
@@ -9,7 +9,7 @@ const ACInstallSection = () => {
           {/* Image */}
           <div className="order-2 lg:order-1">
             <img
-              src={mikePhoto}
+              src={canonPhoto}
               alt="Air Conditioning Installation"
               className="w-full rounded-lg shadow-lg"
             />

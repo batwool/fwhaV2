@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import indoorAirQuality from '../assets/newGroup.jpg';
+import indoorAirQuality from '../assets/canonphoto3.jpeg';
 
 const IndoorAirQuality = () => {
   const [openIndex, setOpenIndex] = useState(null);
